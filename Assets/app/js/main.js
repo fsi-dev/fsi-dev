@@ -22,7 +22,8 @@ jQuery(document).ready(function () {
       if($(".bd-sidebar-content").length != 0){
         console.log(" bd-sidebar-content");
         clearInterval(check_menu);
-        getContent();       
+        getContent();  
+        jQuery(document).find(".useScrollBar").perfectScrollbar();     
       }else{
         console.log(" ! bd-sidebar-content");
       }
@@ -136,16 +137,6 @@ jQuery(document).ready(function () {
 
 //--WINDOW LOADED FUNCTION BEGIN
 jQuery(window).bind("load", function () {
-    
-
-
-
-
-  jQuery(document).find(".useScrollBar").perfectScrollbar();
-
-
-
-
 
 });
 //--WINDOW LOADED FUNCTION END
