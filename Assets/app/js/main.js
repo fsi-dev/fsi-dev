@@ -15,13 +15,12 @@
 //--DOCUMENT READY FUNCTION BEGIN
 jQuery(document).ready(function () {
   
-    
-  $.when($.ajax(includeHTML())).then(function () {
-    $.when($.ajax(getContent())).then(function () {
+  $.when($.ajax(includeHTML())).done(function () {
+    $.when($.ajax(getContent())).done(function () {
         Highlight();
     });
   });
-
+  
   jQuery(document).on('click', '.bd-sidenav > li > a', function(e){
     e.preventDefault();
     var link = jQuery(this).attr('href');
@@ -127,6 +126,11 @@ jQuery(document).ready(function () {
 
 //--WINDOW LOADED FUNCTION BEGIN
 jQuery(window).bind("load", function () {
+    
+
+
+
+
   jQuery(document).find(".useScrollBar").perfectScrollbar();
 
 
