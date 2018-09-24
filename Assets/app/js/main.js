@@ -211,8 +211,9 @@ var Highlight = function(){
     SyntaxHighlighter.config.stripBrs = false; 
     SyntaxHighlighter.defaults["gutter"] = true;  
     SyntaxHighlighter.defaults["toolbar"] = true;  
-    //SyntaxHighlighter.highlight();
-    SyntaxHighlighter.all();  
+    SyntaxHighlighter.highlight();
+    console.log("function highlight");
+    //SyntaxHighlighter.all();  
 }
 
   // $.when(includeHTML()).done(function () {
