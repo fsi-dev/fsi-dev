@@ -16,11 +16,22 @@
 jQuery(document).ready(function () {
   
   $.when(includeHTML()).done(function () {
-    $.when(getContent()).done(function () {
-        SyntaxHighlighter.highlight();
-    });
+    console.log("includeHTML Done");
+
+    var check_menu = setInterval(function(){
+      if($(".bd-sidebar-content").length != 0){
+        console.log(" bd-sidebar-content");
+        clearInterval(check_menu);
+        getContent();
+        Highlight();
+      }else{
+        console.log(" ! bd-sidebar-content");
+      }
+    }, 10);
+
+
   });
-  
+
   jQuery(document).on('click', '.bd-sidenav > li > a', function(e){
     e.preventDefault();
     var link = jQuery(this).attr('href');
@@ -147,7 +158,10 @@ jQuery(window).resize(function () {
 //--WINDOW RESIZE FUNCTION END
 
 
-function includeHTML(container) {
+
+
+
+var includeHTML = function(container) {
   if (!container){
     container = jQuery(document);
   }
@@ -177,17 +191,28 @@ function includeHTML(container) {
   });  
 }
 
-function getContent(){
+var getContent = function(){
   var link = jQuery(document).find(".bd-sidenav").find("li.active").find("a").attr('href');
   console.log(link);
   jQuery(document).find(".bd-content").find("div[data-include-html]").attr('data-include-html',link);
   includeHTML(jQuery(".bd-content"));
 }
 
-function Highlight(){
+var Highlight = function(){
     SyntaxHighlighter.config.stripBrs = false; 
     SyntaxHighlighter.defaults["gutter"] = true;  
     SyntaxHighlighter.defaults["toolbar"] = true;  
     //SyntaxHighlighter.highlight();
     SyntaxHighlighter.all();  
 }
+
+  // $.when(includeHTML()).done(function () {
+  //   console.log("includeHTML Done");
+
+  //     if($(".bd-sidebar-content").length != 0){
+  //       console.log(" bd-sidebar-content");
+  //       getContent();
+  //     }else{
+  //       console.log(" ! bd-sidebar-content");
+  //     }
+  // });
