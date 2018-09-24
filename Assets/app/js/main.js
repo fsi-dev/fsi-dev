@@ -149,16 +149,7 @@ jQuery(window).resize(function () {
 
 
 jQuery(window).load(function () {
-    var check_highlight = setInterval(function(){
-      if($(".syntaxhighlighter").length != 0){
-        console.log(" syntaxhighlighter");
-        clearInterval(check_highlight);
-      }else{
 
-        console.log(" ! syntaxhighlighter");
-        Highlight();
-      }
-    }, 10);  
 });
 
 
@@ -197,7 +188,16 @@ var getContent = function(){
   console.log(link);
   jQuery(document).find(".bd-content").find("div[data-include-html]").attr('data-include-html',link);
   includeHTML(jQuery(".bd-content"));
+    var check_highlight = setInterval(function(){
+      if($(".syntaxhighlighter").length != 0){
+        console.log(" syntaxhighlighter");
+        clearInterval(check_highlight);
+      }else{
 
+        console.log(" ! syntaxhighlighter");
+        Highlight();
+      }
+    }, 10);  
 };
 
 var Highlight = function(){
