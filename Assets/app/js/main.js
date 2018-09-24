@@ -22,8 +22,7 @@ jQuery(document).ready(function () {
       if($(".bd-sidebar-content").length != 0){
         console.log(" bd-sidebar-content");
         clearInterval(check_menu);
-        getContent();
-        Highlight();
+        getContent();       
       }else{
         console.log(" ! bd-sidebar-content");
       }
@@ -196,6 +195,16 @@ var getContent = function(){
   console.log(link);
   jQuery(document).find(".bd-content").find("div[data-include-html]").attr('data-include-html',link);
   includeHTML(jQuery(".bd-content"));
+    var check_highlight = setInterval(function(){
+      if($(".syntaxhighlighter").length != 0){
+        console.log(" syntaxhighlighter");
+        clearInterval(check_highlight);
+      }else{
+
+        console.log(" ! syntaxhighlighter");
+        Highlight();
+      }
+    }, 10);  
 }
 
 var Highlight = function(){
