@@ -1,0 +1,140 @@
+<!-- MÔ TẢ -->
+<h1 class="bd-title" id="content">Widget Header</h1>
+
+
+<!-- DEMO -->
+<div class="demo-section">
+    <h3 id="cpn_demo">Demo</h3>
+    <p>Widget Header nằm trong <strong>widget</strong> (<code class="highlighter-rouge">&lt;div class=&quot;widget&quot;&gt;&lt;/div&gt;</code> ).</p>
+    <div class="demo_content">
+        <div class="widget">
+            <div class="widget-header bordered-bottom bordered-yellow">
+                <span class="widget-caption has-sub-caption">
+                    <span class="widget-caption-left"><i class="fa fa-folder-open"></i></span> 
+                    <span class="widget-caption-right">
+                        <span class="widget-mainCaption">Kho lưu trữ</span> 
+                        <span class="widget-subCaption">Có 26 tài liệu - thư mục được tìm thấy</span>
+                    </span>
+                </span>
+                <div class="widget-buttons">
+                    <a class="widget_back_btn text-btn hidden" href="#" title="Quay lại"><i aria-hidden="true" class="fa fa-arrow-left"></i><span>Quay lại</span></a>
+                    <a data-toggle="maximize" href="javascript:;"><i class="fa fa-expand"></i></a>
+                    <a data-toggle="collapse" href="#"><i class="fa fa-minus"></i></a>
+                    <a data-toggle="dispose" href="javascript:;"><i class="fa fa-times"></i></a>
+                </div>
+            </div> 
+        </div>
+    </div>                
+</div>                
+
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">HTML</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                <div class="widget"> <!-- widget -->
+                    <div class="widget-header bordered-bottom bordered-yellow">
+                        <span class="widget-caption has-sub-caption">
+                            <span class="widget-caption-left"><i class="fa fa-folder-open"></i></span> 
+                            <span class="widget-caption-right">
+                                <span class="widget-mainCaption">Kho lưu trữ</span> 
+                                <span class="widget-subCaption">C&#243; 26 t&#224;i liệu - thư mục được t&#236;m thấy</span>
+                            </span>
+                        </span>
+                        <div class="widget-buttons">
+                            <a class="widget_back_btn text-btn" href="#" title="Quay lại"><i aria-hidden="true" class="fa fa-arrow-left"></i><span>Quay lại</span></a>
+                            <a data-toggle="maximize" href="javascript:;"><i class="fa fa-expand"></i></a>
+                            <a data-toggle="collapse" href="#"><i class="fa fa-minus"></i></a>
+                            <a data-toggle="dispose" href="javascript:;"><i class="fa fa-times"></i></a>
+                        </div>
+                    </div>    
+                </div>     
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- CSS -->
+<div class="demo-section">
+    <h3 id="cpn_css">CSS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:css;">
+                /* widget */
+                .widget {
+                    padding: 0;
+                    -webkit-box-shadow: 1px 0px 20px rgba(0,0,0,0.08) !important;
+                    -moz-box-shadow: 1px 0px 20px rgba(0,0,0,0.08) !important;
+                    box-shadow: 1px 0px 20px rgba(0,0,0,0.08) !important;
+                }
+                .widget-header.bordered-bottom {
+                    border-bottom: 1px solid #eee !important;
+                }
+                .widget .widget-header {
+                    min-height: 50px;
+                }
+
+                .widget .widget-header {
+                    overflow: hidden;
+                    height: auto;
+                }
+                .widget-header, .widget-body {
+                    box-shadow: none !important;
+                }
+                .widget-header {
+                    padding-left: 10px;
+                    padding-right: 5px;
+                }
+                .widget-header {
+                    text-align: center !important;
+                }
+
+                /* widget header */
+                /* widget caption  */
+
+                /* widget button */
+                .widget-buttons {
+                    padding-top: 9px;
+                }
+
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- JS -->
+<div class="demo-section">
+    <h3 id="cpn_js">JS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content ">
+            <pre class="brush:js;">
+                           
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- NOTE -->
+<div class="demo-section">
+    <h3 id="cpn_note">Note</h3>
+    <p>Bootstrap’s alert plugin exposes a few events for hooking into alert functionality.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="highlighter-rouge">close.bs.alert</code></td>
+                <td>This event fires immediately when the <code>close</code> instance method is called.</td>
+            </tr>
+            <tr>
+                <td><code class="highlighter-rouge">closed.bs.alert</code></td>
+                <td>This event is fired when the alert has been closed (will wait for CSS transitions to complete).</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

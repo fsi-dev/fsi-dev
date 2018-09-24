@@ -1,0 +1,12 @@
+@media(max-width: 991px){
+    body{
+        padding-top: 75px;
+    }
+    .bd-sidebar {
+        top: 0;
+        position: relative;
+    }    
+    .bd-content {
+        padding-left: 15px !important;
+    }    
+}

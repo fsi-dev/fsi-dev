@@ -1,0 +1,297 @@
+﻿.secrtc2 .dragupRecommend {
+    min-height: 50px;
+    position: relative;
+    width: calc((100%) - 40px);
+    padding: 15px 0;
+}
+.secrtc2 .dragupRecommend .dragFile{
+    height: auto;
+}
+.secrtc2 .dragupRecommend h2 { 
+    display: none; 
+}
+.secrtc2 .dragupRecommend h3 {
+    font-size: 12px;
+    margin-top: 0;
+}
+.dragBox .btn .glyphicon{
+    border: medium none;
+    border-radius: 5px 0;
+    color: #fff;
+    height: 20px;
+    line-height: 1.5;
+    top: 1px;
+    width: 20px;
+}
+.downPlugin span{
+    float: left;
+    width: 100%;
+}
+.upBoxer .tablecs .tickrows{
+    top: 0;
+}
+.uptree{
+    height: 245px;
+    padding: 15px 35px;
+}
+.uptree .actions{
+    padding-top: 15px;
+}
+.uptree .useTabs{
+    height: calc((100%) - 35px);
+    margin: 0;
+}
+.uptree .ui-tabs-nav{
+    border: none;
+}
+.uptree .treectn{
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+.dragBox{
+    height: 300px !important;
+    overflow: hidden !important;
+}
+.dragBox *{
+    font-size: 11px;
+}
+.dragBox .form-files{
+    float: left;
+    height: 260px;
+    width: 100%;
+}
+.dragBox .form-files input[type="text"]{
+    border: 1px solid #ccc;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 22px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #fff;
+}
+.dragBox .form-files select{
+    border: 1px solid #ccc;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+}
+.dragBox .form-files .loaded {
+    background: transparent url("/Assets/app/img/icons.png") no-repeat scroll -140px -3px;
+    color: transparent;
+    height: 15px;
+    margin: auto;
+    padding: 2px 10px;
+    text-shadow: none;
+    width: 16px;
+}
+.dragBox .files{
+    border: medium none !important;
+    float: left;
+    height: 33px !important;
+    padding: 5px;
+}
+.dragBox .upStatus{
+    height: 15px;
+}
+.dragBox .sizes{
+    border: none !important;
+    text-align: center;
+}
+.dragBox .progress{
+    height: 100%;
+    background-color: #989898;
+}
+.dragBox .progress-label{
+    color: #fff;
+    line-height: 15px;
+    position: absolute;
+}
+.dragBox .form-actions{
+    border-top: 1px solid #ccc;
+    float: left;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+.form-label{
+    color: #000 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+}
+.btn-vtri{
+    width: 70px;
+    float: left;
+}
+.name-vtri{
+    float: left;
+    width: calc((100%) - 100px);
+    padding: 0;
+    line-height: 28px;
+    height: 28px;
+    text-decoration: underline;
+}
+.floatr{
+    float: right !important;
+}
+.form-actions .col{
+    height: 40px;
+    border: none !important;
+}
+.form-actions .tablecs {
+    border: none;
+}
+.dragBox .form-actions select{
+    border: 1px solid #ccc;
+    height: 20px;
+    line-height: 20px;
+    padding: 2px;
+    position: relative;
+    top: 4px;
+    width: 100%;
+}
+.dragBox .form-actions button{
+    margin: 3px 8px 0;
+    padding: 2px 15px;
+}
+.dragBox .form-actions label{
+    font-weight: normal;
+    float: left;
+    margin: 0;
+    border: none;
+}
+.dragupRecommend{
+    background: url("/Assets/app/img/dragdrop.png") no-repeat scroll center center/50% auto #fff;
+    border: 5px dashed #e6e6e6;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    height: calc((100%) - 120px);
+    margin: 20px;
+    overflow: auto;
+    padding: 20px 0;
+    position: absolute;
+    width: calc((100%) - 70px);
+}
+.dragupRecommend h2 {
+    color: #4f4f4f;
+    text-align: center;
+}
+.dragupRecommend h3 {
+    color: #4f4f4f;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+.dragFile {
+    -moz-animation: dragFile 5s ease 0s infinite normal;
+    /* Safari and Chrome */
+    -o-animation: dragFile 5s ease 0s infinite normal;
+    /* Firefox */
+    -webkit-animation: dragFile 5s ease 0s infinite normal;
+    animation: dragFile 5s ease 0s infinite normal;
+    background: url("/Assets/app/img/dragFile.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    height: 46px;
+    left: calc((100%) - (30%));
+    opacity: 0;
+    position: absolute;
+    top: calc(((100%) - 13px) / 2);
+    width: 58px;
+    /* Opera */
+}
+
+@keyframes dragFile {
+    0% {
+        left: 70%;
+        opacity: 0;
+    }
+
+    25% {
+        left: 60%;
+        opacity: 1;
+    }
+
+    50% {
+        left: 45%;
+        opacity: 1;
+    }
+
+    100% {
+        left: 30%;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes dragFile {
+    0% {
+        left: 70%;
+        opacity: 0;
+    }
+
+    25% {
+        left: 60%;
+        opacity: 1;
+    }
+
+    50% {
+        left: 45%;
+        opacity: 1;
+    }
+
+    100% {
+        left: 30%;
+        opacity: 0;
+    }
+}
+
+/* Safari and Chrome */
+
+@-webkit-keyframes dragFile {
+    0% {
+        left: 70%;
+        opacity: 0;
+    }
+
+    25% {
+        left: 60%;
+        opacity: 1;
+    }
+
+    50% {
+        left: 45%;
+        opacity: 1;
+    }
+
+    100% {
+        left: 30%;
+        opacity: 0;
+    }
+}
+
+/* Opera */
+
+@-o-keyframes dragFile {
+    0% {
+        left: 70%;
+        opacity: 0;
+    }
+
+    25% {
+        left: 60%;
+        opacity: 1;
+    }
+
+    50% {
+        left: 45%;
+        opacity: 1;
+    }
+
+    100% {
+        left: 30%;
+        opacity: 0;
+    }
+}

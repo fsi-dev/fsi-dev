@@ -1,0 +1,745 @@
+﻿.info-box-message-user {
+    display: block;
+    float: left;
+    height: 100%;
+    right: 0;
+    width: 100%
+}
+
+.master-view {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    right: 40px;
+    width: 286px
+}
+
+.message-thread {
+    border-left: 1px solid #ecf0f1;
+    display: block;
+    height: 100%;
+    margin-left: 286px;
+    overflow: hidden;
+    position: absolute;
+    width: calc((100%) - 256px);
+}
+
+.box-msg-system {
+    color: #66a523;
+    display: block;
+    height: 31px;
+    line-height: 38px;
+    padding: 0px 8px 15px 8px;
+    width: 286px;
+}
+
+.box-msg-system strong { font-size: 18px }
+
+sup {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 1) 100%) repeat scroll 0 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: normal;
+    margin-left: 5px;
+    padding: 2px 5px
+}
+
+.box-find-user {
+    border-bottom: 1px solid #e3e3e3;
+    display: block;
+    padding: 10px 8px;
+    position: relative;
+    width: 100%;
+}
+
+.ifind-right {
+    background-position: -656px -207px;
+    display: none;
+    height: 32px;
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    width: 32px
+}
+
+.input-find-user {
+    border: 1px solid #ccc;
+    border-radius: 0;
+    line-height: 26px;
+    padding: 0 5px;
+    width: 100%;
+}
+
+.box-userlist {
+    height: calc((100%) - 80px);
+    overflow: hidden;
+    padding: 0;
+    width: 100%
+}
+.blockitem.zoom-in .box-userlist{
+    height: calc((100%) - 57px);
+}
+.box-userlist ul {
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.box-userlist ul li {
+    border-bottom: 1px solid #e3e3e3;
+    cursor: pointer;
+    display: inline-block;
+    height: 45px;
+    width: 100%;
+}
+.box-userlist ul li:nth-child(2n+1){
+    background-color: #f2f2f2;
+}
+
+.box-userlist ul li.active, .box-userlist ul li.active:hover { background: none repeat scroll 0 0 #dbedfe }
+
+.box-userlist ul li.active * { color: red }
+
+.box-userlist ul li:hover { background: none repeat scroll 0 0 #ededed }
+
+.line-item-user {
+    display: block;
+    height: 100%
+}
+
+.left-avatar-user {
+    display: inline-block;
+    float: left;
+    padding: 8px;
+}
+
+.left-avatar-user img {
+    border-radius: 50%;
+    float: left;
+}
+
+.left-infor-user {
+    display: inline-block;
+    float: left;
+    padding: 8px;
+}
+
+.left-user-name {
+    line-height: 26px;
+    position: relative;
+    top: 5px;
+}
+
+.left-user-msg {
+    color: #777;
+    display: block;
+    line-height: 12px;
+    margin-left: 45px;
+    font-size: 11px;
+}
+
+.message-thread .box-chat-user-title {
+    border-bottom: 1px solid #ecf0f1;
+    display: inline-block;
+    height: 80px;
+    width: 100%;
+}
+
+.chat-name {
+    font-size: 18px;
+    height: 100%;
+    line-height: 40px;
+    margin-left: 20px
+}
+
+.box-chat-message-list {
+    background: none repeat scroll 0 0 #fff;
+    display: inline-block;
+    height: calc((100%) - 80px);
+    position: relative;
+    width: 100%
+}
+
+.box-chat-bround-message {
+    display: inline-block;
+    height: calc((100%) - 113px);
+    position: relative;
+    width: 100%;
+}
+
+.box-chat-bround-message ul {
+    background: none repeat scroll 0 0 #fff;
+    margin: auto;
+    min-height: 200px;
+    padding: 15px;
+    position: relative;
+    z-index: 1
+}
+
+.box-chat-form {
+    background: none repeat scroll 0 0 #fff;
+    border-top: 1px solid #ddd;
+    height: 111px;
+    margin-top: -4px;
+    padding: 15px 20px 0;
+}
+
+.box-chat-form-txt {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #cdcdcd;
+    padding: 5px;
+    position: relative;
+}
+
+.box-chat-form-txt textarea {
+    border: medium none;
+    color: #333;
+    display: block;
+    font-size: 12px;
+    resize: none;
+    width: 100%
+}
+
+.box-chat-form-menu {
+    display: block;
+    height: 37px;
+    line-height: 37px
+}
+
+.form-menu-chat-item {
+    float: right;
+    padding-left: 10px
+}
+
+.form-menu-chat-item input {
+    border: 1px solid #e3e3e3;
+    display: inline-block;
+}
+
+.form-menu-chat-item label {
+    color: gray;
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    height: auto;
+    line-height: 25px;
+    margin: 0;
+}
+.form-menu-chat-item.box-ck-enter input{
+    top: 3px
+}
+.form-menu-chat-item.box-ck-enter label{
+    top: 8px; position: relative; 
+}
+.rightchat-avatar-user {
+    display: inline-block;
+    float: left;
+    padding: 8px;
+}
+
+.rightchat-avatar-user img { float: left }
+
+.rightchat-infor-user {
+    display: inline-block;
+    float: left;
+    padding: 8px;
+}
+
+.rightchat-user-name {
+    font-size: 15px;
+    line-height: 30px
+}
+
+.rightchat-info-user.left .rightchat-user-name { float: left }
+
+.rightchat-info-user.right .rightchat-user-name { float: left }
+
+.rightchat-info-user.right {
+    float: left;
+    width: 100%;
+}
+
+.rightchat-info-user.left {
+    float: left;
+    width: 100%;
+}
+
+.rightchat-user-name a { color: #66a523 !important }
+
+.rightchat-user-msg {
+    border-radius: 5px;
+    color: #333;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 20px;
+    max-width: 60%;
+    padding: 7px 10px;
+    white-space: pre-line;
+    z-index: 10
+}
+
+.rightchat-info-user.left .rightchat-user-msg {
+    background: -moz-linear-gradient(center bottom, #c7defe, #e7f1fe) repeat scroll 0 0 #dbedfe;
+    background-color: #dbedfe;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#c7defe), to(#e7f1fe));
+    background-image: -webkit-linear-gradient(bottom, #c7defe, #e7f1fe);
+    float: left;
+}
+
+.rightchat-info-user.right .rightchat-user-msg {
+    background: -moz-linear-gradient(center bottom, #f2f2f2, #fff) repeat scroll 0 0 #f7f7f7;
+    background-color: #f7f7f7;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#f2f2f2), to(#fff));
+    background-image: -webkit-linear-gradient(bottom, #f2f2f2, #fff);
+    float: left;
+}
+
+.ul-messagehtml, .messagehtml { display: none !important }
+
+.ul-messages .item-message {
+    clear: both;
+    display: inline-block;
+    margin-bottom: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.ul-messages .item-message:last-child { margin-bottom: 0 }
+
+.message-thread.chat-single {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #cdcdcd;
+    bottom: 5px;
+    color: #fff;
+    display: block;
+    font-family: Arial, sans-serif;
+    height: 350px;
+    margin-left: 10px;
+    position: fixed;
+    right: 15px;
+    width: 290px;
+    z-index: 10;
+}
+
+.message-thread.chat-single .box-chat-user-title {
+    background: none repeat scroll 0 0 #f4f5f6;
+    border-bottom: 1px solid #e3e3e3;
+    display: inline-block;
+    height: 30px;
+    width: 100%
+}
+
+.message-thread.chat-single .chat-name {
+    font-size: 12px;
+    height: 100%;
+    line-height: 30px;
+    margin-left: 15px
+}
+
+.message-thread.chat-single .box-chat-message-list {
+    border-bottom: 1px solid #e3e3e3;
+    display: inline-block;
+    height: 318px;
+    position: relative;
+    width: 100%
+}
+
+.message-thread.chat-single .box-chat-bround-message {
+    display: inline-block;
+    height: 246px;
+    position: relative;
+    width: 100%
+}
+
+.message-thread.chat-single .box-chat-bround-message ul {
+    background: none repeat scroll 0 0 #fff;
+    margin: auto;
+    min-height: 216px;
+    padding: 15px 15px 0 15px;
+    position: relative;
+    z-index: 1
+}
+
+.message-thread.chat-single .box-chat-form {
+    background: none repeat scroll 0 0 #f4f5f6;
+    height: 70px;
+    margin-top: -3px;
+    padding: 15px 20px 0
+}
+
+.message-thread.chat-single .box-chat-form-txt textarea {
+    border: medium none;
+    color: #333;
+    display: block;
+    font-size: 12px;
+    height: 25px;
+    resize: none;
+    width: 100%
+}
+
+.message-thread.chat-single .box-chat-form-menu {
+    display: block;
+    height: 20px;
+    line-height: 20px
+}
+
+.box-chat-user-title .chat-close {
+    color: #ccc;
+    cursor: pointer;
+    display: none;
+    float: right;
+    font-weight: bold;
+    padding: 5px 10px
+}
+
+.box-chat-user-title a { color: red }
+
+.message-thread.chat-single .box-chat-user-title .chat-close { display: block }
+
+.rightchat-link-profile img {
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+}
+
+.chat-time {
+    color: gray;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 17px;
+    margin-left: 70px;
+    max-width: 180px;
+    position: relative;
+    white-space: pre-line;
+    width: 100%;
+}
+
+.rightchat-info-user.left .chat-time {
+    float: left;
+    text-align: left
+}
+
+.rightchat-info-user.right .chat-time {
+    float: left;
+    text-align: left
+}
+.num-new-message[data-value=''],
+.num-new-message[data-value='0']{
+    display: none;
+}
+.txt-new-message {
+    color: #777 !important;
+    display: inline-block;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info-box-message-user .chat-time {
+    float: right !important;
+    width: auto !important
+}
+
+.chat-single .chat-name a { color: #000 !important }
+
+.rightchat-info-user.right .arrow {
+    border-color: transparent #f9f9f9 transparent transparent;
+    border-right: 10px solid #f9f9f9;
+}
+
+.rightchat-info-user.left .arrow {
+    border-color: transparent #daecfc transparent transparent;
+    border-right: 10px solid #daecfc;
+}
+
+.rightchat-info-user .arrow {
+    border-style: solid;
+    border-width: 10px;
+    display: block;
+    height: 0;
+    left: 39px;
+    position: absolute;
+    top: 6px;
+    width: 0;
+    z-index: -1
+}
+
+.online-status {
+    min-height: 16px;
+    padding-right: 20px;
+}
+
+.online-status.online { background: url("/Assets/app/img/online.png") no-repeat scroll right center transparent }
+
+.lk-notification-system { color: #0da9e6 !important; }
+
+.line-control-panel {
+    height: 100%; /*calc((100%) - 32px)*/
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.wrapp-control-panel-bottom {
+    height: 100%;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.line-box-control-panel {
+    clear: both;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.right-control-panel-line {
+    display: block;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 30px;
+    margin-top: 0;
+    min-width: 885px;
+    position: relative;
+    top: 0;
+}
+
+.page-profile-message .right-contain { padding-bottom: 0; }
+
+.right-control-panel-line .right-contain {
+    display: block;
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.form-chat-data {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.winchat {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    bottom: 0;
+    height: 200px;
+    padding: 10px;
+    position: absolute;
+    right: 5px;
+    width: 300px;
+    z-index: 1000;
+}
+
+.chat-single .chat-time {
+    display: block;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.chat-single input[name="send"] {
+    background: #62a7da none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 12px;
+    margin-top: -3px;
+    padding: 0 10px;
+}
+
+.load-more-msg {
+    color: #ccc;
+    cursor: pointer;
+    list-style: outside none none;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.input-find-user{
+    background: url("/Assets/app/img/search.png") no-repeat right center / 24px 24px;
+}
+.master-view .group-tab{
+    height: 100%;
+    position: relative;
+}
+.blockchat.zoom-in .master-view{
+    width: 100%;
+}
+.blockchat.zoom-in .right-control-panel-line{
+    min-width: 100%;
+    margin: 0;
+}
+.blockchat.zoom-in .message-thread,
+.blockchat.zoom-in .box-msg-system{
+    display: none;
+}
+.blockchat.zoom-in .box-find-user{
+    padding: 0;
+}
+.blockchat.zoom-in .input-find-user{
+    border: none;
+    padding: 0 15px;
+}
+.blockchat.zoom-in.miniBox{
+    border-radius: 0;
+    bottom: 0;
+    display: block !important;
+    height: 330px;
+    min-width: inherit;
+    position: absolute;
+    right: 5px;
+    width: 254px !important;
+    z-index: 100 !important;
+}
+.blockchat.zoom-in.miniBox .master-view{
+    display: none;
+}
+.blockchat.zoom-in.miniBox .message-thread{
+    display: block;
+    left: 0;
+    margin: 0;
+    right: 0;
+    width: 100%;
+    border: none;
+}
+.blockchat.zoom-in.miniBox .message-thread .box-chat-user-title{
+    height: 32px;
+    text-indent: 32px;
+}
+.blockchat.zoom-in.miniBox .chat-name {
+    font-size: 12px;
+    height: 100%;
+    line-height: 32px;
+    margin-left: 15px;
+}
+.blockchat.zoom-in.miniBox .toolbar{
+    position: absolute;
+}
+.blockchat.zoom-in.miniBox .toolbar h2{
+    color: transparent;
+}
+.blockchat.zoom-in.miniBox .line-control-panel{
+    height: 100%;
+}
+.blockchat.zoom-in.miniBox .box-chat-message-list{
+    height: calc((100%) - 32px);
+}
+.blockchat.zoom-in.miniBox .box-chat-bround-message{
+    height: calc((100%) - 55px);
+}
+.blockchat.zoom-in.miniBox .box-chat-form-txt{
+    border: none;
+}
+.blockchat.zoom-in.miniBox .box-chat-form-txt textarea{
+    height: 22px;
+    line-height: 22px;
+}
+.blockchat.zoom-in.miniBox .box-chat-form{
+    height: 55px;
+    padding: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 1px solid #cdcdcd;
+}
+.blockchat.zoom-in.miniBox .box-chat-form-menu{
+    height: 21px;
+    line-height: 21px;
+    background-color: #ccc;
+}
+.blockchat.zoom-in.miniBox .form-menu-chat-item.box-ck-enter label{
+    font-size: 11px;
+    padding: 0 5px;
+    top: -1px;
+}
+.blockchat.zoom-in.miniBox .btn-zoom{
+    z-index: 10;
+}
+.blockchat.zoom-in.miniBox .btn-hide{
+    display: none;
+}
+.blockchat .closechat{
+    display: none;
+}
+.blockchat.zoom-in.miniBox .closechat{
+    display: block;
+    cursor: pointer;
+    height: 32px;
+    line-height: 27px;
+    position: relative;
+    right: 24px;
+    top: -1px;
+    z-index: 10;
+}
+.blockchat.zoom-in.miniBox .closechat:hover{
+    background-color: #fff;
+}
+.blockchat.zoom-in.miniBox #multiboxchat{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.blockchat.zoom-in.miniBox #multiboxchat ul{
+    background-color: #f4f4f4;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+.blockchat.zoom-in.miniBox .chat-time{
+    clear: both;
+    font-size: 8px !important;
+    left: 3px;
+    margin: 0;
+    overflow: hidden;
+    text-indent: -40px;
+    width: 34px;
+}
+.tabitem .sbHolder{
+    position: absolute;
+    right: 8px;
+    top: 2px;
+    width: 100px;
+    display: none;
+    border: none;
+}
+.tabitem.active .sbHolder{
+    display: block;
+}
+.label-group-tab {
+    background-image: none;
+    background-position: 3px -30px;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    display: block;
+    line-height: 31px;
+    padding: 0 20px;
+    position: relative;
+}
+.label-group-tab .tabitem{
+    border-right: 1px solid #ccc;
+    color: gray;
+    padding: 0 10px;
+    line-height: 30px;
+    display: inline-block;
+}
+.label-group-tab .tabitem.active{
+    color: red;
+}
+.label-group-tab .tabitem:first-child{
+    padding-left: 0;
+}
+.label-group-tab .tabitem:last-child{
+    border-right: none;
+}

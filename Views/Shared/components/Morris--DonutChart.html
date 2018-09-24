@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Docpro Components</title>
+    <meta content="Docpro Components" name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link href="stg/Assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="stg/Assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.ui.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.cscrollbar.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.datetimepicker.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.jcrop.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.contextMenu.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.megaimgviewer.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.selectbox.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.bootstrap-select.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/ionicons.min.css" rel="stylesheet">
+    <link href="stg/Assets/beyond/css/font-awesome.css" rel="stylesheet">
+    <link href="stg/Assets/beyond/css/weather-icons.css" rel="stylesheet">
+    <link href="stg/Assets/beyond/css/beyond.css" rel="stylesheet">
+    <link href="stg/Assets/beyond/css/demo.css" rel="stylesheet">
+    <link href="stg/Assets/beyond/css/typicons.css" rel="stylesheet">
+    <link href="stg/Assets/beyond/css/animate.css" rel="stylesheet">
+    <link href="stg/Assets/beyond/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="stg/pdf/viewer.css" rel="stylesheet">
+    <link href="stg/Assets/jquery/css/jquery.stacktable.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/main.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/size.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/icons.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/upfile.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/table.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/chat.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/ntfs.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/stg.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/cust.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/structure.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/fsi.css" rel="stylesheet">
+    <link href="stg/Assets/app/css/fix_ie.css" rel="stylesheet">
+    <script src="stg/Assets/app/js/modernizr-custom.js">
+    </script>
+
+    <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>
+
+    <link href='css/style.css' rel='stylesheet' type='text/css'>
+    <link href='css/responsive.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <!-- include HTML -->
+    <div class="include_html" data-include-html="header"></div>
+
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            <!-- include HTML -->
+            <div class="include_html" data-include-html="left"></div>
+            <div class="page-content" id="Section">
+                <div class="page-body" id="SHResult">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="widget">
+                                <div class="widget-header bordered-bottom bordered-yellow">
+                                    <span class="widget-caption has-sub-caption">
+                                        <span class="widget-caption-left"><i class="fa fa-hashtag"></i></span> 
+                                        <span class="widget-caption-right">
+                                            <span class="widget-mainCaption">Morris Donut Chart</span> 
+                                        </span>
+                                    </span>
+                                    <div class="widget-buttons">
+                                        <a class="widget_back_btn text-btn" href="#" title="Quay lại"><i aria-hidden="true" class="fa fa-arrow-left"></i><span>Quay lại</span></a>
+                                        <a data-toggle="maximize" href="javascript:;"><i class="fa fa-expand"></i></a>
+                                        <a data-toggle="collapse" href="#"><i class="fa fa-minus"></i></a>
+                                        <a data-toggle="dispose" href="javascript:;"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                                    <div class="widget-body no-padding">
+                                        <div class="demo-wrapper"> <!-- HTML -->
+                                            <div class="demo-title">
+                                                <span class="left">HTML</span>
+                                            </div>
+                                            <div class="demo_content ">
+                                                <pre class="brush:xml;">
+                                                    &lt;div id=&quot;&quot; class=&quot;donut-chart chart chart-lg&quot;&gt;
+                                                        &lt;textarea id=&quot;txtdata&quot; class=&quot;hidden&quot;&gt;&lt;/textarea&gt;
+                                                    &lt;/div&gt;
+                                                </pre>
+                                            </div>
+                                        </div>
+                                        <div class="demo-wrapper hidden"> <!-- CSS -->
+                                            <div class="demo-title">
+                                                <span class="left">CSS</span>
+                                            </div>
+                                            <div class="demo_content ">
+                                                <pre class="brush:css;">
+
+                                                </pre>
+                                            </div>
+                                        </div> <!-- demo-wrapper -->
+                                        <div class="demo-wrapper"> <!-- JS -->
+                                            <div class="demo-title">
+                                                <span class="left">JS</span>
+                                            </div>
+                                            <div class="demo_content ">
+                                                <pre class="brush:js;">
+                                                    jQuery(document).find(".donut-chart").each(function () {
+                                                        Morris.Donut({
+                                                            element: jQuery(this),
+                                                            data: [
+                                                              { label: 'IOS', value: 40 , },
+                                                              { label: 'Win', value: 30 },
+                                                              { label: 'Android', value: 25 },
+                                                              { label: 'Java', value: 5 }
+                                                            ],
+                                                            colors: ["#9c0", "#c20000","#007bc1","#ccc"]
+                                                        });
+                                                    });     
+                                                </pre>
+                                            </div>
+                                        </div> <!-- demo-wrapper -->
+                                        <div class="demo-wrapper"> <!-- DEMO -->
+                                            <div class="demo-title">
+                                                <span class="left">DEMO</span>
+                                            </div>
+                                            <div class="demo_content ">
+                                                <div id="" class="donut-chart chart chart-lg">
+                                                    <textarea id="txtdata" class="hidden"></textarea>
+                                                </div>
+                                            </div>
+                                        </div> <!-- demo-wrapper -->                         
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="stg/Assets/jquery/js/jquery.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.ui.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.mousewheel.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.cscrollbar.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.jcrop.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.datetimepicker.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.contextMenu.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.dateformat.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.serializejson.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.megaimgviewer.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.jwplayer.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.selectbox.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.rating.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.bootstrap-select.js">
+    </script> 
+    <script src="stg/Assets/bootstrap/js/bootstrap.js">
+    </script> 
+    <script src="stg/pdf/compatibility.js">
+    </script> 
+    <script src="stg/pdf/l10n.js">
+    </script> 
+    <script src="stg/pdf/build/pdf.js">
+    </script> 
+    <script src="stg/pdf/viewer.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/slimscroll/jquery.slimscroll.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/validation/bootstrapValidator.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/editors/summernote/summernote.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/nestable/jquery.nestable.min.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/easypiechart/jquery.easypiechart.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/easypiechart/easypiechart-init.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/fuelux/treeview/tree-custom.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.resize.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.pie.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.tooltip.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.orderBars.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/morris/raphael-2.0.2.min.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/morris/morris.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/charts/morris/morris-init.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/skins.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/beyond.js">
+    </script> 
+    <script src="stg/Assets/beyond/js/toastr/toastr.js">
+    </script> 
+    <script src="stg/Assets/jquery/js/jquery.stacktable.js">
+    </script> 
+    <script src="stg/Assets/app/js/autocomplete.js">
+    </script> 
+    <script src="stg/Assets/app/js/utils.js">
+    </script> 
+    <script src="stg/Assets/app/js/main.js">
+    </script> 
+    <script src="stg/Assets/app/js/uploader.js">
+    </script> 
+    <script src="stg/Assets/app/js/upfile.js">
+    </script> 
+    <script src="stg/Assets/app/js/tree.js">
+    </script> 
+    <script src="stg/Assets/app/js/avatar.js">
+    </script> 
+    <script src="stg/Assets/app/js/stgfile.js">
+    </script> 
+    <script src="stg/Assets/app/js/scan.js">
+    </script> 
+    <script src="stg/Assets/app/js/doc.note.js">
+    </script> 
+    <script src="stg/Assets/app/js/base64.js">
+    </script> 
+    <script src="stg/Assets/app/js/vgcaplugin.js">
+    </script> 
+    <script src="stg/Assets/app/js/cks.js">
+    </script> 
+    <script src="stg/Assets/app/js/test.js">
+    </script> 
+    <script src="stg/Assets/app/js/cust.js">
+    </script> 
+    <script src="stg/Assets/app/js/check-ie-version.js">
+    </script>
+    <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+
+    
+    <script src='Include/header.js' type='text/javascript'></script>
+    <script src='Include/left.js' type='text/javascript'></script>
+
+    <script src='js/main.js' type='text/javascript'></script>
+
+</body>
+</html>
