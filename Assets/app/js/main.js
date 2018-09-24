@@ -15,9 +15,9 @@
 //--DOCUMENT READY FUNCTION BEGIN
 jQuery(document).ready(function () {
   
-  $.when($.ajax(includeHTML())).done(function () {
-    $.when($.ajax(getContent())).done(function () {
-        Highlight();
+  $.when(includeHTML()).done(function () {
+    $.when(getContent()).done(function () {
+        SyntaxHighlighter.highlight();
     });
   });
   
