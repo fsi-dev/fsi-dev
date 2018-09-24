@@ -188,7 +188,7 @@ var includeHTML = function(container) {
       }   
     }     
   });  
-}
+};
 
 var getContent = function(){
   var link = jQuery(document).find(".bd-sidenav").find("li.active").find("a").attr('href');
@@ -205,16 +205,16 @@ var getContent = function(){
         Highlight();
       }
     }, 10);  
-}
+};
 
 var Highlight = function(){
     SyntaxHighlighter.config.stripBrs = false; 
     SyntaxHighlighter.defaults["gutter"] = true;  
     SyntaxHighlighter.defaults["toolbar"] = true;  
     SyntaxHighlighter.highlight();
+    SyntaxHighlighter.all(); 
     console.log("function highlight");
-    //SyntaxHighlighter.all();  
-}
+};
 
   // $.when(includeHTML()).done(function () {
   //   console.log("includeHTML Done");
