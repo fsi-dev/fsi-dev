@@ -1,12 +1,12 @@
-// avcfn:	Advanced Click Function
-// avfn: 	Advanced Function
-// bfn: 		Basic Function
-// jsb: 		Begin Js
-// bte: 		Boostrap Tabs Event
-// cfn: 		Click function
-// rfn: 		Document Ready function
-// sbc: 		Sys Browser code
-// wcs: 		Warning console
+// avcfn: Advanced Click Function
+// avfn:  Advanced Function
+// bfn:     Basic Function
+// jsb:     Begin Js
+// bte:     Boostrap Tabs Event
+// cfn:     Click function
+// rfn:     Document Ready function
+// sbc:     Sys Browser code
+// wcs:     Warning console
 
 
 
@@ -15,9 +15,12 @@
 //--DOCUMENT READY FUNCTION BEGIN
 jQuery(document).ready(function () {
   
-  includeHTML();
-  
-
+    
+  $.when($.ajax(includeHTML())).then(function () {
+    $.when($.ajax(getContent())).then(function () {
+        Highlight();
+    });
+  });
 
   jQuery(document).on('click', '.bd-sidenav > li > a', function(e){
     e.preventDefault();
@@ -126,9 +129,7 @@ jQuery(document).ready(function () {
 jQuery(window).bind("load", function () {
   jQuery(document).find(".useScrollBar").perfectScrollbar();
 
-  $.when($.ajax(getContent())).then(function () {
-      SyntaxHighlighter.highlight();
-  });
+
 
 
 
