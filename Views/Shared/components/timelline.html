@@ -1,660 +1,490 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Docpro Components</title>
-    <meta content="Docpro Components" name="description">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <link href="stg/Assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="stg/Assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.ui.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.cscrollbar.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.datetimepicker.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.jcrop.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.contextMenu.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.megaimgviewer.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.selectbox.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.bootstrap-select.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/ionicons.min.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/font-awesome.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/weather-icons.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/beyond.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/demo.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/typicons.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/animate.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="stg/pdf/viewer.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.stacktable.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/main.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/size.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/icons.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/upfile.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/table.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/chat.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/ntfs.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/stg.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/cust.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/structure.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/fsi.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/fix_ie.css" rel="stylesheet">
-    <script src="stg/Assets/app/js/modernizr-custom.js">
-    </script>
+<!-- MÔ TẢ -->
+<h1 class="bd-title" id="content">Timeline</h1>
 
-    <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>
 
-    <link href='css/style.css' rel='stylesheet' type='text/css'>
-    <link href='css/responsive.css' rel='stylesheet' type='text/css'>
-</head>
-<body>
-
-    <!-- include HTML -->
-    <div class="include_html" data-include-html="header"></div>
-
-    <div class="main-container container-fluid">
-        <div class="page-container">
-            <!-- include HTML -->
-            <div class="include_html" data-include-html="left"></div>
-            <div class="page-content" id="Section">
-                <div class="page-body" id="SHResult">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            <div class="widget">
-                                <div class="widget-header bordered-bottom bordered-yellow">
-                                    <span class="widget-caption has-sub-caption">
-                                        <span class="widget-caption-left"><i class="fa fa-hashtag"></i></span> 
-                                        <span class="widget-caption-right">
-                                            <span class="widget-mainCaption">Table</span> 
-                                        </span>
+<!-- DEMO -->
+<div class="demo-section">
+    <h3 id="cpn_demo">Demo</h3>
+    <div class="demo_content">
+        <div class="JobHistories">
+            <ul class="timeline">
+                <li class="timeline-node">
+                    <a class="btn btn-palegreen">Hiện tại</a>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-datetime">
+                        <span class="timeline-time">
+                            19-04-2018 11:39
+                        </span>
+                    </div>
+                    <div class="timeline-badge sky">
+                        <a class="avatar nopad" href="#">
+                            <img class="badge-picture" src="http://localhost:8080/DocproCPN/stg/Assets/app/img/ava1.jpg">
+                        </a>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-header bordered-bottom bordered-blue">
+                            <span class="timeline-title">
+                                <a title="Nguyễn Chí Tuân" href="/login/account/newfeed/nguyen-chi-tuan-1301.html">Nguyễn Chí Tuân</a>
+                            </span>
+                            <p class="timeline-datetime">
+                                <small class="text-muted">
+                                    <span class="timeline-time">
+                                        <i class="glyphicon glyphicon-time">
+                                        </i> 19-04-2018 11:39
                                     </span>
-                                    <div class="widget-buttons">
-                                        <a class="widget_back_btn text-btn" href="#" title="Quay lại"><i aria-hidden="true" class="fa fa-arrow-left"></i><span>Quay lại</span></a>
-                                        <a data-toggle="maximize" href="javascript:;"><i class="fa fa-expand"></i></a>
-                                        <a data-toggle="collapse" href="#"><i class="fa fa-minus"></i></a>
-                                        <a data-toggle="dispose" href="javascript:;"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </div>
-                                    <div class="widget-body no-padding">
-                                        <div class="demo-wrapper"> <!-- HTML -->
-                                            <div class="demo-title">
-                                                <span class="left">HTML</span>
-                                            </div>
-                                            <div class="demo_content  useScrollBar">
-                                                <pre class="brush:xml;">
-                                                    <div class="JobHistories">
-                                                        <ul class="timeline">
-                                                            <li class="timeline-node">
-                                                                <a class="btn btn-palegreen">Hiện tại</a>
-                                                            </li>
-                                                            <li class="timeline-inverted">
-                                                                <div class="timeline-datetime">
-                                                                    <span class="timeline-time">
-                                                                        19-04-2018 11:39
-                                                                    </span>
-                                                                </div>
-                                                                <div class="timeline-badge sky">
-                                                                    <a class="avatar nopad" href="#">
-                                                                        <img class="badge-picture" src="/Thumb/120x120/Avatars/avatar.png">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="timeline-panel">
-                                                                    <div class="timeline-header bordered-bottom bordered-blue">
-                                                                        <span class="timeline-title">
-                                                                            <a title="Nguyễn Chí Tuân" href="/login/account/newfeed/nguyen-chi-tuan-1301.html">Nguyễn Chí Tuân</a>
-                                                                        </span>
-                                                                        <p class="timeline-datetime">
-                                                                            <small class="text-muted">
-                                                                                <span class="timeline-time">
-                                                                                    <i class="glyphicon glyphicon-time">
-                                                                                    </i> 19-04-2018 11:39
-                                                                                </span>
-                                                                            </small>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="timeline-body">
-                                                                        đã hoàn thành công việc này
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="timeline-inverted">
-                                                                <div class="timeline-datetime">
-                                                                    <span class="timeline-time">
-                                                                        19-04-2018 10:25
-                                                                    </span>
-                                                                </div>
-                                                                <div class="timeline-badge sky">
-                                                                    <a class="avatar nopad" href="#">
-                                                                        <img class="badge-picture" src="/Thumb/120x120/Avatars/avatar.png">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="timeline-panel">
-                                                                    <div class="timeline-header bordered-bottom bordered-blue">
-                                                                        <span class="timeline-title">
-                                                                            <a title="Nguyễn Chí Tuân" href="/login/account/newfeed/nguyen-chi-tuan-1301.html">Nguyễn Chí Tuân</a>
-                                                                        </span>
-                                                                        <p class="timeline-datetime">
-                                                                            <small class="text-muted">
-                                                                                <span class="timeline-time">
-                                                                                    <i class="glyphicon glyphicon-time">
-                                                                                    </i> 19-04-2018 10:25
-                                                                                </span>
-                                                                            </small>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="timeline-body">
-                                                                        đã cập nhật tỷ lệ hoàn thành công việc là 80%
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </pre>
-                                            </div>
-                                        </div>
-                                        <div class="demo-wrapper"> <!-- CSS -->
-                                            <div class="demo-title">
-                                                <span class="left">CSS</span>
-                                            </div>
-                                            <div class="demo_content ">
-                                                <pre class="brush:css;">
-/*JOB HISTORY TIMLINE*/
-.JobHistories {
-    background: #fff !important;
-    padding: 15px 75px 15px 100px;
-}
-.JobHistories .toggle-title {
-    margin-top: 0;
-    font-size: 13px;
-    font-weight: normal !important;
-}
-.JobHistories  > .timeline {
-    column-count: unset !important;
-    -webkit-column-count: unset !important;
-    -moz-column-count: unset !important;
-    column-gap: unset !important;
-    -webkit-column-gap: unset !important;
-    -moz-column-gap: unset !important;
-    margin-bottom: 0;
-}
-.JobHistories > .timeline > li.timeline-node {
-    display: block !important;
-    z-index: 2;
-}
-.JobHistories > .timeline > li {
-    display: block !important;
-    padding: 0 !important;
-}
-.JobHistories .timeline {
-    list-style: none !important;
-    padding: 0 !important;
-    position: relative !important;
-}
-.JobHistories .timeline:before {
-    display: block !important;
-    top: 0 !important;
-    bottom: -35px !important;
-    position: absolute !important;
-    content: " " !important;
-    width: 5px !important;
-    left: 200px !important;
-    margin-left: -2.5px !important;
-    box-shadow: none !important;
-    border: 1px solid #eee !important;
-    background-color: #ffffff !important;
-    z-index: 1;
-    height: 100%;
-}
-.JobHistories .timeline>li {
-    margin-bottom: 20px !important;
-    position: relative !important;
-    background: #fff !important;
-}
-.JobHistories .timeline>li:before,
-.JobHistories .timeline>li:after {
-    content: " " !important;
-    display: table !important;
-}
-.JobHistories .timeline>li:after {
-    clear: both !important;
-}
-.JobHistories .timeline>li>.timeline-datetime {
-    color: #737373 !important;
-    position: absolute !important;
-    left: 55% !important;
-    top: 12px !important;
-    text-align: left !important;
-    padding: 10px !important;
-}
-.JobHistories .timeline>li>.timeline-datetime .timeline-time,
-.JobHistories .timeline>li>.timeline-datetime .timeline-date {
-    display: block !important;
-    font-size: 11px !important;
-}
-.JobHistories .timeline>li>.timeline-datetime .timeline-time {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    font-family: inherit;
-}
-.JobHistories .timeline>li>.timeline-panel {
-    background-color: #fbfbfb !important;
-    -lh-property: 0 !important;
-    width: -webkit-calc(100% - 245px) !important;
-    width: -moz-calc(100% - 245px) !important;
-    width: calc(100% - 245px) !important;
-    float: left !important;
-    border-radius: 2px !important;
-    padding: 0 !important;
-    position: relative !important;
-    /*box-shadow: 0 1px 6px rgba(0, 0, 0, .175) !important;*/
-    border-color: #e5e6e9 #dfe0e4 #dfe0e4 !important;
-    max-width: 480px;
-}
-.JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-title {
-    display: block !important;
-    padding: 10px 20px 0 !important;
-    min-width: 200px !important;
-    font-size: 14px !important;
-    font-weight: 700 !important;
-}
-.JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-datetime {
-    position: absolute !important;
-    top: 5px !important;
-    right: 10px !important;
-    font-size: 13px !important;
-    display: none !important;
-}
-.JobHistories .timeline>li>.timeline-panel .timeline-body {
-    padding: 10px 20px 20px !important;
-    line-height: 22px !important;
-    word-break: break-word;
-}
-.JobHistories .timeline>li>.timeline-panel .timeline-body>p,
-.JobHistories .timeline>li>.timeline-panel .timeline-body>ul {
-    margin-bottom: 0 !important;
-}
-.JobHistories .timeline>li>.timeline-panel .timeline-body>p+p {
-    margin-top: 5px !important;
-}
-.JobHistories .timeline>li>.timeline-panel .timeline-footer {
-    padding: 5px 20px 10px !important;
-    border-top: 1px solid #eee !important;
-}
-.JobHistories .timeline>li>.timeline-panel .timeline-footer .footer-registrar {
-    font-size: 12px !important;
-    color: #555 !important;
-}
-.JobHistories .timeline>li>.timeline-panel:before {
-    position: absolute !important;
-    top: 16px !important;
-    right: -15px !important;
-    display: inline-block !important;
-    border-top: 15px solid transparent !important;
-    border-left: 15px solid #e5e5e5 !important;
-    border-right: 0 solid #e5e5e5 !important;
-    border-bottom: 15px solid transparent !important;
-    content: " " !important;
-}
-.JobHistories .timeline>li>.timeline-panel:after {
-    position: absolute !important;
-    top: 17px !important;
-    right: -14px !important;
-    display: inline-block !important;
-    border-top: 14px solid transparent !important;
-    border-left: 14px solid #fff !important;
-    border-right: 0 solid #fff !important;
-    border-bottom: 14px solid transparent !important;
-    content: " " !important;
-}
-.JobHistories .timeline>li .timeline-badge {
-    display: block !important;
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 1.4em !important;
-    text-align: center !important;
-    position: absolute !important;
-    top: 6px !important;
-    left: 200px !important;
-    margin-left: -25px !important;
-    background-image: linear-gradient(to bottom, #eee 0, #fbfbfb 100%) !important;
-    z-index: 100 !important;
-    -webkit-border-radius: 50% !important;
-    -webkit-background-clip: padding-box !important;
-    -moz-border-radius: 50% !important;
-    -moz-background-clip: padding !important;
-    border-radius: 50% !important;
-    background-clip: padding-box !important;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, .175) !important;
-    color: #444 !important;
-}
-.JobHistories .timeline>li .timeline-badge .badge-picture {
-    width: 50px !important;
-    height: 50px !important;
-    -webkit-border-radius: 50% !important;
-    -webkit-background-clip: padding-box !important;
-    -moz-border-radius: 50% !important;
-    -moz-background-clip: padding !important;
-    border-radius: 50% !important;
-    background-clip: padding-box !important;
-}
-.JobHistories .timeline>li .timeline-badge i {
-    line-height: 50px !important;
-}
-.JobHistories .timeline>li .timeline-badge[class*="bg-"] {
-    background-image: none !important;
-    color: #fff !important;
-}
-.JobHistories .timeline>li.timeline-inverted>.timeline-datetime {
-    left: 0 !important;
-    right: auto !important;
-    text-align: right !important;
-    max-width: 150px !important;
-}
-.JobHistories .timeline>li.timeline-inverted>.timeline-panel {
-    float: left !important;
-    margin-left: 240px !important;
-}
-.JobHistories .timeline>li.timeline-inverted>.timeline-panel:before {
-    border-left-width: 0 !important;
-    border-right-width: 15px !important;
-    left: -15px !important;
-    right: auto !important;
-}
-.JobHistories .timeline>li.timeline-inverted>.timeline-panel:after {
-    border-left-width: 0 !important;
-    border-right-width: 14px !important;
-    left: -14px !important;
-    right: auto !important;
-}
-.JobHistories .timeline>li.timeline-node {
-    width: 150px !important;
-    margin: 0 auto 20px 125px !important;
-    text-align: center !important;
-}
-@media(max-width:767px) {
-    .dataTables_filter .quickSearch {
-        padding-top: 40px;
-    }
-    .dataTables_filter .quickSearch div[class*="col-"] {
-        width: 100%;
-    }
-    .dataTables_filter > .quickSearch > label + .btn-searchs .btn[type="submit"],
-    .dataTables_filter .quickSearch div[class*="col-"] .btn[type="submit"] {
-        float: right;
-    }
-    .dataTables_filter > .quickSearch > label + .btn-searchs {
-        padding: 0 15px;
-    }
-    .dataTables_filter > .quickSearch > label {
-        width: 100%;
-        margin: 10px 0 !important;
-        padding: 0 15px;
-    }
-    .dataTables_filter > .quickSearch > label:before {
-        left: 15px;
-    }
-
-    .JobHistories .timeline:before {
-        left: 40px !important;
-    }
-    .JobHistories .timeline>li>.timeline-panel {
-        -lh-property: 0 !important;
-        width: -webkit-calc(100% - 90px) !important;
-        width: -moz-calc(100% - 90px) !important;
-        width: calc(100% - 90px) !important;
-    }
-    .JobHistories .timeline>li>.timeline-badge {
-        left: 15px !important;
-        margin-left: 0 !important;
-        top: 6px !important;
-    }
-    .JobHistories .timeline>li>.timeline-panel {
-        float: right !important;
-    }
-    .JobHistories .timeline>li>.timeline-panel:before {
-        border-left-width: 0 !important;
-        border-right-width: 15px !important;
-        left: -15px !important;
-        right: auto !important;
-    }
-    .JobHistories .timeline>li>.timeline-panel:after {
-        border-left-width: 0 !important;
-        border-right-width: 14px !important;
-        left: -14px !important;
-        right: auto !important;
-    }
-    .JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-title {
-        top: 5px !important;
-    }
-    .JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-datetime {
-        display: block !important;
-    }
-    .JobHistories .timeline>li>.timeline-datetime {
-        display: none !important;
-    }
-    .JobHistories .timeline>li.timeline-node {
-        margin: 0 0 20px -35px !important;
-    }
-}
-@media(max-width:500px) {
-    .JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-datetime {
-        position: relative !important;
-        padding: 5px 30px 0 !important;
-        margin: 0 !important;
-    }
-    .JobHistories .timeline>li>.timeline-panel .timeline-body {
-        padding: 20px 20px 20px !important;
-    }
-}
-/*END JOB HISTORY TIMELINE*/
-                                                </pre>
-                                            </div>
-                                        </div> <!-- demo-wrapper -->
-                                        <div class="demo-wrapper hidden"> <!-- JS -->
-                                            <div class="demo-title">
-                                                <span class="left">JS</span>
-                                            </div>
-                                            <div class="demo_content ">
-                                                <pre class="brush:js;">
-                                                               
-                                                </pre>
-                                            </div>
-                                        </div> <!-- demo-wrapper -->
-                                        <div class="demo-wrapper"> <!-- DEMO -->
-                                            <div class="demo-title">
-                                                <span class="left">DEMO</span>
-                                            </div>
-                                            <div class="demo_content ">
-                                                <div class="JobHistories">
-                                                    <ul class="timeline">
-                                                        <li class="timeline-node">
-                                                            <a class="btn btn-palegreen">Hiện tại</a>
-                                                        </li>
-                                                        <li class="timeline-inverted">
-                                                            <div class="timeline-datetime">
-                                                                <span class="timeline-time">
-                                                                    19-04-2018 11:39
-                                                                </span>
-                                                            </div>
-                                                            <div class="timeline-badge sky">
-                                                                <a class="avatar nopad" href="#">
-                                                                    <img class="badge-picture" src="/Thumb/120x120/Avatars/avatar.png">
-                                                                </a>
-                                                            </div>
-                                                            <div class="timeline-panel">
-                                                                <div class="timeline-header bordered-bottom bordered-blue">
-                                                                    <span class="timeline-title">
-                                                                        <a title="Nguyễn Chí Tuân" href="/login/account/newfeed/nguyen-chi-tuan-1301.html">Nguyễn Chí Tuân</a>
-                                                                    </span>
-                                                                    <p class="timeline-datetime">
-                                                                        <small class="text-muted">
-                                                                            <span class="timeline-time">
-                                                                                <i class="glyphicon glyphicon-time">
-                                                                                </i> 19-04-2018 11:39
-                                                                            </span>
-                                                                        </small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="timeline-body">
-                                                                    đã hoàn thành công việc này
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="timeline-inverted">
-                                                            <div class="timeline-datetime">
-                                                                <span class="timeline-time">
-                                                                    19-04-2018 10:25
-                                                                </span>
-                                                            </div>
-                                                            <div class="timeline-badge sky">
-                                                                <a class="avatar nopad" href="#">
-                                                                    <img class="badge-picture" src="/Thumb/120x120/Avatars/avatar.png">
-                                                                </a>
-                                                            </div>
-                                                            <div class="timeline-panel">
-                                                                <div class="timeline-header bordered-bottom bordered-blue">
-                                                                    <span class="timeline-title">
-                                                                        <a title="Nguyễn Chí Tuân" href="/login/account/newfeed/nguyen-chi-tuan-1301.html">Nguyễn Chí Tuân</a>
-                                                                    </span>
-                                                                    <p class="timeline-datetime">
-                                                                        <small class="text-muted">
-                                                                            <span class="timeline-time">
-                                                                                <i class="glyphicon glyphicon-time">
-                                                                                </i> 19-04-2018 10:25
-                                                                            </span>
-                                                                        </small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="timeline-body">
-                                                                    đã cập nhật tỷ lệ hoàn thành công việc là 80%
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div> <!-- demo-wrapper -->                         
-                                    </div>
-                            </div>
+                                </small>
+                            </p>
+                        </div>
+                        <div class="timeline-body">
+                            đã hoàn thành công việc này
                         </div>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-datetime">
+                        <span class="timeline-time">
+                            19-04-2018 10:25
+                        </span>
+                    </div>
+                    <div class="timeline-badge sky">
+                        <a class="avatar nopad" href="#">
+                            <img class="badge-picture" src="http://localhost:8080/DocproCPN/stg/Assets/app/img/ava1.jpg">
+                        </a>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-header bordered-bottom bordered-blue">
+                            <span class="timeline-title">
+                                <a title="Nguyễn Chí Tuân" href="/login/account/newfeed/nguyen-chi-tuan-1301.html">Nguyễn Chí Tuân</a>
+                            </span>
+                            <p class="timeline-datetime">
+                                <small class="text-muted">
+                                    <span class="timeline-time">
+                                        <i class="glyphicon glyphicon-time">
+                                        </i> 19-04-2018 10:25
+                                    </span>
+                                </small>
+                            </p>
+                        </div>
+                        <div class="timeline-body">
+                            đã cập nhật tỷ lệ hoàn thành công việc là 80%
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </div>
+    </div>                
+</div>                
 
-    <script src="stg/Assets/jquery/js/jquery.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.ui.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.mousewheel.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.cscrollbar.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.jcrop.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.datetimepicker.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.contextMenu.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.dateformat.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.serializejson.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.megaimgviewer.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.jwplayer.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.selectbox.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.rating.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.bootstrap-select.js">
-    </script> 
-    <script src="stg/Assets/bootstrap/js/bootstrap.js">
-    </script> 
-    <script src="stg/pdf/compatibility.js">
-    </script> 
-    <script src="stg/pdf/l10n.js">
-    </script> 
-    <script src="stg/pdf/build/pdf.js">
-    </script> 
-    <script src="stg/pdf/viewer.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/slimscroll/jquery.slimscroll.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/validation/bootstrapValidator.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/editors/summernote/summernote.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/nestable/jquery.nestable.min.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/easypiechart/jquery.easypiechart.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/easypiechart/easypiechart-init.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/fuelux/treeview/tree-custom.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.resize.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.pie.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.tooltip.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.orderBars.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/skins.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/beyond.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/toastr/toastr.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.stacktable.js">
-    </script> 
-    <script src="stg/Assets/app/js/autocomplete.js">
-    </script> 
-    <script src="stg/Assets/app/js/utils.js">
-    </script> 
-    <script src="stg/Assets/app/js/main.js">
-    </script> 
-    <script src="stg/Assets/app/js/uploader.js">
-    </script> 
-    <script src="stg/Assets/app/js/upfile.js">
-    </script> 
-    <script src="stg/Assets/app/js/tree.js">
-    </script> 
-    <script src="stg/Assets/app/js/avatar.js">
-    </script> 
-    <script src="stg/Assets/app/js/stgfile.js">
-    </script> 
-    <script src="stg/Assets/app/js/scan.js">
-    </script> 
-    <script src="stg/Assets/app/js/doc.note.js">
-    </script> 
-    <script src="stg/Assets/app/js/base64.js">
-    </script> 
-    <script src="stg/Assets/app/js/vgcaplugin.js">
-    </script> 
-    <script src="stg/Assets/app/js/cks.js">
-    </script> 
-    <script src="stg/Assets/app/js/test.js">
-    </script> 
-    <script src="stg/Assets/app/js/cust.js">
-    </script> 
-    <script src="stg/Assets/app/js/check-ie-version.js">
-    </script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.js"></script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCss.js"></script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">HTML</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                &lt;div class=&quot;JobHistories&quot;&gt;
+                    &lt;ul class=&quot;timeline&quot;&gt;
+                        &lt;li class=&quot;timeline-node&quot;&gt;
+                            &lt;a class=&quot;btn btn-palegreen&quot;&gt;Hiện tại&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;timeline-inverted&quot;&gt;
+                            &lt;div class=&quot;timeline-datetime&quot;&gt;
+                                &lt;span class=&quot;timeline-time&quot;&gt;
+                                    19-04-2018 11:39
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;timeline-badge sky&quot;&gt;
+                                &lt;a class=&quot;avatar nopad&quot; href=&quot;#&quot;&gt;
+                                    &lt;img class=&quot;badge-picture&quot; src=&quot;http://localhost:8080/DocproCPN/stg/Assets/app/img/ava1.jpg&quot;&gt;
+                                &lt;/a&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;timeline-panel&quot;&gt;
+                                &lt;div class=&quot;timeline-header bordered-bottom bordered-blue&quot;&gt;
+                                    &lt;span class=&quot;timeline-title&quot;&gt;
+                                        &lt;a title=&quot;Nguyễn Ch&iacute; Tu&acirc;n&quot; href=&quot;/login/account/newfeed/nguyen-chi-tuan-1301.html&quot;&gt;Nguyễn Ch&iacute; Tu&acirc;n&lt;/a&gt;
+                                    &lt;/span&gt;
+                                    &lt;p class=&quot;timeline-datetime&quot;&gt;
+                                        &lt;small class=&quot;text-muted&quot;&gt;
+                                            &lt;span class=&quot;timeline-time&quot;&gt;
+                                                &lt;i class=&quot;glyphicon glyphicon-time&quot;&gt;
+                                                &lt;/i&gt; 19-04-2018 11:39
+                                            &lt;/span&gt;
+                                        &lt;/small&gt;
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;timeline-body&quot;&gt;
+                                    đ&atilde; ho&agrave;n th&agrave;nh c&ocirc;ng việc n&agrave;y
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;timeline-inverted&quot;&gt;
+                            &lt;div class=&quot;timeline-datetime&quot;&gt;
+                                &lt;span class=&quot;timeline-time&quot;&gt;
+                                    19-04-2018 10:25
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;timeline-badge sky&quot;&gt;
+                                &lt;a class=&quot;avatar nopad&quot; href=&quot;#&quot;&gt;
+                                    &lt;img class=&quot;badge-picture&quot; src=&quot;http://localhost:8080/DocproCPN/stg/Assets/app/img/ava1.jpg&quot;&gt;
+                                &lt;/a&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;timeline-panel&quot;&gt;
+                                &lt;div class=&quot;timeline-header bordered-bottom bordered-blue&quot;&gt;
+                                    &lt;span class=&quot;timeline-title&quot;&gt;
+                                        &lt;a title=&quot;Nguyễn Ch&iacute; Tu&acirc;n&quot; href=&quot;/login/account/newfeed/nguyen-chi-tuan-1301.html&quot;&gt;Nguyễn Ch&iacute; Tu&acirc;n&lt;/a&gt;
+                                    &lt;/span&gt;
+                                    &lt;p class=&quot;timeline-datetime&quot;&gt;
+                                        &lt;small class=&quot;text-muted&quot;&gt;
+                                            &lt;span class=&quot;timeline-time&quot;&gt;
+                                                &lt;i class=&quot;glyphicon glyphicon-time&quot;&gt;
+                                                &lt;/i&gt; 19-04-2018 10:25
+                                            &lt;/span&gt;
+                                        &lt;/small&gt;
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;timeline-body&quot;&gt;
+                                    đ&atilde; cập nhật tỷ lệ ho&agrave;n th&agrave;nh c&ocirc;ng việc l&agrave; 80%
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            </pre>
+        </div>                
+    </div>                
+</div>                
 
-    
-    <script src='Include/header.js' type='text/javascript'></script>
-    <script src='Include/left.js' type='text/javascript'></script>
+<!-- CSS -->
+<div class="demo-section">
+    <h3 id="cpn_css">CSS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:css;">
+                /*JOB HISTORY TIMLINE*/
+                .JobHistories {
+                    background: #fff !important;
+                    padding: 15px 75px 15px 100px;
+                }
+                .JobHistories .toggle-title {
+                    margin-top: 0;
+                    font-size: 13px;
+                    font-weight: normal !important;
+                }
+                .JobHistories  > .timeline {
+                    column-count: unset !important;
+                    -webkit-column-count: unset !important;
+                    -moz-column-count: unset !important;
+                    column-gap: unset !important;
+                    -webkit-column-gap: unset !important;
+                    -moz-column-gap: unset !important;
+                    margin-bottom: 0;
+                }
+                .JobHistories > .timeline > li.timeline-node {
+                    display: block !important;
+                    z-index: 2;
+                }
+                .JobHistories > .timeline > li {
+                    display: block !important;
+                    padding: 0 !important;
+                }
+                .JobHistories .timeline {
+                    list-style: none !important;
+                    padding: 0 !important;
+                    position: relative !important;
+                }
+                .JobHistories .timeline:before {
+                    display: block !important;
+                    top: 0 !important;
+                    bottom: -35px !important;
+                    position: absolute !important;
+                    content: " " !important;
+                    width: 5px !important;
+                    left: 200px !important;
+                    margin-left: -2.5px !important;
+                    box-shadow: none !important;
+                    border: 1px solid #eee !important;
+                    background-color: #ffffff !important;
+                    z-index: 1;
+                    height: 100%;
+                }
+                .JobHistories .timeline>li {
+                    margin-bottom: 20px !important;
+                    position: relative !important;
+                    background: #fff !important;
+                }
+                .JobHistories .timeline>li:before,
+                .JobHistories .timeline>li:after {
+                    content: " " !important;
+                    display: table !important;
+                }
+                .JobHistories .timeline>li:after {
+                    clear: both !important;
+                }
+                .JobHistories .timeline>li>.timeline-datetime {
+                    color: #737373 !important;
+                    position: absolute !important;
+                    left: 55% !important;
+                    top: 12px !important;
+                    text-align: left !important;
+                    padding: 10px !important;
+                }
+                .JobHistories .timeline>li>.timeline-datetime .timeline-time,
+                .JobHistories .timeline>li>.timeline-datetime .timeline-date {
+                    display: block !important;
+                    font-size: 11px !important;
+                }
+                .JobHistories .timeline>li>.timeline-datetime .timeline-time {
+                    font-size: 14px !important;
+                    font-weight: normal !important;
+                    font-family: inherit;
+                }
+                .JobHistories .timeline>li>.timeline-panel {
+                    background-color: #fbfbfb !important;
+                    -lh-property: 0 !important;
+                    width: -webkit-calc(100% - 245px) !important;
+                    width: -moz-calc(100% - 245px) !important;
+                    width: calc(100% - 245px) !important;
+                    float: left !important;
+                    border-radius: 2px !important;
+                    padding: 0 !important;
+                    position: relative !important;
+                    /*box-shadow: 0 1px 6px rgba(0, 0, 0, .175) !important;*/
+                    border-color: #e5e6e9 #dfe0e4 #dfe0e4 !important;
+                    max-width: 480px;
+                }
+                .JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-title {
+                    display: block !important;
+                    padding: 10px 20px 0 !important;
+                    min-width: 200px !important;
+                    font-size: 14px !important;
+                    font-weight: 700 !important;
+                }
+                .JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-datetime {
+                    position: absolute !important;
+                    top: 5px !important;
+                    right: 10px !important;
+                    font-size: 13px !important;
+                    display: none !important;
+                }
+                .JobHistories .timeline>li>.timeline-panel .timeline-body {
+                    padding: 10px 20px 20px !important;
+                    line-height: 22px !important;
+                    word-break: break-word;
+                }
+                .JobHistories .timeline>li>.timeline-panel .timeline-body>p,
+                .JobHistories .timeline>li>.timeline-panel .timeline-body>ul {
+                    margin-bottom: 0 !important;
+                }
+                .JobHistories .timeline>li>.timeline-panel .timeline-body>p+p {
+                    margin-top: 5px !important;
+                }
+                .JobHistories .timeline>li>.timeline-panel .timeline-footer {
+                    padding: 5px 20px 10px !important;
+                    border-top: 1px solid #eee !important;
+                }
+                .JobHistories .timeline>li>.timeline-panel .timeline-footer .footer-registrar {
+                    font-size: 12px !important;
+                    color: #555 !important;
+                }
+                .JobHistories .timeline>li>.timeline-panel:before {
+                    position: absolute !important;
+                    top: 16px !important;
+                    right: -15px !important;
+                    display: inline-block !important;
+                    border-top: 15px solid transparent !important;
+                    border-left: 15px solid #e5e5e5 !important;
+                    border-right: 0 solid #e5e5e5 !important;
+                    border-bottom: 15px solid transparent !important;
+                    content: " " !important;
+                }
+                .JobHistories .timeline>li>.timeline-panel:after {
+                    position: absolute !important;
+                    top: 17px !important;
+                    right: -14px !important;
+                    display: inline-block !important;
+                    border-top: 14px solid transparent !important;
+                    border-left: 14px solid #fff !important;
+                    border-right: 0 solid #fff !important;
+                    border-bottom: 14px solid transparent !important;
+                    content: " " !important;
+                }
+                .JobHistories .timeline>li .timeline-badge {
+                    display: block !important;
+                    width: 50px !important;
+                    height: 50px !important;
+                    font-size: 1.4em !important;
+                    text-align: center !important;
+                    position: absolute !important;
+                    top: 6px !important;
+                    left: 200px !important;
+                    margin-left: -25px !important;
+                    background-image: linear-gradient(to bottom, #eee 0, #fbfbfb 100%) !important;
+                    z-index: 100 !important;
+                    -webkit-border-radius: 50% !important;
+                    -webkit-background-clip: padding-box !important;
+                    -moz-border-radius: 50% !important;
+                    -moz-background-clip: padding !important;
+                    border-radius: 50% !important;
+                    background-clip: padding-box !important;
+                    box-shadow: 0 1px 6px rgba(0, 0, 0, .175) !important;
+                    color: #444 !important;
+                }
+                .JobHistories .timeline>li .timeline-badge .badge-picture {
+                    width: 50px !important;
+                    height: 50px !important;
+                    -webkit-border-radius: 50% !important;
+                    -webkit-background-clip: padding-box !important;
+                    -moz-border-radius: 50% !important;
+                    -moz-background-clip: padding !important;
+                    border-radius: 50% !important;
+                    background-clip: padding-box !important;
+                }
+                .JobHistories .timeline>li .timeline-badge i {
+                    line-height: 50px !important;
+                }
+                .JobHistories .timeline>li .timeline-badge[class*="bg-"] {
+                    background-image: none !important;
+                    color: #fff !important;
+                }
+                .JobHistories .timeline>li.timeline-inverted>.timeline-datetime {
+                    left: 0 !important;
+                    right: auto !important;
+                    text-align: right !important;
+                    max-width: 150px !important;
+                }
+                .JobHistories .timeline>li.timeline-inverted>.timeline-panel {
+                    float: left !important;
+                    margin-left: 240px !important;
+                }
+                .JobHistories .timeline>li.timeline-inverted>.timeline-panel:before {
+                    border-left-width: 0 !important;
+                    border-right-width: 15px !important;
+                    left: -15px !important;
+                    right: auto !important;
+                }
+                .JobHistories .timeline>li.timeline-inverted>.timeline-panel:after {
+                    border-left-width: 0 !important;
+                    border-right-width: 14px !important;
+                    left: -14px !important;
+                    right: auto !important;
+                }
+                .JobHistories .timeline>li.timeline-node {
+                    width: 150px !important;
+                    margin: 0 auto 20px 125px !important;
+                    text-align: center !important;
+                }
+                @media(max-width:767px) {
+                    .dataTables_filter .quickSearch {
+                        padding-top: 40px;
+                    }
+                    .dataTables_filter .quickSearch div[class*="col-"] {
+                        width: 100%;
+                    }
+                    .dataTables_filter > .quickSearch > label + .btn-searchs .btn[type="submit"],
+                    .dataTables_filter .quickSearch div[class*="col-"] .btn[type="submit"] {
+                        float: right;
+                    }
+                    .dataTables_filter > .quickSearch > label + .btn-searchs {
+                        padding: 0 15px;
+                    }
+                    .dataTables_filter > .quickSearch > label {
+                        width: 100%;
+                        margin: 10px 0 !important;
+                        padding: 0 15px;
+                    }
+                    .dataTables_filter > .quickSearch > label:before {
+                        left: 15px;
+                    }
 
-    <script src='js/main.js' type='text/javascript'></script>
+                    .JobHistories .timeline:before {
+                        left: 40px !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-panel {
+                        -lh-property: 0 !important;
+                        width: -webkit-calc(100% - 90px) !important;
+                        width: -moz-calc(100% - 90px) !important;
+                        width: calc(100% - 90px) !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-badge {
+                        left: 15px !important;
+                        margin-left: 0 !important;
+                        top: 6px !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-panel {
+                        float: right !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-panel:before {
+                        border-left-width: 0 !important;
+                        border-right-width: 15px !important;
+                        left: -15px !important;
+                        right: auto !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-panel:after {
+                        border-left-width: 0 !important;
+                        border-right-width: 14px !important;
+                        left: -14px !important;
+                        right: auto !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-title {
+                        top: 5px !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-datetime {
+                        display: block !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-datetime {
+                        display: none !important;
+                    }
+                    .JobHistories .timeline>li.timeline-node {
+                        margin: 0 0 20px -35px !important;
+                    }
+                }
+                @media(max-width:500px) {
+                    .JobHistories .timeline>li>.timeline-panel .timeline-header .timeline-datetime {
+                        position: relative !important;
+                        padding: 5px 30px 0 !important;
+                        margin: 0 !important;
+                    }
+                    .JobHistories .timeline>li>.timeline-panel .timeline-body {
+                        padding: 20px 20px 20px !important;
+                    }
+                }
+                /*END JOB HISTORY TIMELINE*/
+            </pre>
+        </div>                
+    </div>                
+</div>                
 
-</body>
-</html>
+<!-- JS -->
+<div class="demo-section">
+    <h3 id="cpn_js">JS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content ">
+            <pre class="brush:js;">
+     
+            </pre>
+        </div>                
+    </div>                
+</div>                
+<!-- NOTE -->
+<div class="demo-section">
+    <h3 id="cpn_note">Note</h3>
+    <p class="hidden">Note des</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="highlighter-rouge">CSS</code></td>
+                <td>Chỉ thêm <code>CSS</code> khi copy <code>HTML</code> không giống demo</td>
+            </tr>
+            <tr>
+                <td><code class="highlighter-rouge">JS</code></td>
+                <td>Chỉ thêm <code>Js</code> khi copy <code>HTML,CSS</code> không chạy giống demo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,347 +1,192 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Docpro Components</title>
-    <meta content="Docpro Components" name="description">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <link href="stg/Assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="stg/Assets/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.ui.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.cscrollbar.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.datetimepicker.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.jcrop.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.contextMenu.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.megaimgviewer.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.selectbox.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.bootstrap-select.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/ionicons.min.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/font-awesome.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/weather-icons.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/beyond.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/demo.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/typicons.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/animate.css" rel="stylesheet">
-    <link href="stg/Assets/beyond/css/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="stg/pdf/viewer.css" rel="stylesheet">
-    <link href="stg/Assets/jquery/css/jquery.stacktable.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/main.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/size.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/icons.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/upfile.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/table.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/chat.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/ntfs.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/stg.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/cust.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/structure.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/fsi.css" rel="stylesheet">
-    <link href="stg/Assets/app/css/fix_ie.css" rel="stylesheet">
-    <script src="stg/Assets/app/js/modernizr-custom.js">
-    </script>
+<!-- MÔ TẢ -->
+<h1 class="bd-title" id="content">Table</h1>
 
-    <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>
 
-    <link href='css/style.css' rel='stylesheet' type='text/css'>
-    <link href='css/responsive.css' rel='stylesheet' type='text/css'>
-
-</head>
-<body>
-
-    <!-- include HTML -->
-    <div class="include_html" data-include-html="header"></div>
-
-    <div class="main-container container-fluid">
-        <div class="page-container">
-            <!-- include HTML -->
-            <div class="include_html" data-include-html="left"></div>
-            <div class="page-content" id="Section">
-                <div class="page-body" id="SHResult">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            <div class="widget">
-                                <div class="widget-header bordered-bottom bordered-yellow">
-                                    <span class="widget-caption has-sub-caption">
-                                        <span class="widget-caption-left"><i class="fa fa-hashtag"></i></span> 
-                                        <span class="widget-caption-right">
-                                            <span class="widget-mainCaption">Table</span> 
-                                        </span>
-                                    </span>
-                                    <div class="widget-buttons">
-                                        <a class="widget_back_btn text-btn" href="#" title="Quay lại"><i aria-hidden="true" class="fa fa-arrow-left"></i><span>Quay lại</span></a>
-                                        <a data-toggle="maximize" href="javascript:;"><i class="fa fa-expand"></i></a>
-                                        <a data-toggle="collapse" href="#"><i class="fa fa-minus"></i></a>
-                                        <a data-toggle="dispose" href="javascript:;"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </div>
-                                    <div class="widget-body no-padding">
-                                        <div class="demo-wrapper"> <!-- HTML -->
-                                            <div class="demo-title">
-                                                <span class="left">HTML</span>
-                                            </div>
-                                            <div class="demo_content ">
-                                                
-                                                <pre class="brush:xml;">
-                                                    &lt;div class=&quot;job_search_widget&quot;&gt;
-                                                        &lt;div class=&quot;table-responsive&quot;&gt;
-                                                            &lt;table class=&quot;table table-bordered table-hover table-striped dataTable&quot;&gt;
-                                                                &lt;thead&gt;
-                                                                    &lt;tr&gt;
-                                                                        &lt;th class=&quot;wpx70 center&quot;&gt;STT&lt;/th&gt;
-                                                                        &lt;th class=&quot;wpx70 center&quot;&gt;
-                                                                            &lt;label&gt;
-                                                                                &lt;input class=&quot;group-checkable&quot; type=&quot;checkbox&quot;&gt;
-                                                                                &lt;span class=&quot;text&quot;&gt;&lt;/span&gt;
-                                                                            &lt;/label&gt;
-                                                                        &lt;/th&gt;
-                                                                        &lt;th class=&quot;wauto&quot;&gt;Họ v&agrave; t&ecirc;n&lt;/th&gt;
-                                                                        &lt;th class=&quot;wpx300&quot;&gt;Th&ocirc;ng tin&lt;/th&gt;
-                                                                        &lt;th class=&quot;wpx100&quot;&gt;Tuổi&lt;/th&gt;
-                                                                    &lt;/tr&gt;
-                                                                &lt;/thead&gt;
-                                                                &lt;tbody&gt;
-                                                                    &lt;tr&gt;
-                                                                        &lt;td class=&quot;center&quot;&gt;1&lt;/td&gt;
-                                                                        &lt;td class=&quot;center&quot;&gt;
-                                                                            &lt;label&gt;
-                                                                                &lt;input class=&quot;checkboxes&quot; type=&quot;checkbox&quot;&gt;
-                                                                                &lt;span class=&quot;text&quot;&gt;&lt;/span&gt;
-                                                                            &lt;/label&gt;
-                                                                        &lt;/td&gt;
-                                                                        &lt;td&gt;Nguyễn Ch&iacute; Tu&acirc;n&lt;/td&gt;
-                                                                        &lt;td&gt;
-                                                                            &lt;div class=&quot;user-info&quot;&gt;
-                                                                                &lt;img class=&quot;ua&quot; width=&quot;30&quot; src=&quot;stg/Assets/app/img/ava1.jpg&quot;&gt;
-                                                                                &lt;span class=&quot;ui&quot;&gt;
-                                                                                    &lt;span class=&quot;clearfix&quot;&gt;Nguyễn Ch&iacute; Tu&acirc;n&lt;/span&gt;
-                                                                                    &lt;span class=&quot;clearfix&quot;&gt;tuannc@fsivietnam.com.vn&lt;/span&gt;
-                                                                                &lt;/span&gt;
-                                                                            &lt;/div&gt;
-                                                                        &lt;/td&gt;
-                                                                        &lt;td&gt;22&lt;/td&gt;
-                                                                    &lt;/tr&gt;
-                                                                &lt;/tbody&gt;
-                                                            &lt;/table&gt;
-                                                        &lt;/div&gt;
-                                                    &lt;/div&gt;
-                                                </pre>                                                      
-                                               
-                                            </div>
-                                        </div>
-                                        <div class="demo-wrapper"> <!-- CSS -->
-                                            <div class="demo-title">
-                                                <span class="left">CSS</span>
-                                            </div>
-                                            <div class="demo_content ">
-                                                <pre class="brush:css;">
-/* UI User */
-.job_search_widget td > .user-info {
-    overflow: hidden;
-    float: none;
-    min-width: 90px;
-}
-.user-info .ua {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    float: left;
-    margin-top: 2px;
-    border-radius: 50%;
-    overflow: hidden;
-    object-fit: cover;
-    object-position: center center;
-}
-.user-info .ui {
-    width: calc((100%) - 30px);
-    display: inline-block;
-    float: left;
-    padding-left: 10px;
-}
-                                                </pre>
-                                            </div>
-                                        </div> <!-- demo-wrapper -->
-                                        <div class="demo-wrapper hidden"> <!-- JS -->
-                                            <div class="demo-title">
-                                                <span class="left">JS</span>
-                                            </div>
-                                            <div class="demo_content ">
-                                                <pre class="brush:js;">
-                                                               
-                                                </pre>
-                                            </div>
-                                        </div> <!-- demo-wrapper -->
-                                        <div class="demo-wrapper"> <!-- DEMO -->
-                                            <div class="demo-title">
-                                                <span class="left">DEMO</span>
-                                            </div>
-                                            <div class="demo_content">
-                                                <div class="job_search_widget">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-bordered table-hover table-striped dataTable">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="wpx70 center">STT</th>
-                                                                    <th class="wpx70 center">
-                                                                        <label>
-                                                                            <input class="group-checkable" type="checkbox">
-                                                                            <span class="text"></span>
-                                                                        </label>
-                                                                    </th>
-                                                                    <th class="wauto">Họ và tên</th>
-                                                                    <th class="wpx300">Thông tin</th>
-                                                                    <th class="wpx100">Tuổi</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="center">1</td>
-                                                                    <td class="center">
-                                                                        <label>
-                                                                            <input class="checkboxes" type="checkbox">
-                                                                            <span class="text"></span>
-                                                                        </label>
-                                                                    </td>
-                                                                    <td>Nguyễn Chí Tuân</td>
-                                                                    <td>
-                                                                        <div class="user-info">
-                                                                            <img class="ua" width="30" src="stg/Assets/app/img/ava1.jpg">
-                                                                            <span class="ui">
-                                                                                <span class="clearfix">Nguyễn Chí Tuân</span>
-                                                                                <span class="clearfix">tuannc@fsivietnam.com.vn</span>
-                                                                            </span>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>22</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> <!-- demo-wrapper -->                         
-                                    </div>
+<!-- DEMO -->
+<div class="demo-section">
+    <h3 id="cpn_demo">Demo</h3>
+    <div class="demo_content">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped dataTable">
+                <thead>
+                    <tr>
+                        <th class="wpx70 center">STT</th>
+                        <th class="wpx70 center">
+                            <label>
+                                <input class="group-checkable" type="checkbox">
+                                <span class="text"></span>
+                            </label>
+                        </th>
+                        <th class="wauto">Họ và tên</th>
+                        <th class="wpx300">Thông tin</th>
+                        <th class="wpx100">Tuổi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">1</td>
+                        <td class="center">
+                            <label>
+                                <input class="checkboxes" type="checkbox">
+                                <span class="text"></span>
+                            </label>
+                        </td>
+                        <td>Nguyễn Chí Tuân</td>
+                        <td>
+                            <div class="user-info">
+                                <img class="ua" width="30" src="stg/Assets/app/img/ava1.jpg">
+                                <span class="ui">
+                                    <span class="clearfix">Nguyễn Chí Tuân</span>
+                                    <span class="clearfix">tuannc@fsivietnam.com.vn</span>
+                                </span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td class="center">2</td>
+                        <td class="center">
+                            <label>
+                                <input class="checkboxes" type="checkbox">
+                                <span class="text"></span>
+                            </label>
+                        </td>
+                        <td>Nguyễn Văn A</td>
+                        <td>
+                            <div class="user-info">
+                                <img class="ua" width="30" src="stg/Assets/app/img/ava1.jpg">
+                                <span class="ui">
+                                    <span class="clearfix">Nguyễn Văn A</span>
+                                    <span class="clearfix">Anv@fsivietnam.com.vn</span>
+                                </span>
+                            </div>
+                        </td>
+                        <td>25</td>
+                    </tr>                    
+                </tbody>
+            </table>
         </div>
-    </div>
+    </div>                
+</div>                
 
-    <script src="stg/Assets/jquery/js/jquery.js">
-    </script>  
-    <script src="stg/Assets/jquery/js/jquery.ui.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.mousewheel.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.cscrollbar.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.jcrop.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.datetimepicker.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.contextMenu.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.dateformat.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.serializejson.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.megaimgviewer.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.jwplayer.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.selectbox.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.rating.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.bootstrap-select.js">
-    </script> 
-    <script src="stg/Assets/bootstrap/js/bootstrap.js">
-    </script> 
-    <script src="stg/pdf/compatibility.js">
-    </script> 
-    <script src="stg/pdf/l10n.js">
-    </script> 
-    <script src="stg/pdf/build/pdf.js">
-    </script> 
-    <script src="stg/pdf/viewer.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/slimscroll/jquery.slimscroll.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/validation/bootstrapValidator.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/editors/summernote/summernote.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/nestable/jquery.nestable.min.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/easypiechart/jquery.easypiechart.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/easypiechart/easypiechart-init.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/fuelux/treeview/tree-custom.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.resize.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.pie.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.tooltip.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/charts/flot/jquery.flot.orderBars.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/skins.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/beyond.js">
-    </script> 
-    <script src="stg/Assets/beyond/js/toastr/toastr.js">
-    </script> 
-    <script src="stg/Assets/jquery/js/jquery.stacktable.js">
-    </script> 
-    <script src="stg/Assets/app/js/autocomplete.js">
-    </script> 
-    <script src="stg/Assets/app/js/utils.js">
-    </script> 
-    <script src="stg/Assets/app/js/main.js">
-    </script> 
-    <script src="stg/Assets/app/js/uploader.js">
-    </script> 
-    <script src="stg/Assets/app/js/upfile.js">
-    </script> 
-    <script src="stg/Assets/app/js/tree.js">
-    </script> 
-    <script src="stg/Assets/app/js/avatar.js">
-    </script> 
-    <script src="stg/Assets/app/js/stgfile.js">
-    </script> 
-    <script src="stg/Assets/app/js/scan.js">
-    </script> 
-    <script src="stg/Assets/app/js/doc.note.js">
-    </script> 
-    <script src="stg/Assets/app/js/base64.js">
-    </script> 
-    <script src="stg/Assets/app/js/vgcaplugin.js">
-    </script> 
-    <script src="stg/Assets/app/js/cks.js">
-    </script> 
-    <script src="stg/Assets/app/js/test.js">
-    </script> 
-    <script src="stg/Assets/app/js/cust.js">
-    </script> 
-    <script src="stg/Assets/app/js/check-ie-version.js">
-    </script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.js"></script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCss.js"></script>
-    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">HTML</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                &lt;div class=&quot;job_search_widget&quot;&gt;
+                    &lt;div class=&quot;table-responsive&quot;&gt;
+                        &lt;table class=&quot;table table-bordered table-hover table-striped dataTable&quot;&gt;
+                            &lt;thead&gt;
+                                &lt;tr&gt;
+                                    &lt;th class=&quot;wpx70 center&quot;&gt;STT&lt;/th&gt;
+                                    &lt;th class=&quot;wpx70 center&quot;&gt;
+                                        &lt;label&gt;
+                                            &lt;input class=&quot;group-checkable&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;span class=&quot;text&quot;&gt;&lt;/span&gt;
+                                        &lt;/label&gt;
+                                    &lt;/th&gt;
+                                    &lt;th class=&quot;wauto&quot;&gt;Họ v&agrave; t&ecirc;n&lt;/th&gt;
+                                    &lt;th class=&quot;wpx300&quot;&gt;Th&ocirc;ng tin&lt;/th&gt;
+                                    &lt;th class=&quot;wpx100&quot;&gt;Tuổi&lt;/th&gt;
+                                &lt;/tr&gt;
+                            &lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                    &lt;td class=&quot;center&quot;&gt;1&lt;/td&gt;
+                                    &lt;td class=&quot;center&quot;&gt;
+                                        &lt;label&gt;
+                                            &lt;input class=&quot;checkboxes&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;span class=&quot;text&quot;&gt;&lt;/span&gt;
+                                        &lt;/label&gt;
+                                    &lt;/td&gt;
+                                    &lt;td&gt;Nguyễn Ch&iacute; Tu&acirc;n&lt;/td&gt;
+                                    &lt;td&gt;
+                                        &lt;div class=&quot;user-info&quot;&gt;
+                                            &lt;img class=&quot;ua&quot; width=&quot;30&quot; src=&quot;stg/Assets/app/img/ava1.jpg&quot;&gt;
+                                            &lt;span class=&quot;ui&quot;&gt;
+                                                &lt;span class=&quot;clearfix&quot;&gt;Nguyễn Ch&iacute; Tu&acirc;n&lt;/span&gt;
+                                                &lt;span class=&quot;clearfix&quot;&gt;tuannc@fsivietnam.com.vn&lt;/span&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/td&gt;
+                                    &lt;td&gt;22&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </pre>
+        </div>                
+    </div>                
+</div>                
 
-    
-    <script src='Include/header.js' type='text/javascript'></script>
-    <script src='Include/left.js' type='text/javascript'></script>
+<!-- CSS -->
+<div class="demo-section">
+    <h3 id="cpn_css">CSS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:css;">
+                /* User avater */
+                .job_search_widget td > .user-info {
+                    overflow: hidden;
+                    float: none;
+                    min-width: 90px;
+                }
+                .user-info .ua {
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    float: left;
+                    margin-top: 2px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+                .user-info .ui {
+                    width: calc((100%) - 30px);
+                    display: inline-block;
+                    float: left;
+                    padding-left: 10px;
+                }
+            </pre>
+        </div>                
+    </div>                
+</div>                
 
-    <script src='js/main.js' type='text/javascript'></script>
-
-</body>
-</html>
+<!-- JS -->
+<div class="demo-section">
+    <h3 id="cpn_js">JS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content ">
+            <pre class="brush:js;">
+     
+            </pre>
+        </div>                
+    </div>                
+</div>                
+<!-- NOTE -->
+<div class="demo-section">
+    <h3 id="cpn_note">Note</h3>
+    <p class="hidden">Note des</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="highlighter-rouge">CSS</code></td>
+                <td>Chỉ thêm <code>CSS</code> khi copy <code>HTML</code> không giống demo</td>
+            </tr>
+            <tr>
+                <td><code class="highlighter-rouge">JS</code></td>
+                <td>Chỉ thêm <code>Js</code> khi copy <code>HTML,CSS</code> không chạy giống demo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -4,79 +4,105 @@ var Main = {
         Main.onEvent();
         Main.upEvent();
         Main.backLink();
-        //Utils.getToastMessage();
+        Main.setRefresh();
+
     },
-    upEvent: function (container)
-    {
+    upEvent: function (container) {
         if (Utils.isEmpty(container))
             container = jQuery(document);
+
+        container.find(".useSlider").each(function () {
+            var obj = $(this);
+            var SliderBar = obj.find(".SliderBar");
+            var useSlider_percent = obj.find(".useSlider_percent");
+            var SliderPercent = obj.find(".SliderPercentCount");
+            var percentCompleted = obj.attr("data-percent-completed");
+            var urlchange = obj.attr('data-urlchange');
+            var id = obj.attr('data-id');
+            SliderBar.noUiSlider({
+                range: [0, 100],
+                start: percentCompleted,
+                step: 1,
+                handles: 1,
+                connect: "lower",
+                serialization: {
+                    resolution: 1,
+                    to: [SliderPercent, 'html']
+                }
+            }).on('change', function (value, handler) {
+                var value = jQuery(this).val();
+                var data = {};
+                data.ID = id;
+                data.OldPercentCompleted = percentCompleted;
+                if (percentCompleted != value) {
+                    data.PercentCompleted = value;
+                    jQuery.ajax({
+                        type: "POST",
+                        async: true,
+                        url: urlchange,
+                        data: data,
+                        beforeSend: function () {
+                        },
+                        complete: function () {
+                        },
+                        error: function () {
+                        },
+                        success: function (response) {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+            useSlider_percent.show();
+        });
 
         container.find(".useDragable").draggable({
             cursorAt: { left: 5 }
         });
-        container.find(".doc-marker").draggable();
-        
-        container.find(".secrtc2").resizable({
-            handles: "w",
-            maxWidth: 700,
-            minWidth: 7,
-            resize: function (event, ui) {
-                jQuery(this).find(".clsr").removeClass("awl");
-                jQuery(this).removeClass("closed").css("left", "0");
-                jQuery(this).parent().find(".secrtc1").removeClass("frt").css("width", "calc((100%) - " + ui.size.width + "px)");
+        Cust.dataTables_filter_col();
+        container.find('.dataTables_wrapper .table:not(.useTreegrid)').each(function () {
+            if (!$(this).hasClass("stacktable_inited") && !$(this).hasClass("not_js_responsive")) {
+                $(this).addClass("stacktable_inited");
+                $(this).stacktable();
             }
         });
-
-        Cust.dataTables_filter_col();
-container.find(".chart_class_name").each(function () {
-                                                    try{
-                                                        function labelFormatter(label, series) {
-                                                            return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
-                                                        } 
-                                                        var data = jQuery(this).attr('data-value');
-                                                        if (typeof data != "undefined") {
-                                                            data = jQuery.parseJSON(data);
-                                                            jQuery(this).unbind();
-                                                            $.plot(jQuery(this), data, {
-                                                                series: {
-                                                                    pie: {
-                                                                        show: true,
-                                                                        radius: 1,
-                                                                        label: {
-                                                                            show: true,
-                                                                            radius: 2 / 3,
-                                                                            formatter: labelFormatter,
-                                                                            threshold: 0.1
-                                                                        }
-                                                                    }
-                                                                },
-                                                                legend: {
-                                                                    show: false
-                                                                }
-                                                            }); 
-                                                        }               
-                                                    } catch (e) { 
-                                                        console.log(e);
-                                                    }
-
-                                                });         
-container.find('.dataTables_wrapper .table:not(.useTreegrid)').each(function() {
-	if(!$(this).hasClass("stacktable_inited") && !$(this).hasClass("not_js_responsive")){
-		$(this).addClass("stacktable_inited");
-		$(this).stacktable();
-	}
-});
-container.find(".selectpicker").selectpicker();
-container.find(".editorSummernote").each(function () {
+        container.find(".selectpicker").selectpicker();
+        container.find(".editorSummernote").each(function () {
             if (!jQuery(this).hasClass("setSummernote")) {
                 jQuery(this).addClass("setSummernote").summernote({
-                    height: jQuery(this).attr("data-height") || '200px'
+                    height: '200px',
+                    onpaste: function (e) {
+                        var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+
+                        e.preventDefault();
+                        if (bufferText) {
+                            while (bufferText.indexOf("ï¯") != -1) {
+                                bufferText = bufferText.replace("ï¯", "");
+                            }
+                            while (bufferText.indexOf("ï") != -1) {
+                                bufferText = bufferText.replace("ï", "");
+                            }
+                        }
+                        document.execCommand('insertText', false, bufferText);
+                    }
                 });
             }
         });
-container.find(".useTreegrid").each(function () {
-    jQuery(this).treegrid();
-});
+        console.log("! useTreegrid");
+        container.find(".useTreegrid").each(function () {
+            console.log("useTreegrid");
+            var column = jQuery(this).attr('data-column');
+            if (column == undefined) {
+                jQuery(this).treegrid();
+            }
+            else {
+                jQuery(this).treegrid({
+                    treeColumn: column,
+                    initialState: 'collapsed'
+                });
+            }
+            console.log("xin chào");
+        });
         container.find(".nestable").each(function () {
             if (!jQuery(this).hasClass("setNestabled")) {
                 var obj = jQuery(this);
@@ -88,9 +114,6 @@ container.find(".useTreegrid").each(function () {
                     var ids = [];
                     var idTheme = obj.attr("data-theme-id");
                     var idRegion = obj.attr("data-region-id");
-                    var idDoc = obj.attr("data-id-doc");
-                    var idDoctype = obj.attr("data-doctype-id");
-                    var idRecordType = obj.attr("data-record-type-id");
                     var idPage = obj.attr("data-page-id");
                     var url = obj.attr("data-url");
                     var data = obj.nestable('serialize');
@@ -99,47 +122,22 @@ container.find(".useTreegrid").each(function () {
                         var item = data[i];
                         ids.push(item.id);
                     }
-                    if (!Utils.isEmpty(url))
-                    {
+                    if (!Utils.isEmpty(url)) {
                         var dataPost = {};
-                        if (obj.hasClass("regions"))
-                        {
+                        if (obj.hasClass("regions")) {
                             dataPost = {
                                 IDTheme: idTheme,
                                 IDPage: idPage || 0,
                                 IDRegions: JSON.stringify(ids)
                             };
                         }
-                        else if (obj.hasClass("doctypes")) {
-                            dataPost = {
-                                IDDoc: idDoc,
-                                IDDoctype: idDoctype,
-                                IDFieldSettings: JSON.stringify(ids)
-                            };
-                        }
-                        else if (obj.hasClass("recordtypes")) {
-                            dataPost = {
-                                IDRecordType: idRecordType,
-                                IDFieldSettings: JSON.stringify(ids)
-                            };
-                        }
-                        else
-                        {
+                        else {
                             dataPost = {
                                 IDTheme: idTheme,
                                 IDRegion: idRegion,
                                 IDPage: idPage || 0,
                                 IDBlocks: JSON.stringify(ids)
                             };
-                        }
-                        if (obj.hasClass("withTicks")) {
-                            var ticks = [];
-                            obj.find(".checkboxes").each(function () {
-                                if (jQuery(this).prop("checked")) {
-                                    ticks.push(jQuery(this).attr("data-id"));
-                                }
-                            });;
-                            dataPost.Ticks = JSON.stringify(ticks);
                         }
 
                         jQuery.ajax({
@@ -155,6 +153,7 @@ container.find(".useTreegrid").each(function () {
                 });
             }
         });
+
         container.find(".useSortable").each(function () {
             if (jQuery(this).hasClass("inited")) {
                 jQuery(this).sortable("destroy");
@@ -163,50 +162,681 @@ container.find(".useTreegrid").each(function () {
                 items: ".sortitem"
             });
         });
-container.find(".donut-chart").each(function () {
-    //var mrdata = JSON.parse(jQuery(this).find('#txtdata').val());
-    Morris.Donut({
-        element: jQuery(this),
-        data: [
-          { label: 'IOS', value: 40 , },
-          { label: 'Win', value: 30 },
-          { label: 'Android', value: 25 },
-          { label: 'Java', value: 5 }
-        ],
-        colors: ["#9c0", "#c20000","#007bc1","#ccc"]
-    });
-});
-container.find(".morris-bar-chart").each(function () {
-    //var mrdata = JSON.parse(jQuery(this).find('#txtdata').val());
-    Morris.Bar({
-        element: jQuery(this),
-        data: [
-            { y: '2006', a: 100, b: 90, c:80 },
-            { y: '2007', a: 75, b: 65 , c:25},
-            { y: '2008', a: 50, b: 40 , c:90},
-            { y: '2009', a: 75, b: 65 , c:15},
-            { y: '2010', a: 50, b: 40 , c:50},
-            { y: '2011', a: 75, b: 65 ,c:10},
-            { y: '2012', a: 100, b: 90 ,c:90}
-        ],
-        xkey:'y',
-        ykeys: ['a', 'b', 'c'],
-        labels: ['Series A', 'Series B', 'Series C'],
-    });
-});
-container.find(".morris-line-chart").each(function () {
-    //var mrdata = JSON.parse(jQuery(this).find('#txtdata').val());
-    Morris.Line({
-        element: jQuery(this),
-        data: tax_data,
-        xkey: 'period',
-        ykeys: ['licensed', 'sorned'],
-        labels: ['Licensed', 'Off the road'],
-        parseTime: false
-    });
-});
+        container.find('.useRate').each(function () {
+            var obj = jQuery(this);
+            if (!obj.hasClass("inited")) {
+                obj.addClass("inited").rating({
+                    min: 0,
+                    max: 5,
+                    step: 1,
+                    size: 'xs',
+                    showClear: false,
+                    hoverOnClear: false,
+                    theme: 'krajee-svg'
+                }).on("rating.change", function (event, value, caption) {
+
+                    var data = obj.getDataUppername();
+                    data.Rating = value;
+                    jQuery.ajax({
+                        type: "POST",
+                        async: true,
+                        url: data.Href,
+                        data: data,
+                        beforeSend: function () {
+                        },
+                        complete: function () {
+                        },
+                        error: function () {
+                        },
+                        success: function (response) {
+                        }
+                    });
+                });
+            }
+        });
+        container.find(".morris-line-chart").each(function () {
+            var w = jQuery(this).width();
+            if (w == 0) {
+                jQuery(this).css("width", '500px');
+            }
+            var mrdata = JSON.parse(jQuery(this).find('#txtdata').val());
+            Morris.Line({
+                element: jQuery(this),
+                data: mrdata.data,
+                xkey: mrdata.xkey,
+                ykeys: mrdata.ykeys,
+                labels: mrdata.labels,
+                lineColors: mrdata.colors,
+                parseTime: false
+            });
+        });
+
+        container.find(".QLCVtotal-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: mrdata.title
+                },
+                colors: mrdata.colors,
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.percentage:.1f} %',
+                            distance: -50,
+                            filter: {
+                                property: 'percentage',
+                                operator: '>',
+                                value: 4
+                            }
+                        },
+                        showInLegend: true
+                    }
+                },
+                legend: {
+                    alignColumns: false,
+                    maxHeight: 60
+                },                 
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: mrdata.data
+                    //[
+                    //    { name: 'HoĂ n thĂ nh', y: 40 },
+                    //    { name: 'Äang xá»­ lĂ½', y: 20 },
+                    //    { name: 'ChÆ°a xá»­ lĂ½', y: 30 },
+                    //]
+                }]
+            });
+        });
+
+        container.find(".QLCVtotalmonth-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+
+                chart: {
+                    type: 'column'
+                },
+
+                title: {
+                    text: mrdata.title
+                },
+                colors: mrdata.colors,
+
+                xAxis: {
+                    categories: mrdata.categories//['ThĂ¡ng 1', 'ThĂ¡ng 2', 'ThĂ¡ng 3', 'ThĂ¡ng 4', 'ThĂ¡ng 5', 'ThĂ¡ng 6', 'ThĂ¡ng 7', 'ThĂ¡ng 8', 'THĂ¡ng 9', 'ThĂ¡ng 10', 'ThĂ¡ng 11', 'ThĂ¡ng 12']
+                },
+
+                yAxis: {
+                    allowDecimals: false,
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+
+                tooltip: {
+                    formatter: function () {
+                        return '<b>' + this.x + '</b><br/>' +
+                            this.series.name + ': ' + this.y + '<br/>' +
+                            'Tá»•ng: ' + this.point.stackTotal;
+                    }
+                },
+
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    },
+                    series: {
+                        pointWidth: 30
+                    }
+                },
+
+                series: mrdata.series
+                //    [{
+                //    name: 'HoĂ n thĂ nh',
+                //    data: [8, 3, 1, 4, 7, 2, 1, 1, 1, 5, 1, 1],
+                //    stack: 'male'
+                //}, {
+                //    name: 'Äang xá»­ lĂ½',
+                //    data: [7, 1, 2, 4, 3, 0, 7, 3, 4, 3, 4, 10],
+                //    stack: 'male'
+                //}, {
+                //    name: 'ChÆ°a xá»­ lĂ½',
+                //    data: [7, 1, 2, 4, 3, 0, 7, 3, 5, 3, 4, 10],
+                //    stack: 'male'
+                //}]
+            });
+        });
+
+        container.find(".QLCVtkeCty-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+
+                chart: {
+                    type: 'column'
+                },
+
+                title: {
+                    text: mrdata.title
+                },
+                colors: mrdata.colors, //['#53a93f', '#57b5e3', '#cccccc'],
+                xAxis: {
+                    categories: mrdata.categories//['Tá»•ng sá»‘ cĂ´ng viá»‡c', 'ThĂ¡ng 2', 'ThĂ¡ng 3']
+                },
+
+                yAxis: {
+                    allowDecimals: false,
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+
+                tooltip: {
+                    formatter: function () {
+                        return '<b>' + this.x + '</b><br/>' +
+                            this.series.name + ': ' + this.y + '<br/>' +
+                            'Tá»•ng: ' + this.point.stackTotal;
+                    }
+                },
+
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    },
+                    series: {
+                        pointWidth: 30
+                    }
+                },
+
+                series: mrdata.series
+                //    [{
+                //    name: 'HoĂ n ThĂ nh',
+                //    data: [34, 7, 2],
+                //    stack: 'male'
+                //}, {
+                //    name: 'Äang xá»­ lĂ½',
+                //    data: [19, 12, 0],
+                //    stack: 'male'
+                //}, {
+                //    name: 'ChÆ°a xá»­ lĂ½',
+                //    data: [138, 44, 8],
+                //    stack: 'male'
+                //}]
+            });
+        });
+
+        container.find(".QLCVtkePban-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: mrdata.title//'THá»NG KĂ CĂ”NG VIá»†C PHĂ’NG BAN'
+                },
+                colors: mrdata.colors,//['#53a93f', '#57b5e3', '#cccccc'],
+                xAxis: {
+                    categories: mrdata.categories//['Tá»•ng sá»‘ cĂ´ng viá»‡c', 'ThĂ¡ng 2', 'ThĂ¡ng 3']
+                },
+                yAxis: {
+                    allowDecimals: false,
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        return '<b>' + this.x + '</b><br/>' +
+                            this.series.name + ': ' + this.y + '<br/>' +
+                            'Tá»•ng: ' + this.point.stackTotal;
+                    }
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    },
+                    series: {
+                        pointWidth: 30
+                    }
+                },
+                series: mrdata.series
+                //    [{
+                //    name: 'HoĂ n ThĂ nh',
+                //    data: [34, 7, 2],
+                //    stack: 'male'
+                //}, {
+                //    name: 'Äang xá»­ lĂ½',
+                //    data: [19, 12, 0],
+                //    stack: 'male'
+                //}, {
+                //    name: 'ChÆ°a xá»­ lĂ½',
+                //    data: [138, 44, 8],
+                //    stack: 'male'
+                //}]
+            });
+        });
+
+        container.find(".QLCVtkeNV-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+
+                chart: {
+                    type: 'column'
+                },
+
+                title: {
+                    text: mrdata.title//'THá»NG KĂ CĂ”NG VIá»†C NHĂ‚N VIĂN'
+                },
+                colors: mrdata.colors,//['#53a93f', '#57b5e3', '#cccccc'],
+
+                xAxis: {
+                    categories: mrdata.categories//['Tá»•ng sá»‘ cĂ´ng viá»‡c', 'ThĂ¡ng 2', 'ThĂ¡ng 3']
+                },
+
+                yAxis: {
+                    allowDecimals: false,
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+
+                tooltip: {
+                    formatter: function () {
+                        return '<b>' + this.x + '</b><br/>' +
+                            this.series.name + ': ' + this.y + '<br/>' +
+                            'Tá»•ng: ' + this.point.stackTotal;
+                    }
+                },
+
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    },
+                    series: {
+                        pointWidth: 30
+                    }
+                },
+
+                series: mrdata.series
+                //[{
+                //    name: 'HoĂ n ThĂ nh',
+                //    data: [10, 6, 2],
+                //    stack: 'male'
+                //}, {
+                //    name: 'Äang xá»­ lĂ½',
+                //    data: [4, 2, 0],
+                //    stack: 'male'
+                //}, {
+                //    name: 'ChÆ°a xá»­ lĂ½',
+                //    data: [75, 14, 3],
+                //    stack: 'male'
+                //}]
+            });
+        });
+
+        container.find(".QLCVcmt-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: mrdata.title//'THá»NG KĂ ÄĂNH GIĂ CĂ”NG VIá»†C'
+                },
+                colors: mrdata.colors,//['#53a93f', '#57b5e3', '#d73d32', '#cccccc'],
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.percentage:.1f} %',
+                            distance: -50,
+                            filter: {
+                                property: 'percentage',
+                                operator: '>',
+                                value: 4
+                            }
+                        },
+                        showInLegend: true
+                    }
+                },
+                legend: {
+                    alignColumns: false,
+                    maxHeight: 60
+                },                 
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+
+                    data: mrdata.data
+                    //    [
+                    //    { name: 'Xuáº¥t sáº¯c', y: 10 },
+                    //    { name: 'Äáº¡t', y: 20 },
+                    //    { name: 'KhĂ´ng Ä‘áº¡t', y: 10 },
+                    //    { name: 'ChÆ°a xĂ¡c Ä‘á»‹nh', y: 60 },
+                    //]
+                }]
+            });
+        });
+
+        container.find(".QLCVcmtCty-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: mrdata.title//'THá»NG KĂ ÄĂNH GIĂ CĂ”NG VIá»†C CTY'
+                },
+                colors: mrdata.colors,// ['#53a93f', '#57b5e3', '#d73d32', '#cccccc'],
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.percentage:.1f} %',
+                            distance: -50,
+                            filter: {
+                                property: 'percentage',
+                                operator: '>',
+                                value: 4
+                            }
+                        },
+                        showInLegend: true
+                    }
+                },
+                legend: {
+                    alignColumns: false,
+                    maxHeight: 60
+                },                
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+
+                    data: mrdata.data
+                    //    [
+                    //    { name: 'Xuáº¥t sáº¯c', y: 10 },
+                    //    { name: 'Äáº¡t', y: 20 },
+                    //    { name: 'KhĂ´ng Ä‘áº¡t', y: 10 },
+                    //    { name: 'ChÆ°a xĂ¡c Ä‘á»‹nh', y: 60 },
+                    //]
+                }]
+            });
+        });
+
+        container.find(".QLCVcmtPban-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: mrdata.title//'THá»NG KĂ ÄĂNH GIĂ CĂ”NG VIá»†C PHĂ’NG BAN'
+                },
+                colors: mrdata.colors,//['#53a93f', '#57b5e3', '#d73d32', '#cccccc'],
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.percentage:.1f} %',
+                            distance: -50,
+                            filter: {
+                                property: 'percentage',
+                                operator: '>',
+                                value: 4
+                            }
+                        },
+                        showInLegend: true
+                    }
+                },
+                legend: {
+                    alignColumns: false,
+                    maxHeight: 60
+                },                
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+
+                    data: mrdata.data
+                    //    [
+                    //    { name: 'Xuáº¥t sáº¯c', y: 10 },
+                    //    { name: 'Äáº¡t', y: 20 },
+                    //    { name: 'KhĂ´ng Ä‘áº¡t', y: 10 },
+                    //    { name: 'ChÆ°a xĂ¡c Ä‘á»‹nh', y: 60 },
+                    //]
+                }]
+            });
+        });
+
+        container.find(".QLCVcmtNV-chart").each(function () {
+            var obj = jQuery(this);
+            var target = obj.attr("data-target");
+            var mrdata = JSON.parse(obj.find('#txtdata').val());
+            Highcharts.chart(target, {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: mrdata.title//'THá»NG KĂ ÄĂNH GIĂ CĂ”NG VIá»†C NHĂ‚N VIĂN'
+                },
+                colors: mrdata.colors,//['#53a93f', '#57b5e3', '#d73d32', '#cccccc'],
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.percentage:.1f} %',
+                            distance: -50,
+                            filter: {
+                                property: 'percentage',
+                                operator: '>',
+                                value: 4
+                            }
+                        },
+                        showInLegend: true
+                    }
+                },
+                legend: {
+                    alignColumns: false,
+                    maxHeight: 60
+                },                
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+
+                    data: mrdata.data
+                    //    [
+                    //    { name: 'Xuáº¥t sáº¯c', y: 10 },
+                    //    { name: 'Äáº¡t', y: 20 },
+                    //    { name: 'KhĂ´ng Ä‘áº¡t', y: 10 },
+                    //    { name: 'ChÆ°a xĂ¡c Ä‘á»‹nh', y: 60 },
+                    //]
+                }]
+            });
+        });
+
+        container.find(".inputUpFileImport").each(function () {
+            var obj = jQuery(this);
+            if (!obj.hasClass("setUpFiled")) {
+                obj.hasClass("setUpFiled");
+                obj.ajaxUploader({
+                    name: "FileDocument",
+                    postUrl: Cdata.Storage.domain + "/uploader/upfile",
+                    //elTarget: obj.attr("data-target"),
+                    onBegin: function (e, t) {
+                        return true;
+                    },
+                    onClientLoadStart: function (e, file, t) {
+                    },
+                    onClientProgress: function (e, file, t) {
+                        jQuery(obj.attr("data-target")).addClass("loading");
+                    },
+                    onServerProgress: function (e, file, t) {
+                        jQuery(obj.attr("data-target")).addClass("loading");
+                    },
+                    onClientAbort: function (e, file, t) {
+                        jQuery(obj.attr("data-target")).removeClass("loading");
+                    },
+                    onClientError: function (e, file, t) {
+                        jQuery(obj.attr("data-target")).removeClass("loading");
+                    },
+                    onServerAbort: function (e, file, t) {
+                        jQuery(obj.attr("data-target")).removeClass("loading");
+                    },
+                    onServerError: function (e, file, t) {
+                        jQuery(obj.attr("data-target")).removeClass("loading");
+                    },
+                    onSuccess: function (e, file, t, data) {
+                        var dataObj = obj.getData();
+                        jQuery.ajax({
+                            type: "POST",
+                            async: true,
+                            url: dataObj.url,
+                            data: data,
+                            beforeSend: function () {
+                                obj.addClass("loading-btn");
+                            },
+                            complete: function () {
+                                obj.removeClass("loading-btn");
+                            },
+                            error: function () {
+                                obj.removeClass("loading-btn");
+                            },
+                            success: function (response) {
+                                Utils.sectionBuilder(response);
+                                if (response.hasOwnProperty("isCust")) {
+                                    jQuery(dataObj.target).html(response.htCust);
+                                    if ($("#ConfirmImport").length != 0) {
+                                        $("#ConfirmImport").removeClass("hidden");
+                                    }
+                                }
+                                Utils.updateInputDate(jQuery(dataObj.target));
+                                Utils.updateFormState(jQuery(dataObj.target));
+                                Utils.updateScrollBar(jQuery(dataObj.target));
+                                Autocomplete.init(jQuery(dataObj.target));
+                                Main.upEvent(jQuery(dataObj.target));
+                                //Utils.sectionBuilder(response);
+                                //Utils.updateScrollBar(jQuery(".ui-dialog:visible"));
+                            }
+                        });
+
+                        try {
+                            var form = jQuery(dataObj.target).closest("form");
+                            if (form.hasClass("bootstrapValidator")) {
+                                form.bootstrapValidator('revalidateField', jQuery(dataObj.target).attr("data-bv-field"));
+                            }
+                        } catch (e) { }
+                    }
+                });
+            }
+        });
     },
     onEvent: function () {
+
+        jQuery(document).on("change", ".datetime, .date", function (e) {
+            try {
+                var dateInput = jQuery(e.currentTarget);
+                var form = dateInput.closest("form");
+                if (form.hasClass("bootstrapValidator")) {
+                    form.bootstrapValidator('revalidateField', dateInput.attr("name"));
+                }
+                if (dateInput.hasClass("changeRemindDate")) {
+
+                    var inputStart = jQuery(dateInput.attr("data-rel-start"));
+                    var inputEnd = jQuery(dateInput.attr("data-rel-end"));
+
+                    var start_dateString = inputStart.val();
+                    var start_args = start_dateString.split(" ");
+                    var start_ddMMyyyy = start_args[0].split("-");
+                    var start_HHmm = start_args[1].split(":");
+                    var startDate = new Date(start_ddMMyyyy[2], parseInt(start_ddMMyyyy[1]) - 1, start_ddMMyyyy[0], start_HHmm[0], start_HHmm[1]);
+
+
+                    var end_dateString = inputEnd.val();
+                    var end_args = end_dateString.split(" ");
+                    var end_ddMMyyyy = end_args[0].split("-");
+                    var end_HHmm = end_args[1].split(":");
+
+                    var endDate = new Date(end_ddMMyyyy[2], parseInt(end_ddMMyyyy[1]) - 1, end_ddMMyyyy[0], end_HHmm[0], end_HHmm[1]);
+                    var totalDay = DateDiff.inDays(startDate, endDate);
+                    if (totalDay >= 1) {
+
+                        var inputRemind = jQuery(dateInput.attr("data-rel-remind"));
+                        var remindDay = inputRemind.attr("data-remind-day");
+                        var remindDate = endDate.addDays(-parseFloat(remindDay));
+                        inputRemind.val(remindDate.toDateFormat("dd-MM-yyyy HH:mm"));
+                    }
+                    else {
+                        var inputRemind = jQuery(dateInput.attr("data-rel-remind"));
+                        var remindHour = inputRemind.attr("data-remind-hour");
+                        var remindDate = endDate.addHours(-parseFloat(remindHour));
+                        inputRemind.val(remindDate.toDateFormat("dd-MM-yyyy HH:mm"));
+                    }
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        });
 
         jQuery(document).on("click", ".close-flash", function () {
             jQuery(this).closest(".flash").fadeOut("fast");
@@ -218,7 +848,27 @@ container.find(".morris-line-chart").each(function () {
             jQuery(this).closest("form").slideUp("fast");
         });
         jQuery(document).on("click", ".deleteItem", function () {
+            var form = jQuery(this).closest("form");
+            var field = jQuery(this).closest("[data-bv-field]");
+
             jQuery(this).closest(".item").remove();
+            try {
+                if (form.hasClass("bootstrapValidator")) {
+                    var fieldName = field.attr("name");
+                    if (fieldName) {
+                        form.bootstrapValidator('revalidateField', fieldName);
+                    }
+                    else {
+                        var bootstrapValidator = form.data('bootstrapValidator');
+                        //bootstrapValidator.validate(true);
+                        if (bootstrapValidator.isValid()) {
+                            form.bootstrapValidator('disableSubmitButtons', false);
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log(e);
+            }
         });
         jQuery(document).on("click", ".clickSort", function () {
             var data = jQuery(this).getData();
@@ -238,120 +888,21 @@ container.find(".morris-line-chart").each(function () {
             Utils.autoOpenDialog(jQuery(this));
         });
 
-        jQuery(document).on("click", ".btnGPrev", function () {
 
-            var i = 0;
-            var flag = false;
-            var gNextPrev = jQuery(this).closest(".gNextPrevContainer");
-            var data = gNextPrev.getDataUppername();
-
-            var viewCount = parseInt(data.ViewCount);
-            var objs = gNextPrev.find(".gNextPrevItem");
-            var objReverses = objs.get().reverse();
-            jQuery(".compare").removeClass("compare-focus");
-
-            jQuery(objReverses).each(function () {
-                if (jQuery(this).is(":visible")) {
-                    flag = true;
-                    jQuery(this).addClass("hidden");
-                }
-                else if (flag && i < viewCount) {
-                    i++;
-                    jQuery(this).removeClass("hidden");
-
-                    var objTarget = jQuery(jQuery(this).attr("data-target"));
-                    objTarget.addClass("compare-focus");
-
-                    objTarget.closest(".useScrollBar").scrollTop(objTarget.position().top);
-                }
-            });
-
-            gNextPrev.find(".btnGNext").prop("disabled", false);
-            if (objs.first().is(":visible")) {
-                gNextPrev.find(".btnGPrev").prop("disabled", true);
-            }
-        });
-        jQuery(document).on("click", ".btnGNext", function () {
-
-            var i = 0;
-            var flag = false;
-            var gNextPrev = jQuery(this).closest(".gNextPrevContainer");
-            var data = gNextPrev.getDataUppername();
-            jQuery(".compare").removeClass("compare-focus");
-
-            var viewCount = parseInt(data.ViewCount);
-            var objs = gNextPrev.find(".gNextPrevItem");
-
-            objs.each(function () {
-                if (jQuery(this).is(":visible")) {
-                    flag = true;
-                    jQuery(this).addClass("hidden");
-                }
-                else if (flag && i < viewCount)
-                {
-                    i++;
-                    jQuery(this).removeClass("hidden");
-
-                    var objTarget = jQuery(jQuery(this).attr("data-target"));
-                    objTarget.addClass("compare-focus");
-
-                    console.log(objTarget.position());
-                    objTarget.closest(".useScrollBar").scrollTop(objTarget.position().top);
-                }
-            });
-            gNextPrev.find(".btnGPrev").prop("disabled", false);
-            if (objs.last().is(":visible")) {
-                gNextPrev.find(".btnGNext").prop("disabled", true);
-            }
-        });
-
-        jQuery(document).on("click", ".openEditor", function () {
-            jQuery(".gEditor").removeClass("gEditorActive");
-
-            var title = jQuery(this).attr("title");
-            var text = jQuery(this).closest(".gEditor").addClass("gEditorActive").find(".fEditor").val();
-            jQuery("#dialogEditor").find("textarea").val(text);
-            jQuery("#dialogEditor").dialog({
-                dialogClass: "dialogEditor",
-                title: title,
-                resizable: false,
-                height: "auto",
-                width: 800,
-                open: function () {
-                    Utils.openOverlay();
-                },
-                buttons: {
-                    "Ok": function () {
-                        jQuery(this).dialog("close");
-                        jQuery(".gEditorActive").find(".fEditor").val(jQuery("#dialogEditor").find("textarea").val());
-                    },
-                    Cancel: function () {
-                        jQuery(this).dialog("close");
-                    }
-                },
-                close: function () {
-                    Utils.closeOverlay();
-                }
-            });
-        });
         jQuery(document).on("click", ".openDialog", function () {
-
             var data = jQuery(this).getData();
             var dialoger = jQuery(data.target);
             var maxH = jQuery(window).height();
             if (!dialoger.hasClass("ui-dialog-content")) {
                 jQuery(".ui-dialog[aria-describedby='" + dialoger.attr("id") + "']").remove();
             }
-            var data_with = 600;
-            if(data.width != null && data.width != ""){
-                data_with = data.width;
-            }
+
             dialoger.dialog({
                 width: data.width,
                 resizable: false,
                 open: function () {
                     if (maxH < dialoger.height()) {
-                        dialoger.css("height", (maxH - 50));
+                        dialoger.css("height", maxH - 50);
                     }
                     if (typeof data.formTarget != 'undefined') {
                         dialoger.attr("data-target", data.formTarget);
@@ -376,9 +927,10 @@ container.find(".morris-line-chart").each(function () {
                             dialoger.unbind();
                         }
                     }
+
                     Utils.openOverlay();
-                    Utils.updateScrollBar(dialoger);
                     Utils.updateFormState(dialoger);
+                    Utils.updateScrollBar(dialoger);
                     Autocomplete.init(dialoger);
 
                     if (typeof data.id != 'undefined') {
@@ -390,11 +942,6 @@ container.find(".morris-line-chart").each(function () {
                     if (typeof data.parentName != 'undefined') {
                         dialoger.find("input[name='ParentName']").val(data.parentName);
                     }
-                    if (typeof data.idCategoryType != 'undefined') {
-                        dialoger.find("input[name='IDCategoryType']").val(data.idCategoryType);
-                        dialoger.find("select[name='IDCategoryType']").val(data.idCategoryType);
-                    }
-
                 },
                 close: function () {
                     Utils.closeOverlay();
@@ -435,7 +982,6 @@ container.find(".morris-line-chart").each(function () {
             if (jQuery(this).hasClass("tabOpen")) {
                 jQuery("[href='" + data.TabOpen + "']").trigger("click");
             }
-
             Utils.viewer(data);
             return false;
         });
@@ -448,17 +994,7 @@ container.find(".morris-line-chart").each(function () {
         });
         jQuery(document).on('change', '.tickAllFormGroup', function () {
             var checked = jQuery(this).is(":checked");
-            jQuery(this).closest(".form-group").find(".tickItem").each(function(){
-                if(!jQuery(this).prop("disabled"))
-                    jQuery(this).prop("checked", checked);
-            });
-        });
-        jQuery(document).on('change', '.tickAll', function () {
-            var checked = jQuery(this).is(":checked");
-            jQuery(this).closest(".tickGroup").find(".tickItem, .tickKey").each(function () {
-                if (!jQuery(this).prop("disabled"))
-                    jQuery(this).prop("checked", checked);
-            });
+            jQuery(this).closest(".form-group").find(".tickItem").prop("checked", checked);
         });
         jQuery(document).on('change', '.tickKey', function () {
 
@@ -505,17 +1041,19 @@ container.find(".morris-line-chart").each(function () {
             var v = jQuery(this).prop("checked") ? 1 : 0;
             var data = jQuery(this).getDataUppername();
             jQuery(data.Rel).val(v);
-            if (typeof data.RelVisible != 'undefined')
-            {
+            if (v) {
+                jQuery(jQuery(this).attr("data-rel-date")).removeClass("hidden")
+            } else {
+                jQuery(jQuery(this).attr("data-rel-date")).addClass("hidden");
+                jQuery(jQuery(this).attr("data-rel-date")).find("input").val("");
+            }
+            if (typeof data.RelVisible != 'undefined') {
                 var dataOptions = jQuery(this).find("option:selected").getDataUppername();
                 if (dataOptions.IsVisible.toLowerCase() == "true") {
                     jQuery(data.RelVisible).removeClass("hidden")
                 } else {
                     jQuery(data.RelVisible).addClass("hidden")
                 }
-            }
-            if (typeof data.RelChecked != 'undefined') {
-                jQuery(data.RelChecked).prop("checked", true);
             }
         });
         jQuery(".changeRel").trigger("change");
@@ -532,11 +1070,6 @@ container.find(".morris-line-chart").each(function () {
                     }
                 });
             }
-        });
-        jQuery(document).on('change', '.checkone', function () {
-            var checked = jQuery(this).prop("checked");
-            jQuery(this).closest('.checkone-group').find(".checkone").prop("checked", false);
-            jQuery(this).prop("checked", checked);
         });
 
         jQuery(document).on("keydown", ".pressSubmit", function (e) {
@@ -559,6 +1092,11 @@ container.find(".morris-line-chart").each(function () {
                 if (Utils.isEmpty(url)) {
                     return;
                 }
+                for (var i in data) {
+                    if (Utils.isEmpty(data[i]))
+                        delete data[i];
+                }
+
 
                 jQuery.ajax({
                     type: "POST",
@@ -576,7 +1114,7 @@ container.find(".morris-line-chart").each(function () {
                     },
                     success: function (response) {
                         try {
-                            window.history.pushState(null, response.title, Utils.builderUrlQString(data, url));
+                            window.history.pushState(null, response.title, url + Utils.builderQString(data));
                             jQuery(document).prop("title", response.title);
                         } catch (e) {
                             console.log(e);
@@ -586,13 +1124,12 @@ container.find(".morris-line-chart").each(function () {
                         if (response.hasOwnProperty("isCust")) {
                             jQuery(target).html(response.htCust);
                         }
+
                         Utils.updateInputDate(jQuery(target));
                         Utils.updateFormState(jQuery(target));
                         Utils.updateScrollBar(jQuery(target));
                         Autocomplete.init(jQuery(target));
-                        Main.upEvent();
-
-                        form.find("[type='submit']").prop("disabled", false);
+                        Main.upEvent(jQuery(target));
                     }
                 });
             } catch (e) {
@@ -600,31 +1137,38 @@ container.find(".morris-line-chart").each(function () {
             }
             return false;
         });
-        jQuery(document).on("submit", ".quickSubmit", function (event) {
-            event.preventDefault();
-            event.stopPropagation();
+        jQuery(document).on("submit", ".quickSubmit", function (e) {
+            e.preventDefault();
             try {
                 var form = jQuery(this);
                 var url = form.attr("action");
                 var target = form.attr("data-target");
                 var targetDelete = form.attr("data-target-delete");
+
                 var type = form.attr("data-insert-type");
                 var data = Utils.getSerialize(form);
                 if (Utils.isEmpty(url)) {
                     return false;
                 }
+
+                if (!form.hasClass("bootstrapValidator")) {
+                    form.addClass("bootstrapValidator").bootstrapValidator();
+                }
+                var bootstrapValidator = form.data('bootstrapValidator');
+                bootstrapValidator.validate();
+                if (!bootstrapValidator.isValid(true)) {
+                    return false;
+                }
+
                 if (!Utils.validateDataForm(form)) {
                     return false;
                 }
-                //if (!form.hasClass("bootstrapValidator")) {
-                //    form.addClass("bootstrapValidator").bootstrapValidator();
-                //}
-                //var bootstrapValidator = form.data('bootstrapValidator');
-                //bootstrapValidator.validate();
-                //if (!bootstrapValidator.isValid()) {
-                //    jQuery(this).unbind();
-                //    return false;
-                //}
+                if (form.find(".has-error").length > 0) {
+                    return false;
+                }
+                if (form.hasClass("submited")) {
+                    return false;
+                }
 
                 jQuery.ajax({
                     type: "POST",
@@ -632,50 +1176,64 @@ container.find(".morris-line-chart").each(function () {
                     url: url,
                     data: data,
                     beforeSend: function () {
+                        form.addClass("submited").find("[type='submit']").prop("disabled", true);
                     },
                     complete: function () {
+                        form.removeClass("submited").find("[type='submit']").prop("disabled", false);
                     },
                     error: function () {
+                        form.removeClass("submited").find("[type='submit']").prop("disabled", false);
                     },
                     success: function (response) {
 
-                        Utils.sectionBuilder(response);
-                        if (response.hasOwnProperty("isCust")) {
-                            if (type == "append") {
-                                jQuery(target).append(response.htCust);
+                        try {
+                            Utils.sectionBuilder(response);
+                            if (response.hasOwnProperty("isCust")) {
+                                if (type == "append") {
+                                    jQuery(target).append(response.htCust);
+                                }
+                                else if (type == "prepend") {
+                                    jQuery(target).prepend(response.htCust);
+                                }
+                                else if (type == "replaceWith") {
+                                    jQuery(target).replaceWith(response.htCust);
+                                }
+                                else {
+                                    jQuery(target).html(response.htCust);
+                                }
                             }
-                            else if (type == "prepend") {
-                                jQuery(target).prepend(response.htCust);
+
+                            Utils.updateInputDate(jQuery(target));
+                            Utils.updateFormState(jQuery(target));
+                            Utils.updateScrollBar(jQuery(target));
+                            Autocomplete.init(jQuery(target));
+                            Main.upEvent(jQuery(target));
+
+                            if (!Utils.isEmpty(targetDelete)) {
+                                jQuery(targetDelete).fadeOut("fast", function () {
+                                    jQuery(this).remove();
+                                });
                             }
-                            else if (type == "replaceWith") {
-                                jQuery(target).replaceWith(response.htCust);
+                            if (form.hasClass("closeOnSubmit")) {
+                                Utils.closeOverlay(true);
                             }
-                            else {
-                                jQuery(target).html(response.htCust);
-                            }
+                        }
+                        catch (e) {
                         }
 
-                        Utils.updateInputDate(jQuery(target));
-                        Utils.updateFormState(jQuery(target));
-                        Utils.updateScrollBar(jQuery(target));
-                        Autocomplete.init(jQuery(target));
-                        Main.upEvent();
-
-                        if (!Utils.isEmpty(targetDelete)) {
-                            jQuery(targetDelete).fadeOut("fast", function () {
-                                jQuery(this).remove();
-                            });
-                        }
-                        if (form.hasClass("closeOnSubmit")) {
-                            Utils.closeOverlay(true);
-                        }
-                        if (!response.hasOwnProperty("isErr") &&
-                            form.hasClass("successOnRefresh")) {
-                            window.location.href = Utils.getRedirect();
+                        try {
+                            form.reset();
+                            form.find("[type='submit']").prop("disabled", false);
+                        } catch (e) {
+                            console.log(e);
                         }
 
-                        form.reset();
-                        form.find("[type='submit']").prop("disabled", false);
+                        form.find(".editorSummernote").each(function () {
+                            try {
+                                jQuery(this).code('');
+                            } catch (e) {
+                            }
+                        });
                     }
                 });
             } catch (e) {
@@ -785,8 +1343,6 @@ container.find(".morris-line-chart").each(function () {
                         data: { RedirectPath: Utils.getRedirect() },
                         beforeSend: function () {
                             jQuery(target).addClass("loading").html("")
-                            jQuery(".quickView").removeClass("active");
-                            node.addClass("active");
                         },
                         complete: function () {
                             jQuery(target).removeClass("loading");
@@ -795,35 +1351,36 @@ container.find(".morris-line-chart").each(function () {
                             jQuery(target).removeClass("loading");
                         },
                         success: function (response) {
+                            window.history.pushState(null, response.title, url);
+                            jQuery(document).prop("title", response.title);
+
                             Utils.sectionBuilder(response);
                             if (response.hasOwnProperty("isCust")) {
                                 jQuery(target).html(response.htCust);
                             }
-                            if (node.attr("data-state") != "0") {
-                                    window.history.pushState(null, response.title, url);
-                                    jQuery(document).prop("title", response.title);
-                            }
+
                             Utils.updatePDFViewer(response);
                             Utils.updateImageViewer();
-                            Utils.updatePlayer(jQuery(target));
                             Utils.updateChart(jQuery(target));
                             Utils.updateInputDate(jQuery(target));
                             Utils.updateFormState(jQuery(target));
                             Utils.updateScrollBar(jQuery(target));
-                            //Utils.getToastMessage();
                             Autocomplete.init(jQuery(target));
-                            Main.upEvent();
+                            Main.upEvent(jQuery(target));
+                            JobPage.upEvent(jQuery(target));
                             Main.backLink();
 
                             //window.webViewerLoad(true);
                             //jQuery("#viewerContainer").scrollTop(0);
-                            OCR.bindNote();
                             Cust.fileViewer_height_fn();
-                            Cust.prev_next_group_button();
+                            Cust.toogle_steps();
                             Cust.Scroll_table();
                             Cust.Scroll_tab_group();
                             Cust.Table_sort();
                             Cust.dataTables_filter_col(); //Responsive dataTables_filter Col
+                            Cust.gotoStep();
+                            Cust.check_required_input();
+                            //Cust.prev_next_group_button();
                         }
                     });
                 } else {
@@ -832,9 +1389,64 @@ container.find(".morris-line-chart").each(function () {
             } catch (e) {
 
             }
-
             if (jQuery(this).hasClass("closeOpen")) {
                 jQuery(this).closest(".open").removeClass("open");
+            }
+            return false;
+        });
+        jQuery(document).on("click", ".quickUpdate", function () {
+            try {
+                var obj = jQuery(this);
+                var target = jQuery(this).attr("data-target");
+                var dialogWidth = jQuery(this).attr("data-width");;
+                var data = obj.getDataUppername();
+                data.RedirectPath = Utils.getRedirect();
+
+                jQuery.ajax({
+                    type: "POST",
+                    async: true,
+                    url: jQuery(this).attr("href"),
+                    data: data,
+                    beforeSend: function () {
+                        if (!obj.hasClass("not-overlay")) {
+                            Utils.openOverlay();
+                        }
+                    },
+                    complete: function () {
+                        if (!obj.hasClass("not-overlay")) {
+                            Utils.openOverlay();
+                        }
+                    },
+                    error: function () {
+                        if (!obj.hasClass("not-overlay")) {
+                            Utils.openOverlay();
+                        }
+                    },
+                    success: function (response) {
+                        if (dialogWidth) {
+                            response.wDL = dialogWidth;
+                        }
+                        Utils.sectionBuilder(response);
+                        if (response.hasOwnProperty("isCust")) {
+                            Utils.closeOverlay();
+                            jQuery(target).html(response.htCust);
+                        }
+                        if (!response.isErr && data.OnSuccessRefresh == "1") {
+                            Utils.reloadPage();
+                        }
+                        else {
+                            Utils.updateTab(jQuery(target));
+                            Utils.updateInputDate(jQuery(target));
+                            Utils.updateFormState(jQuery(target));
+                            Utils.updateScrollBar(jQuery(target));
+                            Autocomplete.init(jQuery(target));
+                            Main.upEvent(jQuery(target));
+                            Cust.check_required_input();
+                        }
+                    }
+                });
+            } catch (e) {
+
             }
             return false;
         });
@@ -868,58 +1480,13 @@ container.find(".morris-line-chart").each(function () {
                             Utils.closeOverlay();
                             jQuery(target).append(response.htCust);
                         }
+
                         Utils.updateTab(jQuery(target));
                         Utils.updateInputDate(jQuery(target));
-                        Utils.updateFormState(jQuery(target));
                         Utils.updateScrollBar(jQuery(target));
-                        Autocomplete.init(jQuery(target));
-                        Main.upEvent();
-                    }
-                });
-            } catch (e) {
-
-            }
-            return false;
-        });
-        jQuery(document).on("click", ".quickUpdate , .quickConfirm", function () {
-            try {
-                var obj = jQuery(this);
-                var target = obj.attr("data-target");
-
-                var data = jQuery(this).getDataUppername();
-                data.RedirectPath = Utils.getRedirect();
-
-                delete data.Target;
-
-                jQuery.ajax({
-                    type: "POST",
-                    async: true,
-                    url: jQuery(this).attr("href"),
-                    data: data,
-                    beforeSend: function () {
-                        Utils.openOverlay();
-                    },
-                    complete: function () {
-                        Utils.closeOverlay();
-                    },
-                    error: function () {
-                        Utils.closeOverlay();
-                    },
-                    success: function (response) {
-                        Utils.sectionBuilder(response);
-                        if (response.hasOwnProperty("isCust")) {
-                            Utils.closeOverlay();
-                            jQuery(target).html(response.htCust);
-                        }
-                        Utils.updateImageViewer();
-                        Utils.updatePlayer(jQuery(target));
-                        Utils.updateTab(jQuery(target));
-                        Utils.updateInputDate(jQuery(target));
                         Utils.updateFormState(jQuery(target));
-                        Utils.updateScrollBar(jQuery(target));
                         Autocomplete.init(jQuery(target));
-                        Main.upEvent();
-                        Cust.check_required_input();
+                        Main.upEvent(jQuery(target));
                     }
                 });
             } catch (e) {
@@ -967,10 +1534,12 @@ container.find(".morris-line-chart").each(function () {
             }
             return false;
         });
-        jQuery(document).on("click", ".quickDeletes, .quickConfirms, .quickMoves", function () {
-            try
-            {
-                var data = jQuery(this).getDataUppername();
+        jQuery(document).on("click", ".quickDeletes, .quickConfirms", function () {
+            try {
+                var target = jQuery(this)
+                    .attr("data-target");
+                var href = jQuery(this)
+                    .attr("data-href");
                 var table = jQuery(this)
                     .closest(".dataTables_wrapper")
                     .find("table");
@@ -987,20 +1556,11 @@ container.find(".morris-line-chart").each(function () {
                             idFiles.push(idFile);
                     }
                 });
-                data.ID = ids;
-                data.IDFile = idFiles;
-                data.RedirectPath = Utils.getRedirect();
-
-                var target = data.Target;
-                if (jQuery(this).hasClass("quickMoves")) {
-                    delete data.Target;
-                }
-
                 jQuery.ajax({
                     type: "POST",
                     async: true,
-                    url: data.Href,
-                    data: data,
+                    url: href,
+                    data: { ID: ids, IDFile: idFiles, RedirectPath: Utils.getRedirect() },
                     beforeSend: function () {
                         Utils.openOverlay();
                     },
@@ -1014,7 +1574,7 @@ container.find(".morris-line-chart").each(function () {
                         Utils.sectionBuilder(response);
                         if (response.hasOwnProperty("isCust")) {
                             Utils.closeOverlay();
-                            jQuery(data.Target).html(response.htCust);
+                            jQuery(target).html(response.htCust);
                         }
                         Utils.updateFormState(jQuery(target));
                         Utils.updateScrollBar(jQuery(target));
@@ -1025,13 +1585,69 @@ container.find(".morris-line-chart").each(function () {
             }
             return false;
         });
-        jQuery(document).on("click", ".toogleClass", function () {
-            try{
-                var data = jQuery(this).getData();
-                jQuery(data.target).toggleClass(data.toogleClass);
-            }catch(e){}
+
+        jQuery(document).on("click", ".attachFileImport", function () {
+            var data = jQuery(this).getData();
+            jQuery(data.rel).attr("data-target", data.target);
+            jQuery(data.rel).attr("data-file-name", data.fileName);
+            jQuery(data.rel).attr("data-file-path", data.filePath);
+            jQuery(data.rel).attr("data-file-title", data.fileTitle);
+            jQuery(data.rel).attr("data-file-url", data.fileUrl);
+            jQuery(data.rel).attr("data-url", data.url);
+            jQuery(data.rel).val("").trigger("click");
+            Main.upEvent();
+
+        });
+
+        jQuery(document).on("submit", ".quickCmt", function (e) {
+            try {
+                var form = jQuery(this);
+                var attrs = jQuery(this).getDataUppername();
+                var container = form.closest(".container-cmts");
+                var target = container.find(".cmts").first();
+                var data = Utils.getSerialize(form);
+                if (Utils.isEmpty(data.Body))
+                    return false;
+
+                jQuery.ajax({
+                    type: "POST",
+                    async: true,
+                    url: form.attr("action"),
+                    data: data,
+                    beforeSend: function () {
+                    },
+                    complete: function () {
+                    },
+                    error: function () {
+                    },
+                    success: function (response) {
+
+                        try {
+                            Utils.sectionBuilder(response);
+                            if (response.hasOwnProperty("isCust")) {
+                                Utils.closeOverlay();
+                                jQuery(target).append(response.htCust);
+                                var dataInc = jQuery(attrs.IncTarget).getData();
+
+                                var v = parseInt(dataInc.value) + 1;
+                                jQuery(attrs.IncTarget).attr("data-value", v).val(v);
+                            }
+                            Utils.updateFormState(jQuery(target));
+                            Utils.updateScrollBar(jQuery(target));
+                            jQuery(target).scrollTop(jQuery(target).scrollHeight());
+                        } catch (e) { }
+
+                        form.reset();
+                        form.find("[type='submit']").prop("disabled", false);
+                    }
+                });
+            } catch (e) {
+                console.log(e);
+            }
+
             return false;
         });
+
         jQuery(document).on("click", ".nextChart", function () {
 
             var chartViewer = jQuery(this).closest(".chartViewer");
@@ -1072,129 +1688,39 @@ container.find(".morris-line-chart").each(function () {
                 chartViewer.find(".nextChart").removeClass("hidden");
             }
         });
-
-        jQuery(document).on("click", ".addPoint", function () {
-            jQuery("#DocProIMGMap").find(".doc-pos")
-                .removeClass("hidden")
-                .attr("data-row-shelf", "")
-                .attr("data-rack-no", "")
-                .attr("data-shelf-no", "")
-                .attr("data-id", "");
-
-            jQuery("#DocProIMGMap").find(".docPoint").addClass("hidden");
-            jQuery(".savePoint").removeClass("hidden");
-            jQuery(".cancelPoint").removeClass("hidden");
-            jQuery(this).addClass("hidden");
+        jQuery(document).on("change", ".slChangeFT", function () {
+            if (jQuery(this).val() == "textarea") {
+                jQuery(this).closest(".scrollItem").find(".ofTextarea").removeClass("hidden");
+            } else {
+                jQuery(this).closest(".scrollItem").find(".ofTextarea").addClass("hidden");
+            }
         });
-        jQuery(document).on("click", ".cancelPoint", function () {
-            jQuery("#DocProIMGMap").find(".doc-pos").addClass("hidden");
-            jQuery("#DocProIMGMap").find(".docPoint").removeClass("hidden");
-            jQuery(".savePoint").addClass("hidden");
-            jQuery(".addPoint").removeClass("hidden");
-            jQuery(this).addClass("hidden");
+        jQuery(window).resize(function () {
+            Utils.autoResize();
         });
-        jQuery(document).on("click", ".map-marker", function () {
+    },
 
-            var data = jQuery(this).getDataUppername();
-            //jQuery('#DocProIMGMap').lhpMegaImgViewer('setPosition', null, null, 0.2);
-
-            var mapWidth = jQuery("#MapWidth").val();
-            var mapHeight = jQuery("#MapHeight").val();
-            var content = jQuery(".lhp_miv_content");
-            var posContentHolder = jQuery(".lhp_miv_content_holder").position();
-
-            var w = content.width();
-            var h = content.height();
-
-            var l = parseFloat(data.X) / (parseInt(mapWidth) / w);
-            var t = parseFloat(data.Y) / (parseInt(mapHeight) / h);
-
-            var l2 = posContentHolder.left;
-            var t2 = posContentHolder.top;
-
-            var t1 = t - Math.abs(t2);
-            var l1 = l - Math.abs(l2);
-
-            jQuery(".doc-marker").addClass("hidden");
-            jQuery('#DocProIMGMap').lhpMegaImgViewer('setPosition', l1, t1, null);
-
-            setTimeout(function () {
-
-                posContentHolder = jQuery(".lhp_miv_content_holder").position();
-                l2 = posContentHolder.left;
-                t2 = posContentHolder.top;
-
-                t1 = t - Math.abs(t2);
-                l1 = l - Math.abs(l2);
-
-                jQuery(".doc-marker")
-                    .removeClass("hidden")
-                    .attr("data-row-shelf", data.RowShelf)
-                    .attr("data-rack-no", data.RackNo)
-                    .attr("data-shelf-no", data.ShelfNo)
-                    .attr("data-id", data.ID)
-                    .css({
-                        left: l1 + "px",
-                        top: t1 + "px"
-                    });
-
-            }, 600);
-
-            jQuery(".savePoint").removeClass("hidden");
-            jQuery(".cancelPoint").removeClass("hidden");
-            jQuery(".addPoint").addClass("hidden");
-            jQuery("#DocProIMGMap").find(".docPoint").addClass("hidden");
-        });
-        jQuery(document).on("click", ".savePoint", function () {
-
-            var posMarker = jQuery(".doc-marker").position();
-            var dataMarker = jQuery(".doc-marker").getDataUppername();
-            var posContentHolder = jQuery(".lhp_miv_content_holder").position();
-
-            var content = jQuery(".lhp_miv_content");
-            var data = {
-                W: content.width(),
-                H: content.height(),
-                L1: posMarker.left,
-                T1: posMarker.top,
-                L2: posContentHolder.left,
-                T2: posContentHolder.top,
-                RowShelf: dataMarker.RowShelf,
-                RackNo: dataMarker.RackNo,
-                ShelfNo: dataMarker.ShelfNo,
-                IDWarehouseInfo: dataMarker.ID
-            };
-
-            var target = jQuery(this).attr("data-target");
-            jQuery.ajax({
-                type: "POST",
-                async: true,
-                url: jQuery(this).attr("data-url"),
-                data: data,
-                beforeSend: function () {
-                    Utils.openOverlay();
-                },
-                complete: function () {
-                    Utils.closeOverlay();
-                },
-                error: function () {
-                    Utils.closeOverlay();
-                },
-                success: function (response) {
-                    Utils.sectionBuilder(response);
-                    if (response.hasOwnProperty("isCust")) {
-                        Utils.closeOverlay();
-                        jQuery(target).html(response.htCust);
-                    }
-                    Utils.updateInputDate(jQuery(target));
-                    Utils.updateFormState(jQuery(target));
-                    Main.upEvent();
+    callRefresh: null,
+    setRefresh: function () {
+        if (document.getElementById("RefreshPage")) {
+            try {
+                var timeRefresh = parseInt(jQuery("#RefreshPage").val());
+                if (timeRefresh > 0) {
+                    Main.callRefresh = setTimeout(function () {
+                        if (jQuery("#Overlay").is(":visible")) {
+                            clearTimeout(Main.callRefresh);
+                            Main.setRefresh();
+                        }
+                        else {
+                            Utils.reloadPage();
+                        }
+                    }, timeRefresh * 1000);
                 }
-            });
-
-            return false;
-        });
-
+            }
+            catch (e) {
+                console.log(e);
+            }
+        }
     },
 
     backLink: function () {
@@ -1222,13 +1748,13 @@ container.find(".morris-line-chart").each(function () {
         } catch (e) { }
     }
 };
-jQuery(document).ready(function () {
+jQuery(window).bind("load", function () {
     Cdata.init();
+    Smile.init();
     Main.init();
 
     Utils.autoCloseFlash();
     Utils.updateImageViewer();
-
     Utils.updatePlayer(jQuery(document));
     Utils.updateChart(jQuery(document));
     Utils.updateFormState(jQuery(document));

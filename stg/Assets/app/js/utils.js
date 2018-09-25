@@ -1,21 +1,5 @@
-﻿toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": false,
-    "positionClass": "toast-bottom-right",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-}
-var Utils = {
+﻿var Utils = {
+
     rmSpace: function (val) {
         try {
             while (val.indexOf(" ") !== -1) {
@@ -53,28 +37,23 @@ var Utils = {
     },
     IsImage: function(extension)
     {
-        try{
-            var args = extension.toLowerCase().split('.');
-            var ext = args[args.length - 1];
-            switch (ext)
-            {
-                case "ico":
-                    return true;
-                case "bmp":
-                    return true;
-                case "gif":
-                    return true;
-                case "jpe":
-                    return true;
-                case "jpeg":
-                    return true;
-                case "jpg":
-                    return true;
-                case "png":
-                    return true;
-            }
-        } catch (e) {
-
+        extension = extension.toLowerCase().replace('.', '');
+        switch (extension)
+        {
+            case "ico":
+                return true;
+            case "bmp":
+                return true;
+            case "gif":
+                return true;
+            case "jpe":
+                return true;
+            case "jpeg":
+                return true;
+            case "jpg":
+                return true;
+            case "png":
+                return true;
         }
         return false;
     },
@@ -84,246 +63,259 @@ var Utils = {
     },
     IsPdf: function(extension)
     {
-        try{
-            var args = extension.toLowerCase().split('.');
-            var ext = args[args.length - 1];
-            return ext == "pdf";
-        } catch (e) {
-            return false;
-        }
+        extension = extension.toLowerCase().replace('.', '');
+        return extension == "pdf";
     },
     IsOffice: function(extension)
     {
-        try{
-            var args = extension.toLowerCase().split('.');
-            var ext = args[args.length - 1];
-            switch (ext) {
-                case "rtf":
-                    return true;
-                case "odt":
-                    return true;
-                case "doc":
-                    return true;
-                case "dot":
-                    return true;
-                case "docx":
-                    return true;
-                case "dotx":
-                    return true;
-                case "docm":
-                    return true;
-                case "dotm":
-                    return true;
-                case "csv":
-                    return true;
-                case "odc":
-                    return true;
-                case "xls":
-                    return true;
-                case "xlsx":
-                    return true;
-                case "xlsm":
-                    return true;
-                case "odp":
-                    return true;
-                case "ppt":
-                    return true;
-                case "pptx":
-                    return true;
-                case "pptm":
-                    return true;
-                case "pot":
-                    return true;
-                case "potm":
-                    return true;
-                case "potx":
-                    return true;
-                case "pps":
-                    return true;
-                case "ppsx":
-                    return true;
-                case "ppsm":
-                    return true;
-            }
-        }catch(e){}
+        extension = extension.toLowerCase().replace('.', '');
+        switch (extension)
+        {
+            case "rtf":
+                return true;
+            case "odt":
+                return true;
+            case "doc":
+                return true;
+            case "dot":
+                return true;
+            case "docx":
+                return true;
+            case "dotx":
+                return true;
+            case "docm":
+                return true;
+            case "dotm":
+                return true;
+            case "csv":
+                return true;
+            case "odc":
+                return true;
+            case "xls":
+                return true;
+            case "xlsx":
+                return true;
+            case "xlsm":
+                return true;
+            case "odp":
+                return true;
+            case "ppt":
+                return true;
+            case "pptx":
+                return true;
+            case "pptm":
+                return true;
+            case "pot":
+                return true;
+            case "potm":
+                return true;
+            case "potx":
+                return true;
+            case "pps":
+                return true;
+            case "ppsx":
+                return true;
+            case "ppsm":
+                return true;
+        }
         return false;
     },
     IsVideo: function(extension)
     {
-        try{
-            var args = extension.toLowerCase().split('.');
-            var ext = args[args.length - 1];
-            switch (ext) {
-                case "3g2":
-                    return true;
-                case "3gp":
-                    return true;
-                case "3gp2":
-                    return true;
-                case "3gpp":
-                    return true;
-                case "avi":
-                    return true;
-                case "asf":
-                    return true;
-                case "asr":
-                    return true;
-                case "asx":
-                    return true;
-                case "dif":
-                    return true;
-                case "dv":
-                    return true;
-                case "ivf":
-                    return true;
-                case "flv":
-                    return true;
-                case "m4v":
-                    return true;
-                case "lsf":
-                    return true;
-                case "lsx":
-                    return true;
-                case "m1v":
-                    return true;
-                case "m2t":
-                    return true;
-                case "m2ts":
-                    return true;
-                case "m2v":
-                    return true;
-                case "mod":
-                    return true;
-                case "mov":
-                    return true;
-                case "movie":
-                    return true;
-                case "mp2":
-                    return true;
-                case "mp2v":
-                    return true;
-                case "mp4":
-                    return true;
-                case "mp4v":
-                    return true;
-                case "mpeg":
-                    return true;
-                case "mpe":
-                    return true;
-                case "mpa":
-                    return true;
-                case "mpg":
-                    return true;
-                case "mpv2":
-                    return true;
-                case "mqv":
-                    return true;
-                case "mts":
-                    return true;
-                case "nsc":
-                    return true;
-                case "qt":
-                    return true;
-                case "ts":
-                    return true;
-                case "tts":
-                    return true;
-                case "vbk":
-                    return true;
-                case "wm":
-                    return true;
-                case "wmp":
-                    return true;
-                case "wmv":
-                    return true;
-                case "wmx":
-                    return true;
-                case "wvx":
-                    return true;
-            }
-        } catch (e) { }
+        extension = extension.toLowerCase().replace('.', '');
+        switch (extension)
+        {
+            case "3g2":
+                return true;
+            case "3gp":
+                return true;
+            case "3gp2":
+                return true;
+            case "3gpp":
+                return true;
+            case "avi":
+                return true;
+            case "asf":
+                return true;
+            case "asr":
+                return true;
+            case "asx":
+                return true;
+            case "dif":
+                return true;
+            case "dv":
+                return true;
+            case "ivf":
+                return true;
+            case "flv":
+                return true;
+            case "m4v":
+                return true;
+            case "lsf":
+                return true;
+            case "lsx":
+                return true;
+            case "m1v":
+                return true;
+            case "m2t":
+                return true;
+            case "m2ts":
+                return true;
+            case "m2v":
+                return true;
+            case "mod":
+                return true;
+            case "mov":
+                return true;
+            case "movie":
+                return true;
+            case "mp2":
+                return true;
+            case "mp2v":
+                return true;
+            case "mp4":
+                return true;
+            case "mp4v":
+                return true;
+            case "mpeg":
+                return true;
+            case "mpe":
+                return true;
+            case "mpa":
+                return true;
+            case "mpg":
+                return true;
+            case "mpv2":
+                return true;
+            case "mqv":
+                return true;
+            case "mts":
+                return true;
+            case "nsc":
+                return true;
+            case "qt":
+                return true;
+            case "ts":
+                return true;
+            case "tts":
+                return true;
+            case "vbk":
+                return true;
+            case "wm":
+                return true;
+            case "wmp":
+                return true;
+            case "wmv":
+                return true;
+            case "wmx":
+                return true;
+            case "wvx":
+                return true;
+        }
         return false;
     },
     IsAudio: function(extension)
     {
-        try{
-            var args = extension.toLowerCase().split('.');
-            var ext = args[args.length - 1];
-            switch (ext) {
-                case "aa":
-                    return true;
-                case "aac":
-                    return true;
-                case "aax":
-                    return true;
-                case "ac3":
-                    return true;
-                case "adt":
-                    return true;
-                case "adts":
-                    return true;
-                case "aif":
-                    return true;
-                case "aifc":
-                    return true;
-                case "aiff":
-                    return true;
-                case "au":
-                    return true;
-                case "caf":
-                    return true;
-                case "cdda":
-                    return true;
-                case "gsm":
-                    return true;
-                case "m3u":
-                    return true;
-                case "m3u8":
-                    return true;
-                case "m4a":
-                    return true;
-                case "m4b":
-                    return true;
-                case "m4p":
-                    return true;
-                case "m4r":
-                    return true;
-                case "mid":
-                    return true;
-                case "midi":
-                    return true;
-                case "mp3":
-                    return true;
-                case "pls":
-                    return true;
-                case "ra":
-                    return true;
-                case "ram":
-                    return true;
-                case "rmi":
-                    return true;
-                case "sd2":
-                    return true;
-                case "smd":
-                    return true;
-                case "smx":
-                    return true;
-                case "smz":
-                    return true;
-                case "snd":
-                    return true;
-                case "wav":
-                    return true;
-                case "wave":
-                    return true;
-                case "wax":
-                    return true;
-                case "wma":
-                    return true;
-            }
-        } catch (e) { }
-
+        extension = extension.toLowerCase().replace('.', '');
+        switch (extension)
+        {
+            case "aa":
+                return true;
+            case "aac":
+                return true;
+            case "aax":
+                return true;
+            case "ac3":
+                return true;
+            case "adt":
+                return true;
+            case "adts":
+                return true;
+            case "aif":
+                return true;
+            case "aifc":
+                return true;
+            case "aiff":
+                return true;
+            case "au":
+                return true;
+            case "caf":
+                return true;
+            case "cdda":
+                return true;
+            case "gsm":
+                return true;
+            case "m3u":
+                return true;
+            case "m3u8":
+                return true;
+            case "m4a":
+                return true;
+            case "m4b":
+                return true;
+            case "m4p":
+                return true;
+            case "m4r":
+                return true;
+            case "mid":
+                return true;
+            case "midi":
+                return true;
+            case "mp3":
+                return true;
+            case "pls":
+                return true;
+            case "ra":
+                return true;
+            case "ram":
+                return true;
+            case "rmi":
+                return true;
+            case "sd2":
+                return true;
+            case "smd":
+                return true;
+            case "smx":
+                return true;
+            case "smz":
+                return true;
+            case "snd":
+                return true;
+            case "wav":
+                return true;
+            case "wave":
+                return true;
+            case "wax":
+                return true;
+            case "wma":
+                return true;
+        }
         return false;
+    },
+    reloadPage: function () {
+        window.location.href = Utils.getRedirect();
+    },
+    getSorthref: function (sortname, sorttype) {
+
+        var href = window.location.href;
+        if (href.indexOf("#") != -1) {
+            href = href.substring(0, href.indexOf("#"));
+        }
+        href = href.replace(/(Sortname=)[a-z|0-9]+/ig, "");
+        href = href.replace(/(Sorttype=)[a-z|0-9]+/ig, "");
+
+        if (href.indexOf("?") != -1) {
+            href += "&Sortname=" + sortname;
+            href += "&Sorttype=" + sorttype;
+        }
+        else {
+            href += "?Sortname=" + sortname;
+            href += "&Sorttype=" + sorttype;
+        }
+        while (href.indexOf("&&") != -1) {
+            href = href.replace(/&&/i, '');
+        }
+        return href;
     },
     getSerialize: function (form) {
         var keys = {};
@@ -333,16 +325,13 @@ var Utils = {
             var name = el.attr("name");
             if (!Utils.isEmpty(name)) {
                 var tagName = el.prop("tagName").toLowerCase();
-                if (tagName == "input")
-                {
+                if (tagName == "input") {
                     var type = el.attr("type").toLowerCase();
                     if (type == "text" || type == "password" || type == "hidden") {
                         if (!keys.hasOwnProperty(name)) {
                             keys[name] = [];
                         }
-                        var v = el.val();
-                        //if(!Utils.isEmpty(v))
-                            keys[name].push(v);
+                        keys[name].push(el.val());
                     }
                     else if (type == "checkbox") {
                         if (el.prop("checked"))
@@ -358,8 +347,7 @@ var Utils = {
                         checkboxs[name]++;
                     }
                 }
-                else
-                {
+                else{
                     if (!keys.hasOwnProperty(name)) {
                         keys[name] = [];
                     }
@@ -370,10 +358,9 @@ var Utils = {
         for (var k in keys) {
             var vals = keys[k];
             if (vals.length == 1 || !checkboxs.hasOwnProperty(k)) {
-                keys[k] = vals.join(",").replace(/^[,]+|[,]+$/g, '');
+                keys[k] = vals.join(",");
             }
-            else
-            {
+            else {
                 keys[k] = JSON.stringify(vals);
             }
         }
@@ -390,22 +377,6 @@ var Utils = {
             }
         }
         return ("?" + queries.join("&"));
-    },
-    builderUrlQString: function (data, url) {
-
-        var queryString = Utils.builderQString(data);
-        if (queryString == "?")
-            return url;
-
-        if (url.indexOf("?") != -1)
-        {
-            url += "&" + queryString.substring(1);
-        }
-        else
-        {
-            url += queryString;
-        }
-        return url;
     },
     b64toBlob: function (b64Data, contentType, sliceSize) {
 
@@ -521,10 +492,6 @@ var Utils = {
             xmlHttpRequest.send(formData);
         }
     },
-    reloadPage: function(){
-
-        window.location.href = Utils.getRedirect();
-    },
     getRedirect: function () {
 
         var href = window.location.href;
@@ -574,24 +541,45 @@ var Utils = {
                 grouper.prop("checked", false);
         }
     },
+    updateEditor: function (container) {
+        container.find(".editorSummernote").each(function () {
+            if (!jQuery(this).hasClass("setSummernote")) {
+                jQuery(this).addClass("setSummernote").summernote({
+                    height: '200px'
+                });
+            }
+        });
+    },
     updateTab: function (container) {
         if (container.hasClass("useTabs")) {
             container.tabs();
         }
         container.find(".useTabs").tabs();
     },
-    bootstrapValidator: function(obj){
-        if (!obj.hasClass("bootstrapValidator"))
-        {
+    bootstrapValidator: function (obj) {
+        if (!obj.hasClass("bootstrapValidator")) {
             obj.addClass("bootstrapValidator").bootstrapValidator();
         }
     },
+    disableEnter: function(obj){
+
+        jQuery(obj).keypress(function (e) {
+            var keycode = e.which || e.keyCode;
+            if (keycode == 13) {
+                return false;
+            }
+        });
+    },
+    
     updateFormState: function (container) {
 
+        var flag = false;
         if (container.hasClass("validateForm")) {
+            flag = true;
             Utils.bootstrapValidator(container);
         }
         container.find(".validateForm").each(function () {
+            flag = true;
             Utils.bootstrapValidator(jQuery(this));
         });
         container.find(".form-control textarea:visible, .form-control input[type='text']:visible").each(function () {
@@ -616,7 +604,9 @@ var Utils = {
             } else if (redirects.hasClass("redirectauto")) {
                 redirects.val(redirectPath);
             }
-        } else {
+        }
+        else
+        {
             container.find("form").each(function () {
                 var redirects = jQuery(this).find("input[name='RedirectPath']");
                 if (redirects.length == 0) {
@@ -629,7 +619,22 @@ var Utils = {
                 }
             });
         }
-        jQuery(".slChangeFT").trigger("change");
+        //container.find(".validateForm").each(function () {
+        //    if (!jQuery(this).hasClass("quickSubmit") && !jQuery(this).hasClass("bootstrapValidator"))
+        //        jQuery(this).addClass("bootstrapValidator").bootstrapValidator();
+        //});
+
+        if (flag == false)
+        {
+            var form = container.closest("form");
+            if (form.hasClass("bootstrapValidator")) {
+                container.find("[data-bv-field]").each(function () {
+                    var name = jQuery(this).attr("data-bv-field");
+                    var options = container.find('[name="' + name + '"]');
+                    form.bootstrapValidator('addField', options);
+                });
+            }
+        }
     },
     updateSelectbox: function (container) {
 
@@ -676,19 +681,11 @@ var Utils = {
             jQuery("#" + id).datetimepicker({
                 timepicker: false,
                 format: "d-m-Y",
-                lang: Cdata.UILang || "vi",
-                scrollInput: false,
-                onChangeDateTime: function (dp, input) {
-                    var name = jQuery(input).attr("name");
-                    var form = jQuery(input).closest("form");
-                    if (form.hasClass("bootstrapValidator")) {
-                        form.bootstrapValidator('revalidateField', name);
-                    }
-                }
+                lang: "vi",
+                scrollInput: false
             });
         });
         container.find(".datetime").each(function () {
-
             var id = jQuery(this).attr("id");
             jQuery(this).attr("autocomplete","off");
             if (Utils.isEmpty(id)) {
@@ -697,15 +694,9 @@ var Utils = {
             }
             jQuery("#" + id).datetimepicker({
                 format: "d-m-Y H:i",
-                lang: Cdata.UILang || "vi",
+                lang: "vi",
                 scrollInput: false,
-                onChangeDateTime: function (dp, input) {
-                    var name = jQuery(input).attr("name");
-                    var form = jQuery(input).closest("form");
-                    if (form.hasClass("bootstrapValidator")) {
-                        form.bootstrapValidator('revalidateField', name);
-                    }
-                }
+                step: 15
             });
         });
     },
@@ -716,7 +707,7 @@ var Utils = {
                 useBothWheelAxes: false, wheelPropagation: true
             });
         }
-        if (container.hasClass("useScrollBar")) {
+        else if (container.hasClass("useScrollBar")) {
             container.perfectScrollbar({
                 useBothWheelAxes: false, wheelPropagation: true
             });
@@ -729,11 +720,10 @@ var Utils = {
         container.find(".chartViewer").each(function () {
             try {
                 var dataChart = jQuery(this).find(".dataChart").val();
-                if (typeof dataChart != "undefined")
-                {
+                if (typeof dataChart != "undefined") {
                     dataChart = jQuery.parseJSON(dataChart);
-                    jQuery(this).fadeIn("200", function ()
-                    {
+                    jQuery(this).fadeIn("200", function () {
+
                         jQuery(this).highcharts(dataChart);
                         try {
                             var step = 5;
@@ -745,11 +735,11 @@ var Utils = {
                             chartViewer.attr("data-step", step);
                             if (max > step) {
                                 chartViewer.append(jQuery("<button type='button'>")
-									.addClass("btn btn-xs btn-info prevChart")
-									.append(jQuery("<i class='glyphicon glyphicon-arrow-left'></i>")))
+                                    .addClass("btn btn-xs btn-info prevChart")
+                                    .append(jQuery("<i class='glyphicon glyphicon-arrow-left'></i>")))
                                 chartViewer.append(jQuery("<button type='button'>")
-									.addClass("btn btn-xs btn-info nextChart")
-									.append(jQuery("<i class='glyphicon glyphicon-arrow-right'></i>")))
+                                    .addClass("btn btn-xs btn-info nextChart")
+                                    .append(jQuery("<i class='glyphicon glyphicon-arrow-right'></i>")))
                             }
 
                             var chart = jQuery(this).highcharts();
@@ -764,7 +754,7 @@ var Utils = {
         container.find(".chartBeyondPlot").each(function () {
             if (!jQuery(this).hasClass("builded")) {
                 jQuery(this).addClass("builded");
-
+                
                 try{
                     var dataChart = jQuery(this).find(".dataChart").val();
                     if (typeof dataChart != "undefined") {
@@ -814,12 +804,6 @@ var Utils = {
         });
     },
     updateImageViewer: function () {
-        try{
-            jQuery('#DocProIMGMap').lhpMegaImgViewer('destroy');
-        } catch (e) {
-            console.log(e);
-        }
-
         try {
             var thumbUrl = jQuery("#ViewerIMG").attr("src");
             var thumbMapUrl = jQuery("#PathThumbMap").val();
@@ -829,7 +813,7 @@ var Utils = {
                 'fitToViewportShortSide': true,
                 'contentSizeOver100': true,
                 'loadingBgColor': '#ffffff',
-                'startScale': 0.2,
+                'startScale': .2,
                 'startX': 0,
                 'startY': 0,
                 'animTime': 500,
@@ -851,33 +835,16 @@ var Utils = {
                 'intNavBttSizeRation': 1,
                 'mapEnable': true,
                 'mapThumb': thumbMapUrl,
-                'mapPos': 'BR',
+                'mapPos': 'BL',
                 'popupShowAction': 'click',
                 'testMode': false
             };
-            
             jQuery('#DocProIMGMap').lhpMegaImgViewer(settings, 'DocProHotspots');
-            jQuery('#DocProIMGMap .lhp_miv_holder').append(jQuery("#DocProHotspots").find(".doc-pos"));
-
-            setTimeout(function () {
-                var markers = jQuery("#DocProHotspots").find(".lhp_miv_marker");
-                if (markers.length > 0)
-                {
-                    var marker = markers.first();
-                    var data = marker.getData();
-                    jQuery('#DocProIMGMap').lhpMegaImgViewer('setPosition', data.x, data.y, 0.2);
-                }
-                else
-                {
-                    jQuery('#DocProIMGMap').lhpMegaImgViewer('setPosition', 0, 0, 0.2);
-                }
-            }, 700);
         }
         catch (e) {
             console.log(e);
         }
     },
-
     updatePDFViewer: function (response) {
         try{
             OCR.reset();
@@ -888,23 +855,49 @@ var Utils = {
         } catch (e) {
             console.log(e);
         }
+    },    
+    viewer: function (data) {
+
+        try {
+            if (typeof data == "undefined")
+                return;
+            if (typeof data.Path == "undefined")
+                return;
+
+            var path = data.Path.replace("\\", "/");
+            if (Utils.IsPdfOrOffice(data.Extension))
+            {
+                path = path.substring(0, path.lastIndexOf(".")) + ".pdf";
+                jQuery("#DEFAULT_URL").val(Cdata.Storage.domain + "/Storage/Files/" + path);
+                window.webViewerLoad(true);
+                jQuery("#viewerContainer").scrollTop(0);
+            }
+            else if (Utils.IsImage(data.Extension))
+            {
+                Utils.updateImageViewer();
+            }
+            else {
+                Utils.updatePlayer();
+            }
+        } catch (e) {
+            console.log(e);
+        }
     },
     openOverlay: function (overide) {
 
         if (overide != undefined || jQuery("#Overlay").is(":visible") == false) {
-            jQuery("#Overlay").addClass("loadingc").fadeIn("fast");
+            jQuery("#Overlay").fadeIn("fast");
             Utils.autoResize();
         }
     },
     closeOverlay: function (overide) {
         if (overide != undefined || jQuery(".ui-dialog:visible").length < 1) {
-            jQuery("#Overlay").removeClass("loadingc").fadeOut("fast");
+            jQuery("#Overlay").fadeOut("fast");
             jQuery(".ui-dialog-content:visible").dialog("close");
             jQuery(".hiddenDialog").removeClass("hiddenDialog");
-            jQuery("body").removeClass("noscroll");
         }
     },
-    closeCDialog: function(dialoger, invoker){
+    closeCDialog: function (dialoger, invoker) {
         dialoger.closest(".ui-dialog").removeClass("hiddenDialog");
         var hiddenDialogs = jQuery(document).find(".hiddenDialog");
         if (hiddenDialogs.length > 0) {
@@ -959,10 +952,10 @@ var Utils = {
     },
     autoResize: function(){
         try {
+            //var maxH = jQuery(window).height();
             jQuery(".ui-dialog-content:visible").each(function () {
                 jQuery(this).dialog("option", "position", jQuery(this).dialog("option", "position"));
             });
-
         } catch (e) {
         }
     },
@@ -1060,6 +1053,7 @@ var Utils = {
         }
         return true;
     },
+
     sectionBuilder: function (response, options) {
 
         try {
@@ -1085,7 +1079,6 @@ var Utils = {
             }
             if (response.hasOwnProperty("isDL")) {
                 var dialoger = jQuery(response.htDL);
-                var data = dialoger.getData();
                 var idDialoger = dialoger.attr("id");
                 var maxH = jQuery(window).height();
 
@@ -1097,18 +1090,16 @@ var Utils = {
                         resizable: false,
                         open: function () {
                             if (maxH < dialoger.height()) {
-                                dialoger.css("maxHeight", maxH - 10);
+                                dialoger.css("height", maxH - 50);
                             }
                             Utils.openOverlay();
+                            Utils.updateEditor(dialoger);
                             Utils.autoResize();
                             jQuery("#Overlay").removeClass("loading");
                         },
                         close: function () {
-                            if (typeof data.closeRedirect != 'undefined') {
-                                window.location.href = data.closeRedirect;
-                            } else {
-                                Utils.closeCDialog(jQuery(this));
-                            }
+
+                            Utils.closeCDialog(jQuery(this));
                         }
                     });
                 }
@@ -1142,29 +1133,6 @@ var Utils = {
         var args = string.split(' ');
         return args.length;
     },
-    getSorthref: function (sortname, sorttype) {
-
-        var href = window.location.href;
-        if (href.indexOf("#") != -1) {
-            href = href.substring(0, href.indexOf("#"));
-        }
-        href = href.replace(/(Sortname=)[a-z|0-9]+/ig, "");
-        href = href.replace(/(Sorttype=)[a-z|0-9]+/ig, "");
-
-        if (href.indexOf("?") != -1) {
-            href += "&Sortname=" + sortname;
-            href += "&Sorttype=" + sorttype;
-        }
-        else {
-            href += "?Sortname=" + sortname;
-            href += "&Sorttype=" + sorttype;
-        }
-        while (href.indexOf("&&") != -1)
-        {
-            href = href.replace(/&&/i, '');
-        }
-        return href;
-    },
 
     getSumary: function (string, limit) {
 
@@ -1180,20 +1148,68 @@ var Utils = {
         var date = new Date(strDate);
         return date.toDateFormat(format);
     },
-    convertSize: function(size) {
-        var mb = parseInt(size) / 1024 / 1024;
-        if (mb < 1) {
-            var kb = parseInt(size) / 1024;
-            if (kb < 1) {
-                return size + " B";
-            } else {
-                return kb.toFixed(2) + " KB";
-            }
-        } else {
+
+    KB: 1024,
+    MB: 1024 * 1024,
+    GB: 1024 * 1024 * 1024,
+    TB: 1024 * 1024 * 1024 * 1024,
+
+    convertSize: function (size) {
+
+        var bytes = parseInt(size);
+        if (isNaN(bytes))
+            return "0 B";
+
+        var tb = bytes / Utils.TB;
+        if (tb >= 1) {
+            return tb.toFixed(2) + " TB";
+        }
+
+        var gb = bytes / Utils.GB;
+        if (gb >= 1) {
+            return gb.toFixed(2) + " GB";
+        }
+
+        var mb = bytes / Utils.MB;
+        if (mb >= 1) {
             return mb.toFixed(2) + " MB";
         }
 
-    }
+        var kb = bytes / Utils.KB;
+        if (kb >= 1) {
+            return kb.toFixed(2) + " KB";
+        }
+
+        return size + " B";
+    },
+
+    mergeFilter: function (obj, data) {
+
+        if (Utils.isEmpty(data))
+            data = {};
+
+        var dataFilter = obj.getDataUppername();
+        if (!Utils.isEmpty(dataFilter.FilterName) && !Utils.isEmpty(dataFilter.FilterSelector)) {
+            var filterNames = dataFilter.FilterName.split(',');
+            var filterSelectors = dataFilter.FilterSelector.split(',');
+            for (var i in filterNames) {
+                var key = filterNames[i];
+                data[key] = jQuery(filterSelectors[i]).val()
+            }
+        }
+        return data;
+    },
+
+    updateQueryStringParameter: function (uri, key, value) {
+            var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+            var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+            if (uri.match(re)) {
+                return uri.replace(re, '$1' + key + "=" + value + '$2');
+            }
+            else {
+                return uri + separator + key + "=" + value;
+            }
+        }
 };
 var Smile = {
 
@@ -1319,15 +1335,22 @@ var Cdata = {
             }
         } catch (e) {
         }
-        //Cdata.Storage.domain = Utils.getDomain();
     },
     SrcPath: function (path) {
-        return Cdata.Storage.urlFile + "/" + path; //Cdata.Storage.domain +
+        return Cdata.Storage.urlFile + "/" + path; //+ Cdata.Storage.urlFile
     }
 };
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
+Date.prototype.addHours = function (h) {
+    this.setTime(this.getTime() + (h * 60 * 60 * 1000));
+    return this;
+};
+Date.prototype.addDays = function (day) {
+    this.setTime(this.getTime() + (day * 24 * 60 * 60 * 1000));
+    return this;
+};
 Date.prototype.toDateFormat = function (format) {
     var yyyy = this.getFullYear().toString();
     var mm = (this.getMonth() + 1).toString();
@@ -1351,6 +1374,35 @@ Date.prototype.toDateFormat = function (format) {
     }
     return value;
 };
+var DateDiff = {
+
+    inDays: function (d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+
+        return parseInt((t2 - t1) / (24 * 3600 * 1000));
+    },
+
+    inWeeks: function (d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+
+        return parseInt((t2 - t1) / (24 * 3600 * 1000 * 7));
+    },
+
+    inMonths: function (d1, d2) {
+        var d1Y = d1.getFullYear();
+        var d2Y = d2.getFullYear();
+        var d1M = d1.getMonth();
+        var d2M = d2.getMonth();
+
+        return (d2M + 12 * d2Y) - (d1M + 12 * d1Y);
+    },
+
+    inYears: function (d1, d2) {
+        return d2.getFullYear() - d1.getFullYear();
+    }
+};
 jQuery.fn.extend({
     reset: function () {
         try{
@@ -1360,6 +1412,7 @@ jQuery.fn.extend({
             jQuery(jQuery(this).attr("data-html-reset")).html("");
         } catch (e) {
         }
+        jQuery(this).find(".isNew").remove();
     },
     getData: function () {
         var data = {};
@@ -1422,19 +1475,21 @@ jQuery.fn.extend({
         return data;
     }
 });
-var CustomValidator = {
 
-    ServiceFormFiles: function (value, validator) {
+var Callbacks = {
+
+    ServiceFormFiles: function (value, validator)
+    {
         return jQuery(validator.$form).find(".ServiceFormFiles").find(".fileitem").length > 0;
     },
-    SelectorRequired: function (value, validator, field)
-    {
-        var data = field.getData();
-        var isValid = field.find(data.selector).length > 0;
-        if (!isValid && typeof data.triggerClick != "undefined")
-        {
-            jQuery(data.triggerClick).trigger("click");
+    JobExecutors: function (value, validator) {
+        var rs = jQuery(validator.$form).find(".JobExecutors").find(".scrollItem").length > 0;
+        if (!rs) {
+            jQuery("#tabJobCrExecutors").trigger("click");
         }
-        return isValid;
+        return rs;
+    },
+    WorkflowStepExecutors: function (value, validator, field) {
+        return field.prevObject.find(".tickItem").length > 0;
     }
 }
