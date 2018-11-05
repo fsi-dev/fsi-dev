@@ -88,9 +88,7 @@ var Main = {
                 });
             }
         });
-        console.log("! useTreegrid");
         container.find(".useTreegrid").each(function () {
-            console.log("useTreegrid");
             var column = jQuery(this).attr('data-column');
             if (column == undefined) {
                 jQuery(this).treegrid();
@@ -101,7 +99,6 @@ var Main = {
                     initialState: 'collapsed'
                 });
             }
-            console.log("xin chào");
         });
         container.find(".nestable").each(function () {
             if (!jQuery(this).hasClass("setNestabled")) {
@@ -1749,16 +1746,16 @@ var Main = {
     }
 };
 jQuery(window).bind("load", function () {
-    Cdata.init();
-    Smile.init();
-    Main.init();
+    // Cdata.init();
+    // Smile.init();
+    // Main.init();
 
-    Utils.autoCloseFlash();
-    Utils.updateImageViewer();
-    Utils.updatePlayer(jQuery(document));
-    Utils.updateChart(jQuery(document));
-    Utils.updateFormState(jQuery(document));
-    Utils.updateInputDate(jQuery(document));
-    Utils.updateScrollBar(jQuery(document));
-    Autocomplete.init(jQuery(document));
+    // Utils.autoCloseFlash();
+    // Utils.updateImageViewer();
+    // Utils.updatePlayer(jQuery(document));
+    // Utils.updateChart(jQuery(document));
+    // Utils.updateFormState(jQuery(document));
+    // Utils.updateInputDate(jQuery(document));
+    // Utils.updateScrollBar(jQuery(document));
+    // Autocomplete.init(jQuery(document));
 });

@@ -334,4 +334,7 @@ header.bd-navbar .navbar-nav-scroll .navbar-nav.pull-right .nav-item:last-child{
     display: block;
     min-height: 50px;
 }
-
+.demo-section {
+    float: left;
+    width: 100%;
+}

@@ -401,7 +401,7 @@ img.responsite{
     text-align: center;
 }
 input.date, input.datetime {
-    background: url('/Assets/app/img/calendar.png') no-repeat calc((100%) - 5px) center / 16px 16px #fff;
+    background: url('../img/calendar.png') no-repeat calc((100%) - 5px) center / 16px 16px #fff;
 }
 .files.images .fileitem{
     width: 30%;
