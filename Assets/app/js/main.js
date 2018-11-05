@@ -259,6 +259,7 @@ var getContent = function(link,has_popstate){
       link = jQuery(document).find(".bd-sidenav").find("li.active").find("a").attr('data-href');
     }else{
       link = jQuery(document).find("#bd_docs_nav").find('.bd-toc-item').first().find(".bd-sidenav").find("li").first().find("a").attr('data-href');
+      jQuery(document).find("#bd_docs_nav").find('.bd-toc-item').first().find(".bd-sidenav").find("li").removeClass("active");
       jQuery(document).find("#bd_docs_nav").find('.bd-toc-item').first().find(".bd-sidenav").find("li").first().addClass("active");
     }
   }   
