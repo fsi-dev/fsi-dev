@@ -1,0 +1,423 @@
+<!-- MÔ TẢ -->
+<h1 class="bd-title" id="content">DataTable Fillter</h1>
+
+
+<!-- DEMO -->
+<div class="demo-section">
+    <h3 id="cpn_demo">Demo</h3>
+    <div class="demo_content">
+            <div class="widget-body no-padding job_search_widget">
+                <div class="row">
+                    <div class="dataTables_wrapper form-inline">
+                        <div class="dataTables_filter"> <!-- DataTables Filter -->
+                            <form class="quickSearch" data-target="#" action="#" method="post" enctype="multipart/form-data">
+                                <div class="col-md-2 quickSearch_md">
+                                    <label>
+                                        <input type="text" name="Term" class="form-control input-sm" placeholder="Tìm kiếm nhanh" aria-controls="searchable">
+                                    </label>
+                                </div>
+                                <div class="col-md-2 dataFilter_Dropdown_Section">
+                                    <div class="dropdown dataFilter_Dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dataFilter_Dropdown">
+                                            <i class="fa fa-sliders" aria-hidden="true"></i> Lọc
+                                        </button>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fa fa-search"></i> <span class="hidden-xs hidden-sm">Tìm kiếm</span>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu dataFilter_Dropdown_target">
+                                    <div class="dropdown-menu-content">
+                                        <a href="#" title="Đóng" class="dataFilter_Dropdown_close"><i class="ion-android-close"></i></a>
+                                        <div class="col-xs-12">
+                                            <div class="row">
+                                                <div class="col-md-2 DropdownFilter_item">
+                                                    <label>
+                                                        <input type="text" value="" name="CollectedStart" class="form-control input-sm date" placeholder="Từ ngày" aria-controls="searchable">
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-2 DropdownFilter_item">
+                                                    <label>
+                                                        <input type="text" value="" name="CollectedEnd" class="form-control input-sm date" placeholder="Đến ngày" aria-controls="searchable">
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-2 DropdownFilter_item">
+                                                    <label>
+                                                        <select class="form-control input-sm selectpicker"  data-container="body" data-live-search="true" name="#">
+                                                            <option value="">Tất cả</option>
+                                                            
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-2 DropdownFilter_item">
+                                                    <label class="select_filter">
+                                                        <select name="" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Tìm kiếm" data-none-Selected-Text="Nhân sự">
+                                                     
+                                                                <option value="" data-content='<img width="30" src="./stg/Assets/app/img/ava1.jpg"> <div class="option_inline"><span class="span_block">Nguyễn Văn A</span> <span>anv@gmail.com</span></div>'>Nguyễn Văn A</option>
+                                                           
+                                                        </select>
+                                                    </label>
+                                        
+                                                </div>
+                                                <div class="col-md-2 DropdownFilter_item">
+                                                    <label>
+                                                        <select name="States" class="selectpicker form-control" multiple
+                                                                data-live-search="true"
+                                                                data-live-search-placeholder="Tìm kiếm"  data-container="body"
+                                                                data-none-Selected-Text="Trạng thái công việc"
+                                                                data-multiple-separator="">
+                                                            <optgroup label="Trạng thái công việc">
+                                                                <option data-content="<span class='label label-default'>Chưa xử lí</span>">Chưa xử lí</option>
+                                                                <option data-content="<span class='label label-danger'>Từ chối</span>">Từ chối</option>
+                                                                <option data-content="<span class='label label-success'>Đang xử lí</span>">Đang xử lí</option>
+                                                                <option data-content="<span class='label label-info'>Hoàn thành</span>">Hoàn thành</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+    </div>                
+</div>                
+
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">HTML</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                &lt;div class=&quot;dataTables_filter&quot;&gt;
+                    &lt;form class=&quot;quickSearch&quot; data-target=&quot;#&quot; action=&quot;#&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+                        &lt;div class=&quot;col-md-2 quickSearch_md&quot;&gt;
+                            &lt;label&gt;
+                                &lt;input type=&quot;text&quot; name=&quot;Term&quot; class=&quot;form-control input-sm&quot; placeholder=&quot;T&igrave;m kiếm nhanh&quot; aria-controls=&quot;searchable&quot;&gt;
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-md-2 dataFilter_Dropdown_Section&quot;&gt;
+                            &lt;div class=&quot;dropdown dataFilter_Dropdown&quot;&gt;
+                                &lt;button class=&quot;btn btn-default dropdown-toggle&quot; type=&quot;button&quot; id=&quot;dataFilter_Dropdown&quot;&gt;
+                                    &lt;i class=&quot;fa fa-sliders&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Lọc
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;button class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;
+                                &lt;i class=&quot;glyphicon glyphicon-search&quot;&gt;&lt;/i&gt; &lt;span class=&quot;hidden-xs hidden-sm&quot;&gt;T&igrave;m kiếm&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;dropdown-menu dataFilter_Dropdown_target&quot;&gt;
+                            &lt;div class=&quot;dropdown-menu-content&quot;&gt;
+                                &lt;a href=&quot;#&quot; title=&quot;Đ&oacute;ng&quot; class=&quot;dataFilter_Dropdown_close&quot;&gt;&lt;i class=&quot;ion-android-close&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                                &lt;div class=&quot;col-xs-12&quot;&gt;
+                                    &lt;div class=&quot;row&quot;&gt;
+                                        &lt;div class=&quot;col-md-2 DropdownFilter_item&quot;&gt;
+                                            &lt;label&gt;
+                                                &lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;CollectedStart&quot; class=&quot;form-control input-sm date&quot; placeholder=&quot;Từ ng&agrave;y&quot; aria-controls=&quot;searchable&quot;&gt;
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-md-2 DropdownFilter_item&quot;&gt;
+                                            &lt;label&gt;
+                                                &lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;CollectedEnd&quot; class=&quot;form-control input-sm date&quot; placeholder=&quot;Đến ng&agrave;y&quot; aria-controls=&quot;searchable&quot;&gt;
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-md-2 DropdownFilter_item&quot;&gt;
+                                            &lt;label&gt;
+                                                &lt;select class=&quot;form-control input-sm selectpicker&quot; data-live-search=&quot;true&quot; name=&quot;#&quot;&gt;
+                                                    &lt;option value=&quot;&quot;&gt;Tất cả&lt;/option&gt;
+                                                    &lt;option value=&quot;&quot;&gt;Tất cả&lt;/option&gt;
+                                                    &lt;option value=&quot;&quot;&gt;Tất cả&lt;/option&gt;
+                                                &lt;/select&gt;
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-md-2 DropdownFilter_item&quot;&gt;
+                                            &lt;label class=&quot;select_filter&quot;&gt;
+                                                &lt;select name=&quot;Members&quot; class=&quot;selectpicker form-control&quot; multiple data-live-search=&quot;true&quot; data-size=&quot;5&quot; data-live-search-placeholder=&quot;T&igrave;m kiếm&quot; data-none-Selected-Text=&quot;Nh&acirc;n lực&quot;&gt;
+                                                    &lt;option value=&quot;&quot; data-content='&lt;img width=&quot;30&quot; src=&quot;/qlns/Assets/app/img/avatar.png&quot;&gt; &lt;div class=&quot;option_inline&quot;&gt;&lt;span class=&quot;span_block&quot;&gt;Nguyễn Văn A&lt;/span&gt; &lt;span&gt;anv@gmail.com&lt;/span&gt;&lt;/div&gt;'&gt;Nguyễn Văn A&lt;/option&gt;
+                                                &lt;/select&gt;
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;col-md-2 DropdownFilter_item&quot;&gt;
+                                            &lt;label&gt;
+                                                &lt;select name=&quot;States&quot; class=&quot;selectpicker form-control&quot; multiple
+                                                        data-live-search=&quot;true&quot;
+                                                        data-live-search-placeholder=&quot;T&igrave;m kiếm&quot;
+                                                        data-none-Selected-Text=&quot;Trạng th&aacute;i c&ocirc;ng việc&quot;
+                                                        data-multiple-separator=&quot;&quot;&gt;
+                                                    &lt;option data-content=&quot;&lt;span class='label label-success'&gt;Relish&lt;/span&gt;&quot;&gt;Relish&lt;/option&gt;
+                                                    &lt;option data-content=&quot;&lt;span class='label label-info'&gt;Relish&lt;/span&gt;&quot;&gt;Relish&lt;/option&gt;
+                                                    &lt;option data-content=&quot;&lt;span class='label label-danger'&gt;Relish&lt;/span&gt;&quot;&gt;Relish&lt;/option&gt;
+                                                &lt;/select&gt;
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- CSS -->
+<div class="demo-section">
+    <h3 id="cpn_css">CSS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:css;">
+                /* Datatable filter */
+                .dataTables_filter {
+                    background: #fff !important;
+                    clear: both;
+                    float: left;
+                    width: 100%;
+                }
+                .dataTables_filter .form-control {
+                    background: #fff !important;
+                    box-shadow: none !important;
+                    width: 100%;
+                }
+                .dataTables_filter input {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .dataTables_filter .input-sm {
+                    border-color: #ddd !important;
+                    border-radius: 3px !important;
+                }
+                .dataTables_filter .quickSearch div[class*="col-"] label {
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
+                .dataTables_filter .quickSearch_md.width_bs input {
+                    height: 32px;
+                }
+                @media (min-width: 767px)
+                .dataTables_filter .quickSearch >
+                 div[class*="col"]:first-child {
+                    padding-right: 5px;
+                    padding-left: 15px;
+                }
+                /*DataFilter Dropdown begin*/
+
+
+                .dataFilter_Dropdown {
+                    position: static;
+                    float: left;
+                    margin-right: 10px;
+                }
+                .dataFilter_Dropdown > .btn.dropdown-toggle {
+                    box-shadow: none;
+                    border-color: #ddd;
+                    border-radius: 3px;
+                    color: #858585 !important;
+                    margin: 10px 0 !important;
+                }
+                .dataFilter_Dropdown.open > .dropdown-toggle,
+                .dataFilter_Dropdown > .dropdown-toggle:hover,
+                .dataFilter_Dropdown > .dropdown-toggle:focus {
+                    color: #57b5e4 !important;
+                    background: #fff !important;
+                    border-color: rgba(87, 181, 228, .5);
+                }
+
+                .dataFilter_Dropdown_target  {
+                    position: relative;
+                    top: auto;
+                    left: 15px;
+                    width: calc(100% - 30px);
+                    min-height: 85px;
+                    border: 1px solid #ccc !important;
+                    border-radius: 3px !important;
+                    padding: 0;
+                    margin-bottom: 15px;
+                    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05) !important;
+                    -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05) !important;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05) !important;
+                }
+
+                .dataFilter_Dropdown_Section {
+                    position: static !important;
+
+                    width: auto !important;
+                }
+
+                .dataFilter_Dropdown.open > .dropdown-toggle:before {
+                    content: "";
+                    position: absolute;
+                    bottom: -14px;
+                    left: 50%;
+                    margin-left: -5px;
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 10px solid #fff;
+                    z-index: 301;
+                }
+                .dataFilter_Dropdown.open > .dropdown-toggle:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -13px;
+                    left: 50%;
+                    margin-left: -5px;
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 10px solid #ddd;
+                }
+                .dataFilter_Dropdown_target .dropdown-menu-content {
+                    position: relative;
+                    float: left;
+                    width: 100%;
+                    padding: 15px;
+                }
+                .dataFilter_Dropdown_target .dataFilter_Dropdown_close {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    width: 20px;
+                    height: 20px;
+                    background: #fff;
+                    color: #757575;
+                    text-align: center;
+                    line-height: 19px;
+                    font-size: 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    z-index: 1;
+                    transition: all .25s;
+                    -webkit-transition: all .25s;
+                       -moz-transition: all .25s;
+                        -ms-transition: all .25s;
+                         -o-transition: all .25s;
+                            transition: all .25s;
+                }
+                .dataFilter_Dropdown_target .dataFilter_Dropdown_close:hover,
+                .dataFilter_Dropdown_target .dataFilter_Dropdown_close:focus {
+                    color: #57b5e4 !important;
+                    background: #fff !important;
+                    border-color: rgba(87, 181, 228, .5);
+                }
+
+                .dataFilter_Dropdown_target .DropdownFilter_item {
+                    float: left;
+                }
+
+                .dataFilter_Dropdown_target .DropdownFilter_item > label {
+                    margin: 10px 12px !important;
+                }
+                .dataFilter_Dropdown_target.open {
+                    display: block;
+                }
+                .dataFilter_Dropdown_target.open {
+                    display: block;
+                    z-index: auto;
+                }
+                @media(max-width: 1200px) and (min-width: 992px) {
+                    .dataFilter_Dropdown_target .DropdownFilter_item {
+                        width: 25% !important;
+                    }
+                }
+                @media(max-width: 991px) and (min-width: 640px) {
+                    .dataFilter_Dropdown_target .DropdownFilter_item {
+                        width: 50% !important;
+                    }
+                }
+                @media(max-width: 640px) {
+                    .dataFilter_Dropdown_target .DropdownFilter_item {
+                        width: 100% !important;
+                    }
+                }
+                /*DataFilter Dropdown end*/
+
+                /* SElect user */
+                .job_search_widget .dataTables_filter .bootstrap-select.btn-group .dropdown-menu li a img {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    margin: 0px 5px 0 0;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    vertical-align: top;
+                    object-fit: cover;
+                    object-position: center center;
+                    float: left;
+                }
+                .job_search_widget .dataTables_filter .bootstrap-select.btn-group .dropdown-menu li a img + .option_inline {
+                    float: left;
+                    width: calc(100% - 35px);
+                    width: -webkit-calc(100% - 35px);
+                    width: -moz-calc(100% - 35px);
+                    width: -ms-calc(100% - 35px);
+                    width: -o-calc(100% - 35px);
+                }
+                .option_inline {
+                    display: inline-block;
+                    min-height: 36px;
+                }
+                .bootstrap-select > .dropdown-menu.open > ul.dropdown-menu.inner > li > span, .bootstrap-select > .dropdown-menu.open > ul.dropdown-menu.inner > li > a > span, .bootstrap-select > .dropdown-menu.open > ul.dropdown-menu.inner > li > a {
+                    white-space: normal;
+                }
+                .bootstrap-select .dropdown-menu .option_inline > span {
+                    display: block;
+                    word-break: break-word;
+                    white-space: normal;
+                    width: 100%;
+                }
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- JS -->
+<div class="demo-section">
+    <h3 id="cpn_js">JS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content ">
+            <pre class="brush:js;">
+                jQuery(document).on('click', '.dataFilter_Dropdown .dropdown-toggle', function(){
+                    jQuery(this).parents(".dataFilter_Dropdown").toggleClass("open");
+                    jQuery(this).parents(".quickSearch ").find(".dataFilter_Dropdown_target").toggleClass("open");
+                });
+                jQuery(document).on('click', '.dataFilter_Dropdown_close', function(e){
+                    e.preventDefault();
+                    jQuery(this).parents(".quickSearch").find(".dataFilter_Dropdown").toggleClass("open");
+                    jQuery(this).parents(".quickSearch").find(".dataFilter_Dropdown_target").toggleClass("open");
+                });      
+            </pre>
+        </div>                
+    </div>                
+</div>                
+<!-- NOTE -->
+<div class="demo-section">
+    <h3 id="cpn_note">Note</h3>
+    <p class="hidden">Note des</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="highlighter-rouge">CSS</code></td>
+                <td>Chỉ thêm <code>CSS</code> khi copy <code>HTML</code> không giống demo</td>
+            </tr>
+            <tr>
+                <td><code class="highlighter-rouge">JS</code></td>
+                <td>Chỉ thêm <code>Js</code> khi copy <code>HTML,CSS</code> không chạy giống demo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

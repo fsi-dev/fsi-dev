@@ -1,0 +1,203 @@
+<!-- MÔ TẢ -->
+<h1 class="bd-title" id="content">DTT Btns Group</h1>
+
+
+<!-- DEMO -->
+<div class="demo-section">
+    <h3 id="cpn_demo">Demo</h3>
+    <div class="demo_content">
+        <div class="widget-body no-padding">
+            <div class="dataTables_wrapper form-inline _dttt">
+                <div class="DTTT btn-group">
+                    <a title="Xóa" data-href="/stg/doctype/is-deletes.html" class="btn btn-danger actMultiTicks quickDeletes" tabindex="0" aria-controls="searchable">
+                        <i class="fa fa-trash"></i> <span class="hidden-xs hidden-sm">Xóa</span>
+                    </a>
+                    <div class="btn-group">
+                        <a class="btn btn-info dropdown-toggle has_arrow_bottom" data-toggle="dropdown" href="javascript:void(0);" aria-expanded="false">
+                            <i class="fa fa-plus"></i> <span class="hidden-xs hidden-sm">Tạo mới</span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-blue dropdown-menu-right item-actions overflow_btnUl">
+                            <li>
+                                <a class="quickUpdate" data-target=".ui-dialog" tabindex="0" href="/stg/doctype/create/hop-dong-3.html">Hợp đồng</a>
+                            </li>
+                            <li>
+                                <a class="quickUpdate" data-target=".ui-dialog" tabindex="0" href="/stg/doctype/create/van-ban-hanh-chinh-4.html">Văn bản hành chính</a>
+                            </li>
+                            <li>
+                                <a class="quickUpdate" data-target=".ui-dialog" tabindex="0" href="/stg/doctype/create/to-trinh-5.html">Tờ trình</a>
+                            </li>
+                            <li>
+                                <a class="quickUpdate" data-target=".ui-dialog" tabindex="0" href="/stg/doctype/create/luong-mua-6.html">Lượng mưa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>                
+</div>                
+
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">HTML</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                &lt;div class=&quot;DTTT btn-group&quot;&gt; &lt;!-- DTTT BTN-GROUP --&gt;
+                    &lt;a title=&quot;X&oacute;a&quot; data-href=&quot;#&quot; class=&quot;btn btn-danger quickDeletes&quot; tabindex=&quot;0&quot; aria-controls=&quot;searchable&quot;&gt;
+                        &lt;i class=&quot;fa fa-trash&quot;&gt;&lt;/i&gt; &lt;span class=&quot;hidden-xs hidden-sm&quot;&gt;X&oacute;a&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;div class=&quot;btn-group&quot;&gt;
+                        &lt;a class=&quot;btn btn-info dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; href=&quot;&quot; aria-expanded=&quot;false&quot;&gt;
+                            &lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt; &lt;span class=&quot;hidden-xs hidden-sm&quot;&gt;Tạo mới&lt;/span&gt;
+                            &lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;
+                        &lt;/a&gt;
+                        &lt;ul class=&quot;dropdown-menu dropdown-blue dropdown-menu-right item-actions&quot;&gt;
+                            &lt;li&gt;
+                                &lt;a class=&quot;quickUpdate&quot; data-target=&quot;.ui-dialog&quot; tabindex=&quot;0&quot; href=&quot;#&quot;&gt;Hợp đồng&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a class=&quot;quickUpdate&quot; data-target=&quot;.ui-dialog&quot; tabindex=&quot;0&quot; href=&quot;#&quot;&gt;Văn bản h&agrave;nh ch&iacute;nh&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a class=&quot;quickUpdate&quot; data-target=&quot;.ui-dialog&quot; tabindex=&quot;0&quot; href=&quot;#&quot;&gt;Tờ tr&igrave;nh&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a class=&quot;quickUpdate&quot; data-target=&quot;.ui-dialog&quot; tabindex=&quot;0&quot; href=&quot;#&quot;&gt;Lượng mưa&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- CSS -->
+<div class="demo-section">
+    <h3 id="cpn_css">CSS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:css;">
+                /* DTTT btn-group */
+                .widget-body.no-padding .DTTT.btn-group {
+                    right: 10px;
+                    background-color: #fff;
+                }
+                .DTTT.btn-group .btn {
+                    line-height: 30px !important;
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                    -webkit-transition: all .25s;
+                    -moz-transition: all .25s;
+                    -ms-transition: all .25s;
+                    -o-transition: all .25s;
+                    transition: all .25s;
+                    position: relative;
+                }
+                .DTTT.btn-group .dropdown-menu-right {
+                    left: auto;
+                    right: -8px;
+                    top: 32px;
+                    background: #fff;
+                    border: solid 1px #e5e5e5 !important;
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+                    padding: 10px 0;
+                    transition: all .3s;
+                    -webkit-transition: all .3s;
+                    -ms-transition: all .3s;
+                    -moz-transition: all .3s;
+                    -o-transition: all .3s;
+                    border-radius: 5px !important;
+                    -webkit-border-radius: 5px !important;
+                    -moz-border-radius: 5px !important;
+                    /* width: 150px; */
+                    min-width: 0 !important;
+                }
+                .DTTT.btn-group .dropdown-menu-right:before {
+                    content: "";
+                    left: auto;
+                    right: 3px;
+                    position: absolute;
+                    -webkit-transform: translateX(-50%);
+                    -moz-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+                    -o-transform: translateX(-50%);
+                    transform: translateX(-50%);
+                    background-image: url(/stg/Assets/app/img/icon-submenu.png);
+                    background-position: center top;
+                    background-repeat: no-repeat;
+                    height: 9px;
+                    top: -9px;
+                    width: 19px;
+                }
+                .btn-group .dropdown-menu ul {
+                    max-height: 300px;
+                    overflow-y: auto;
+                }
+                .DTTT.btn-group .dropdown-menu-right li {
+                    float: none;
+                    width: 100%;
+                    padding: 0px 15px;
+                    display: block;
+                    margin-right: 0 !important;
+                    margin-bottom: 0 !important;
+                    position: relative;
+                }
+                .DTTT.btn-group .dropdown-menu-right li a, .important_action_btn li .btns .btn-group .dropdown-menu li a {
+                    background: none !important;
+                    border: none !important;
+                    -webkit-transition: all .25s;
+                    -moz-transition: all .25s;
+                    -ms-transition: all .25s;
+                    -o-transition: all .25s;
+                    transition: all .25s;
+                    padding: 0 0 !important;
+                    color: #444 !important;
+                    box-shadow: none !important;
+                    text-align: left;
+                }
+                .DTTT.btn-group .dropdown-menu-right li a:hover, .DTTT.btn-group .dropdown-menu-right li a:focus, .important_action_btn li .btns .btn-group .dropdown-menu li a:hover, .important_action_btn li .btns .btn-group .dropdown-menu li a:focus {
+                    color: #007AB7 !important;
+                    background: none !important;
+                }
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- JS -->
+<div class="demo-section">
+    <h3 id="cpn_js">JS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content ">
+            <pre class="brush:js;">
+     
+            </pre>
+        </div>                
+    </div>                
+</div>                
+<!-- NOTE -->
+<div class="demo-section">
+    <h3 id="cpn_note">Note</h3>
+    <p class="hidden">Note des</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="highlighter-rouge">CSS</code></td>
+                <td>Chỉ thêm <code>CSS</code> khi copy <code>HTML</code> không giống demo</td>
+            </tr>
+            <tr>
+                <td><code class="highlighter-rouge">JS</code></td>
+                <td>Chỉ thêm <code>Js</code> khi copy <code>HTML,CSS</code> không chạy giống demo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
