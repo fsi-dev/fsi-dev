@@ -192,6 +192,7 @@ function load_hash() {
     jQuery('.bd-sidenav > li > a').each(function(){
       var compare_link = $(this).attr('data-href').split('/components/')[1].split('.')[0];
       if(compare_link == hash){
+        $('.bd-sidenav li').removeClass("active");
         $(this).parent("li").addClass("active");
         getContent($(this).attr('data-href'),"true");  
         return false
@@ -259,7 +260,6 @@ var getContent = function(link,has_popstate){
       link = jQuery(document).find(".bd-sidenav").find("li.active").find("a").attr('data-href');
     }else{
       link = jQuery(document).find("#bd_docs_nav").find('.bd-toc-item').first().find(".bd-sidenav").find("li").first().find("a").attr('data-href');
-      jQuery(document).find("#bd_docs_nav").find('.bd-toc-item').first().find(".bd-sidenav").find("li").removeClass("active");
       jQuery(document).find("#bd_docs_nav").find('.bd-toc-item').first().find(".bd-sidenav").find("li").first().addClass("active");
     }
   }   
