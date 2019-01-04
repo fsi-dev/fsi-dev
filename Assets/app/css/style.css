@@ -338,6 +338,8 @@ header.bd-navbar .navbar-nav-scroll .navbar-nav.pull-right .nav-item:last-child{
     float: left;
     width: 100%;
 }
-
-
+.bd-toc-link,
+.bd-sidebar .nav>li>a {
+    cursor: pointer;
+}
 
