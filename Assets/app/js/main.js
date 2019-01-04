@@ -190,7 +190,7 @@ function load_hash() {
 
     var hash = document.location.hash.replace("#", "");
     jQuery('.bd-sidenav > li > a').each(function(){
-      var compare_link = $(this).attr('data-href').split(",").pop(-1).split('.')[0];
+      var compare_link = $(this).attr('data-href').split("/").pop(-1).split('.')[0];
       if(compare_link == hash){
         $('.bd-sidenav li').removeClass("active");
         $(this).parent("li").addClass("active");
@@ -255,7 +255,9 @@ function syslink(link,has_popstate) {
     return false
   }
   if(has_popstate != "true"){
-    var sort_link = link.split(",").pop(-1).split('.')[0];
+    var sort_link = link.split("/").pop(-1).split('.')[0];
+    console.log("link: "+link);
+    console.log("sort_link: "+sort_link);
     window.history.pushState('', '', '#'+sort_link);
     return false;
   }
