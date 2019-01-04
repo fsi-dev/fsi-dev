@@ -1,4 +1,4 @@
-﻿/* FIX SIDEBAR & CONTEND & BODY BEGIN */
+/* FIX SIDEBAR & CONTEND & BODY BEGIN */
 body {
     position: relative !important;
     height: auto !important;
@@ -1738,9 +1738,7 @@ input.ui-autocomplete-loading {
     -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.13), 5px 5px 5px -5px rgba(0, 0, 0, 0.13), 5px -5px 5px -5px rgba(0, 0, 0, 0.13);
     box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.13), 5px 5px 5px -5px rgba(0, 0, 0, 0.13), 5px -5px 5px -5px rgba(0, 0, 0, 0.13);
 }
-.badge-primary, .label-primary {
-    background-color: #57b5e3 !important;
-}
+
 /*End cssd0804*/
 .scrollItem_item .scrollItem_content{
     display: none;
@@ -14129,6 +14127,7 @@ html, body {
 /*SHOW MORE SLIDE*/
 .useMoreSlide {
     position: relative;
+    overflow: hidden;
 }
 .more_slide_nav {
     width: 40px;
@@ -14832,3 +14831,210 @@ ul.tabs_visible {
     padding: 5px 0 !important;
 }
 /* END */
+
+
+/*TUANNC*/
+.project-breadcrumbs > ul > li {
+    position: relative;
+}
+.project-breadcrumbs > ul > li:first-child {
+    padding-left: 17px;
+}
+.project-breadcrumbs .breadcrumb {
+    padding-top: 0;
+    margin: 0;
+}
+.project-breadcrumbs > ul > li:first-child:before {
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f097";
+    font-size: 11px;
+}
+.project_ManagerMain .module_cmt ul li{
+    list-style:none;
+}
+.project_ManagerMain .module_cmt dl {
+    margin-bottom: 10px;
+}
+.project_ManagerMain .module_cmt dl > dd {
+    display: table-cell;
+    padding-left: 5px;
+}
+.project_ManagerMain .module_cmt dl > dt {
+    color: #707070;
+    display: table-cell;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: top;
+    width: 190px;
+    min-width: 190px;
+}
+
+/*QUITC*/
+/*tabCenter*/
+.fsi_group_tabs .nav-tabs {
+    display: none;
+}
+.fsi_group_tabs .nav-tabs {
+    background-color: transparent;
+    box-shadow: none !important;
+}
+ul.tabs_visible {
+    height: auto;
+}
+ul.tabs_visible {
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    text-align: center;
+}
+.fsi_group_tabs .nav-tabs > li {
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+.fsi_group_tabs .nav-tabs > li.active {
+    border-left: 0;
+    border-right: 0;
+}
+.fsi_group_tabs .nav-tabs > li.active {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.fsi_group_tabs .nav-tabs > li {
+    float: none;
+    display: inline-block;
+    margin-top: -3px;
+}
+.fsi_group_tabs .nav-tabs > li.active > a {
+    border-top: 0 !important;
+    color: #fff;
+    background: #57b5e3;
+}
+.fsi_group_tabs .nav-tabs > li.active > a {
+    border-top: 2px solid #2dc3e8 !important;
+    color: #57b5e3;
+    font-weight: 600;
+}
+.fsi_group_tabs .nav-tabs > li > a {
+    border-top: 2px solid transparent !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+.fsi_group_tabs .nav-tabs > li > a {
+    border: none;
+}
+.fsi_group_tabs .nav-tabs > li.active:after {
+    content: "";
+    display: block;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    z-index: 20;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-top: 7px solid #57b5e3;
+}
+.fsi_group_tabs .nav-tabs > li.active > a {
+    border-top: 0 !important;
+    color: #fff;
+    background: #57b5e3;
+}
+.fsi_group_tabs .nav-tabs > li.active > a {
+    border-top: 2px solid #2dc3e8 !important;
+    font-weight: 600;
+}
+.fsi_group_tabs .nav-tabs > li > a {
+    border-top: 2px solid transparent !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+.fsi_group_tabs .nav-tabs > li > a {
+    border: none;
+}
+
+
+
+
+.dropdown-menu.Main_dropdown.open {
+    display: block;
+}
+._borrow--dropdown .Main_dropdown {
+    border: 1px solid #ddd !important;
+    border-radius: 3px !important;
+    top: 52px;
+}
+.dataTables_filter .dropdown-menu {
+    max-height: 350px;
+}
+._borrow--dropdown .Main_dropdown .main--all {
+    position: relative;
+}
+._borrow--dropdown .Main_dropdown ._Main {
+    max-height: 225px;
+    overflow-y: auto;
+    min-width: 250px;
+}
+.useScrollBar {
+    height: 100%;
+}
+.ps-container {
+    overflow: hidden !important;
+    position: relative;
+}
+.ps-container .ps-scrollbar-y-rail, .ps-container .ps-scrollbar-x-rail {
+    opacity: .5;
+}
+.ps-container .ps-scrollbar-y-rail, .ps-container .ps-scrollbar-x-rail {
+    z-index: 123;
+}
+.ps-container .ps-scrollbar-x-rail {
+    -moz-border-radius: 4px;
+    -moz-transition: background-color .2s linear, opacity .2s linear;
+    -o-transition: background-color .2s linear, opacity .2s linear;
+    -webkit-border-radius: 4px;
+    -webkit-transition: background-color .2s linear, opacity .2s linear;
+    border-radius: 4px;
+    bottom: 0px;
+    filter: alpha(opacity = 0);
+    height: 8px;
+    opacity: 0;
+    position: absolute;
+    transition: background-color .2s linear, opacity .2s linear;
+    z-index: 10;
+}
+.ps-container .ps-scrollbar-x {
+    -moz-border-radius: 0;
+    -moz-transition: background-color .2s linear;
+    -o-transition: background-color .2s linear;
+    -webkit-border-radius: 0;
+    -webkit-transition: background-color .2s linear;
+    background-color: #737373;
+    border-radius: 4px;
+    bottom: 0;
+    height: 8px;
+    position: absolute;
+    transition: background-color .2s linear;
+}
+.ps-container .ps-scrollbar-y-rail, .ps-container .ps-scrollbar-x-rail {
+    opacity: .5;
+}
+.ps-container .ps-scrollbar-y-rail, .ps-container .ps-scrollbar-x-rail {
+    z-index: 123;
+}
+.ps-container .ps-scrollbar-y-rail {
+    -moz-border-radius: 0;
+    -moz-transition: background-color .2s linear, opacity .2s linear;
+    -o-transition: background-color .2s linear, opacity .2s linear;
+    -webkit-border-radius: 0;
+    -webkit-transition: background-color .2s linear, opacity .2s linear;
+    border-radius: 0;
+    filter: alpha(opacity = 0);
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    transition: background-color .2s linear, opacity .2s linear;
+    width: 8px;
+    z-index: 10;
+}

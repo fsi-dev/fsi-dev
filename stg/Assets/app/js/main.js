@@ -10,7 +10,7 @@ var Main = {
     upEvent: function (container) {
         if (Utils.isEmpty(container))
             container = jQuery(document);
-
+        Cust.list_pagi(0, "");
         container.find(".useSlider").each(function () {
             var obj = $(this);
             var SliderBar = obj.find(".SliderBar");
@@ -789,7 +789,6 @@ var Main = {
         });
     },
     onEvent: function () {
-
         jQuery(document).on("change", ".datetime, .date", function (e) {
             try {
                 var dateInput = jQuery(e.currentTarget);
