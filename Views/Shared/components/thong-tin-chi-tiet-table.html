@@ -1,0 +1,175 @@
+<!-- MÔ TẢ -->
+<h1 class="bd-title" id="content">Thông tin chi tiết (table)</h1>
+
+
+<!-- DEMO -->
+<div class="demo-section">
+    <h3 id="cpn_demo">Demo</h3>
+    <div class="demo_content">
+        <div class="project_items">
+            <div class="user-info">
+                <span class="ui fix-table">
+                    <span class="ui fix-table">
+                        <span class="clearfix">Tên dự án: 
+                            <a href="/qlkd/project-actual/detail/ttcn-573.html"> TTCN</a>
+                        </span>
+                        <span class="clearfix">
+                            <i class="fa fa-fw fa-bookmark-o" aria-hidden="true"></i> Mã dự án: 573-TTCN-DNCVĐTNN-CNT-AG
+                        </span>
+                        <span class="clearfix">
+                            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Thời gian dự án: 10-10-2018 đến  (Quý 4)
+                        </span>
+                        <span class="clearfix" title="Giá trị hợp đồng dự kiến">
+                            <i class="fa fa-fw fa-usd" aria-hidden="true"></i> Giá trị dự kiến: 310,000,000 VNĐ
+                        </span>
+                        <span class="clearfix">
+                            <div class="project-breadcrumbs">
+                                <ul class="breadcrumb">
+                                    <li>Loại dự án: Công nghệ TT</li>
+                                </ul>
+                            </div>
+                        </span>
+                        <span class="clearfix">
+                            <i class="fa fa-fw fa-university" aria-hidden="true"></i> Loại doanh nghiệp: Dự án đầu tư công
+                        </span>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>                
+</div>                
+
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">HTML</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                &lt;div class=&quot;project_items&quot;&gt;
+                    &lt;div class=&quot;user-info&quot;&gt;
+                        &lt;span class=&quot;ui fix-table&quot;&gt;
+                            &lt;span class=&quot;ui fix-table&quot;&gt;
+                                &lt;span class=&quot;clearfix&quot;&gt;T&ecirc;n dự &aacute;n: 
+                                    &lt;a href=&quot;/qlkd/project-actual/detail/ttcn-573.html&quot;&gt; TTCN&lt;/a&gt;
+                                &lt;/span&gt;
+                                &lt;span class=&quot;clearfix&quot;&gt;
+                                    &lt;i class=&quot;fa fa-fw fa-bookmark-o&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; M&atilde; dự &aacute;n: 573-TTCN-DNCVĐTNN-CNT-AG
+                                &lt;/span&gt;
+                                &lt;span class=&quot;clearfix&quot;&gt;
+                                    &lt;i class=&quot;fa fa-fw fa-calendar&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Thời gian dự &aacute;n: 10-10-2018 đến  (Qu&yacute; 4)
+                                &lt;/span&gt;
+                                &lt;span class=&quot;clearfix&quot; title=&quot;Gi&aacute; trị hợp đồng dự kiến&quot;&gt;
+                                    &lt;i class=&quot;fa fa-fw fa-usd&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Gi&aacute; trị dự kiến: 310,000,000 VNĐ
+                                &lt;/span&gt;
+                                &lt;span class=&quot;clearfix&quot;&gt;
+                                    &lt;div class=&quot;project-breadcrumbs&quot;&gt;
+                                        &lt;ul class=&quot;breadcrumb&quot;&gt;
+                                            &lt;li&gt;Loại dự &aacute;n: C&ocirc;ng nghệ TT&lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/div&gt;
+                                &lt;/span&gt;
+                                &lt;span class=&quot;clearfix&quot;&gt;
+                                    &lt;i class=&quot;fa fa-fw fa-university&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Loại doanh nghiệp: Dự &aacute;n đầu tư c&ocirc;ng
+                                &lt;/span&gt;
+                            &lt;/span&gt;
+                        &lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- CSS -->
+<div class="demo-section">
+    <h3 id="cpn_css">CSS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:css;">
+                .user-info {
+                    overflow: hidden;
+                    float: none;
+                    min-width: 90px;
+                    padding-bottom: 10px;
+                }
+                .project_items > .user-info > .fix-table {
+                    width: 100%;
+                    padding-left: 0px;
+                }
+                .user-info .ui span {
+                    color: #222;
+                    word-break: break-word;
+                }
+                .user-info .ui {
+                    width: calc((100%) - 30px);
+                    display: inline-block;
+                    float: left;
+                    padding-left: 10px;
+                }
+                .user-info .ui span + span {
+                    color: #767676;
+                    font-weight: normal;
+                    font-size: 12px;
+                }
+                .user-info .ui span + span > i {
+                    font-size: 11px;
+                    color: #999;
+                }
+                .project-breadcrumbs > ul > li {
+                    position: relative;
+                }
+                .project-breadcrumbs > ul > li:first-child {
+                    padding-left: 17px;
+                }
+                .project-breadcrumbs .breadcrumb {
+                    padding-top: 0;
+                    margin: 0;
+                }
+                .project-breadcrumbs > ul > li:first-child:before {
+                    position: absolute;
+                    top: 6px;
+                    left: 2px;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    content: "\f097";
+                    font-size: 11px;
+                }
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- JS -->
+<div class="demo-section">
+    <h3 id="cpn_js">JS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content ">
+            <pre class="brush:js;">
+                
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- NOTE -->
+<div class="demo-section">
+    <h3 id="cpn_note">Note</h3>
+    <p class="hidden">Note des</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="highlighter-rouge">CSS</code></td>
+                <td>Chỉ thêm <code>CSS</code> khi copy <code>HTML</code> không giống demo</td>
+            </tr>
+            <tr>
+                <td><code class="highlighter-rouge">JS</code></td>
+                <td>Chỉ thêm <code>Js</code> khi copy <code>HTML,CSS</code> không chạy giống demo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

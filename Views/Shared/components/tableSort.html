@@ -1,0 +1,152 @@
+<!-- MÔ TẢ -->
+<h1 class="bd-title" id="content">Table Sort</h1>
+
+
+<!-- DEMO -->
+<div class="demo-section">
+    <h3 id="cpn_demo">Demo</h3>
+    <div class="demo_content">
+        <table aria-describedby="searchable_info" class="table table-bordered table-hover table-striped dataTable table_custom stacktable_inited stacktable large-only" id="TblMyDocs" role="grid">
+            <thead>
+                <tr role="row">
+                    <th class="wpx70 center hidden-xs hidden-sm" tabindex="0">STT</th>
+                    <th class="wpx80" tabindex="0">
+                        <label>
+                            <input class="group-checkable" type="checkbox">
+                            <span class="text"></span>
+                        </label>
+                    </th>
+                    <th aria-controls="searchable" class="sortitem_th" style="width: 200px" tabindex="0">
+                        Tên
+                        <div class="sortitem">
+                            <a class="clickSort" data-sortname="Name" data-sorttype="0" href="#">
+                                <i aria-hidden="true" class="fa fa-arrow-up"></i>
+                                <span class="sr-only">Tên</span>
+                            </a>
+                        </div>
+                    </th>
+                    <th aria-controls="searchable" class="hidden-xs hidden-sm sortitem_th" style="width: 250px" tabindex="0">
+                        Mô tả
+                        <div class="sortitem">
+                            <a class="clickSort" data-sortname="Describe" data-sorttype="0" href="#">
+                                <i aria-hidden="true" class="fa fa-arrow-up"></i>
+                                <span class="sr-only">Mô tả</span>
+                            </a>
+                        </div>
+                    </th>
+                    <th aria-controls="searchable" class="hidden-xs hidden-sm sortitem_th" style="width: 150px" tabindex="0">
+                        Số ký hiệu
+                        <div class="sortitem">
+                            <a class="clickSort" data-sortname="SymbolNo" data-sorttype="0" href="#">
+                                <i aria-hidden="true" class="fa fa-arrow-up"></i>
+                                <span class="sr-only">Số ký hiệu</span>
+                            </a>
+                        </div>
+                    </th>
+                    <th aria-controls="searchable" class="wpx300 txtct" tabindex="0">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>        
+    </div>
+</div>                
+
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">HTML</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                &lt;table aria-describedby=&quot;searchable_info&quot; class=&quot;table table-bordered table-hover table-striped dataTable table_custom stacktable_inited stacktable large-only&quot; id=&quot;TblMyDocs&quot; role=&quot;grid&quot;&gt;
+                    &lt;thead&gt;
+                        &lt;tr role=&quot;row&quot;&gt;
+                            &lt;th class=&quot;wpx70 center hidden-xs hidden-sm&quot; tabindex=&quot;0&quot;&gt;STT&lt;/th&gt;
+                            &lt;th class=&quot;wpx80&quot; tabindex=&quot;0&quot;&gt;
+                                &lt;label&gt;
+                                    &lt;input class=&quot;group-checkable&quot; type=&quot;checkbox&quot;&gt;
+                                    &lt;span class=&quot;text&quot;&gt;&lt;/span&gt;
+                                &lt;/label&gt;
+                            &lt;/th&gt;
+                            &lt;th aria-controls=&quot;searchable&quot; class=&quot;sortitem_th&quot; style=&quot;width: 200px&quot; tabindex=&quot;0&quot;&gt;
+                                T&ecirc;n
+                                &lt;div class=&quot;sortitem&quot;&gt;
+                                    &lt;a class=&quot;clickSort&quot; data-sortname=&quot;Name&quot; data-sorttype=&quot;0&quot; href=&quot;#&quot;&gt;
+                                        &lt;i aria-hidden=&quot;true&quot; class=&quot;fa fa-arrow-up&quot;&gt;&lt;/i&gt;
+                                        &lt;span class=&quot;sr-only&quot;&gt;T&ecirc;n&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/th&gt;
+                            &lt;th aria-controls=&quot;searchable&quot; class=&quot;hidden-xs hidden-sm sortitem_th&quot; style=&quot;width: 250px&quot; tabindex=&quot;0&quot;&gt;
+                                M&ocirc; tả
+                                &lt;div class=&quot;sortitem&quot;&gt;
+                                    &lt;a class=&quot;clickSort&quot; data-sortname=&quot;Describe&quot; data-sorttype=&quot;0&quot; href=&quot;#&quot;&gt;
+                                        &lt;i aria-hidden=&quot;true&quot; class=&quot;fa fa-arrow-up&quot;&gt;&lt;/i&gt;
+                                        &lt;span class=&quot;sr-only&quot;&gt;M&ocirc; tả&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/th&gt;
+                            &lt;th aria-controls=&quot;searchable&quot; class=&quot;hidden-xs hidden-sm sortitem_th&quot; style=&quot;width: 150px&quot; tabindex=&quot;0&quot;&gt;
+                                Số k&yacute; hiệu
+                                &lt;div class=&quot;sortitem&quot;&gt;
+                                    &lt;a class=&quot;clickSort&quot; data-sortname=&quot;SymbolNo&quot; data-sorttype=&quot;0&quot; href=&quot;#&quot;&gt;
+                                        &lt;i aria-hidden=&quot;true&quot; class=&quot;fa fa-arrow-up&quot;&gt;&lt;/i&gt;
+                                        &lt;span class=&quot;sr-only&quot;&gt;Số k&yacute; hiệu&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/th&gt;
+                            &lt;th aria-controls=&quot;searchable&quot; class=&quot;wpx300 txtct&quot; tabindex=&quot;0&quot;&gt;Thao t&aacute;c&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;&lt;/tbody&gt;
+                &lt;/table&gt;
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- CSS -->
+<div class="demo-section">
+    <h3 id="cpn_css">CSS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:css;">
+
+            </pre>
+        </div>                
+    </div>                
+</div>                
+
+<!-- JS -->
+<div class="demo-section">
+    <h3 id="cpn_js">JS</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content ">
+            <pre class="brush:js;">
+     
+            </pre>
+        </div>                
+    </div>                
+</div>                
+<!-- NOTE -->
+<div class="demo-section">
+    <h3 id="cpn_note">Note</h3>
+    <p class="hidden">Note des</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code class="highlighter-rouge">CSS</code></td>
+                <td>Chỉ thêm <code>CSS</code> khi copy <code>HTML</code> không giống demo</td>
+            </tr>
+            <tr>
+                <td><code class="highlighter-rouge">JS</code></td>
+                <td>Chỉ thêm <code>Js</code> khi copy <code>HTML,CSS</code> không chạy giống demo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

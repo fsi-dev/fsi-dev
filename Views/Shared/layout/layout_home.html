@@ -1,0 +1,50 @@
+<!-- MÔ TẢ -->
+<h1 class="bd-title" id="content">Layout Home</h1>
+
+
+<!-- DEMO -->
+<div class="demo-section">
+    <h3 id="cpn_demo">Demo</h3>
+    <div class="demo_content">
+       <a href="/FSICPN/Assets/app/img/layout_home.png" data-lightbox="lightbox_1"><img src="/FSICPN/Assets/app/img/layout_home.png"></a>
+    </div>                
+</div>                
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">HTML</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                &lt;body&gt;
+                    @Html.Partial(&quot;Header&quot;)
+                    &lt;div class=&quot;main-container container-fluid&quot;&gt;
+                        &lt;div class=&quot;page-container&quot;&gt;
+                            &lt;div id=&quot;Section&quot; class=&quot;page-content&quot;&gt;
+                                @RenderBody()
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/body&gt; 
+            </pre>
+        </div>                
+    </div>                
+</div>                
+<!-- HTML -->
+<div class="demo-section">
+    <h3 id="cpn_html">USE LAYOUT</h3>
+    <div class="demo-wrapper">
+        <div class="demo_content">
+            <pre class="brush:xml;">
+                @{
+                    Layout = &quot;~/Views/Shared/_LayoutHome.cshtml&quot;;
+                } 
+            </pre>
+        </div>                
+    </div>                
+</div>    
+<!-- DEMO -->
+<div class="demo-section">
+    <div class="demo_content">
+        <a href="/FSICPN/Assets/app/img/use_layout.png" data-lightbox="lightbox_2"><img src="/FSICPN/Assets/app/img/use_layout.png"></a>
+    </div>                
+</div>            
