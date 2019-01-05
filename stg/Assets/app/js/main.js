@@ -11,6 +11,23 @@ var Main = {
         if (Utils.isEmpty(container))
             container = jQuery(document);
         Cust.list_pagi(0, "");
+
+        if(container.find("[data-fancybox]").length !=0){
+            container.find("[data-fancybox]").fancybox({
+                margin: [44, 0, 22, 0],
+                loop: true,
+                buttons: [
+                    "zoom",
+                    //"share",
+                    //"slideShow",
+                    "fullScreen",
+                    "download",
+                    //"thumbs",
+                    "close"
+                ],        
+            });
+        } 
+
         container.find(".useSlider").each(function () {
             var obj = $(this);
             var SliderBar = obj.find(".SliderBar");

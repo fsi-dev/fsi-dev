@@ -1,5 +1,5 @@
 ﻿.flags {
-    background: url('../img/flags.png') no-repeat center center;
+    background: url('/stg/Assets/app/img/flags.png') no-repeat center center;
     cursor: pointer;
     vertical-align: middle;
     height: 32px;
@@ -7,7 +7,6 @@
     top: 10px;
     display: inline-block;
 }
-
 .flag-lo {
     background-position: 0 -79px;
     position: relative;
@@ -22,8 +21,9 @@
     position: relative;
 }
 
+
 .exts {
-    background: url('../img/exts.png') no-repeat center center;
+    background: url('/stg/Assets/app/img/exts.png') no-repeat center center;
     cursor: pointer;
     display: inline-block;
     height: 32px;
@@ -32,7 +32,7 @@
 }
 
 .exts-24 {
-    background: url('../img/exts-24.png') no-repeat center center;
+    background: url('/stg/Assets/app/img/exts-24.png') no-repeat center center;
     cursor: pointer;
     display: inline-block;
     height: 24px;
@@ -40,6 +40,23 @@
     vertical-align: middle;
 }
 
+
+*[class*="exts-svg"] {
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    vertical-align: middle;
+    position: relative;
+    background-image: url('/stg/Assets/app/img/exts-svg/icon_file_default.svg');
+}
+*[class*="exts-svg-24"] {
+    height: 24px;
+    width: 24px;
+}
 .ext-mp3,
 .ext-aa,
 .ext-aac,
@@ -81,6 +98,47 @@
 .ext-wma{
     background-position: 0 -1079px;
     position: relative;
+}
+
+.ext-svg-mp3,
+.ext-svg-aa,
+.ext-svg-aac,
+.ext-svg-aax,
+.ext-svg-ac3,
+.ext-svg-adt,
+.ext-svg-adts,
+.ext-svg-aif,
+.ext-svg-aifc,
+.ext-svg-aiff,
+.ext-svg-au,
+.ext-svg-caf,
+.ext-svg-cdda,
+.ext-svg-gsm,
+.ext-svg-m3u,
+.ext-svg-m3u8,
+.ext-svg-mid,
+.ext-svg-midi,
+.ext-svg-pls,
+.ext-svg-ra,
+.ext-svg-ram,
+.ext-svg-rmi,
+.ext-svg-sd2,
+.ext-svg-smd,
+.ext-svg-smx,
+.ext-svg-smz,
+.ext-svg-snd,
+.ext-svg-wav,
+.ext-svg-wave,
+.ext-svg-wax {
+    background-image: url('/stg/Assets/app/img/exts-svg/icon-music.svg');
+}
+.ext-svg-mp4,
+.ext-svg-m4a,
+.ext-svg-m4b,
+.ext-svg-m4p,
+.ext-svg-m4r,
+.ext-svg-wma{
+    background-image: url('/stg/Assets/app/img/exts-svg/icon_file_video.svg');
 }
 
 .exts-24.ext-mp3,
@@ -167,6 +225,9 @@
     background-position: 0 -7px;
     position: relative;
 }
+.ext-svg-pdf {
+    background-image: url('/stg/Assets/app/img/exts-svg/icon_file_pdf.svg');
+}
 
 .exts-24.ext-pdf {
     background-position: -1px -5px;
@@ -177,6 +238,10 @@
 .ext-docx {
     background-position: 0 -63px;
     position: relative;
+}
+.ext-svg-doc,
+.ext-svg-docx {
+    background-image: url('/stg/Assets/app/img/exts-svg/icon_file_word.svg');
 }
 
 .exts-24.ext-doc,
@@ -190,7 +255,10 @@
     background-position: 0 -119px;
     position: relative;
 }
-
+.ext-svg-xls,
+.ext-svg-xlsx {
+    background-image: url('/stg/Assets/app/img/exts-svg/icon_file_excel.svg');
+}
 .exts-24.ext-xls,
 .exts-24.ext-xlsx {
     background-position: 0 -89px;
@@ -212,6 +280,13 @@
 .ext-jpeg {
     background-position: 0 -232px;
     position: relative;
+}
+.ext-svg-jpe,
+.ext-svg-jpg,
+.ext-svg-jpeg,
+.ext-svg-svg,
+.ext-svg-png {
+    background-image: url('/stg/Assets/app/img/exts-svg/icon-photo.svg');
 }
 
 .exts-24.ext-jpe,
@@ -256,6 +331,11 @@
 .ext-zip {
     background-position: 0 -456px;
     position: relative;
+}
+
+.ext-svg-rar,
+.ext-svg-zip {
+    background-image: url('/stg/Assets/app/img/exts-svg/icon_file_zip.svg');
 }
 
 .exts-24.ext-zip {
@@ -320,7 +400,10 @@
     background-position: 0 -887px;
     position: relative;
 }
-
+.ext-svg-ppt,
+.ext-svg-pptx {
+    background-image: url('/stg/Assets/app/img/exts-svg/icon_file_powerpoint.svg');
+}
 .exts-24.ext-ppt,
 .exts-24.ext-pptx {
     background-position: 0 -665px;
@@ -346,7 +429,7 @@
     width: 12px !important;
 }
 .icons {
-    background: url('../img/icons.png') no-repeat 0 0;
+    background: url('/stg/Assets/app/img/icons.png') no-repeat 0 0;
     cursor: pointer;
     display: inline-block !important;
     position: relative;
@@ -357,7 +440,7 @@
 }
 
 .icons-16 {
-    background: url('../img/icons-16.png') no-repeat 0 0;
+    background: url('/stg/Assets/app/img/icons-16.png') no-repeat 0 0;
     cursor: pointer;
     display: inline-block !important;
     position: relative;
@@ -1026,47 +1109,47 @@
     width: 32px;
 }
 
-.icon-menu.icon-favourite { background-image: url('../img/menu/icon-favourite.png') }
+.icon-menu.icon-favourite { background-image: url('/stg/Assets/app/img/menu/icon-favourite.png') }
 
-.icon-menu.icon-group { background-image: url('../img/menu/icon-group.png') }
+.icon-menu.icon-group { background-image: url('/stg/Assets/app/img/menu/icon-group.png') }
 
-.icon-menu.icon-msg { background-image: url('../img/menu/icon-msg.png') }
+.icon-menu.icon-msg { background-image: url('/stg/Assets/app/img/menu/icon-msg.png') }
 
-.icon-menu.icon-notify { background-image: url('../img/menu/icon-notify.png') }
+.icon-menu.icon-notify { background-image: url('/stg/Assets/app/img/menu/icon-notify.png') }
 
-.icon-menu.icon-myfriend { background-image: url('../img/menu/icon-myfriend.png') }
+.icon-menu.icon-myfriend { background-image: url('/stg/Assets/app/img/menu/icon-myfriend.png') }
 
-.icon-menu.icon-mygroup { background-image: url('../img/menu/icon-mygroup.png') }
+.icon-menu.icon-mygroup { background-image: url('/stg/Assets/app/img/menu/icon-mygroup.png') }
 
-.icon-menu.icon-myexecute { background-image: url('../img/menu/icon-myexecute.png') }
+.icon-menu.icon-myexecute { background-image: url('/stg/Assets/app/img/menu/icon-myexecute.png') }
 
-.icon-menu.icon-myfile { background-image: url('../img/menu/icon-myfile.png') }
+.icon-menu.icon-myfile { background-image: url('/stg/Assets/app/img/menu/icon-myfile.png') }
 
-.icon-menu.icon-mywork { background-image: url('../img/menu/icon-mywork.png') }
+.icon-menu.icon-mywork { background-image: url('/stg/Assets/app/img/menu/icon-mywork.png') }
 
-.icon-menu.icon-org { background-image: url('../img/menu/icon-org.png') }
+.icon-menu.icon-org { background-image: url('/stg/Assets/app/img/menu/icon-org.png') }
 
-.icon-menu.icon-perm { background-image: url('../img/menu/icon-perm.png') }
+.icon-menu.icon-perm { background-image: url('/stg/Assets/app/img/menu/icon-perm.png') }
 
-.icon-menu.icon-recent { background-image: url('../img/menu/icon-recent.png') }
+.icon-menu.icon-recent { background-image: url('/stg/Assets/app/img/menu/icon-recent.png') }
 
-.icon-menu.icon-doctype { background-image: url('../img/menu/icon-doctype.png') }
+.icon-menu.icon-doctype { background-image: url('/stg/Assets/app/img/menu/icon-doctype.png') }
 
-.icon-menu.icon-storage { background-image: url('../img/menu/icon-storage.png') }
+.icon-menu.icon-storage { background-image: url('/stg/Assets/app/img/menu/icon-storage.png') }
 
-.icon-menu.icon-role { background-image: url('../img/menu/icon-role.png') }
+.icon-menu.icon-role { background-image: url('/stg/Assets/app/img/menu/icon-role.png') }
 
-.icon-menu.icon-share { background-image: url('../img/menu/icon-share.png') }
+.icon-menu.icon-share { background-image: url('/stg/Assets/app/img/menu/icon-share.png') }
 
-.icon-menu.icon-user { background-image: url('../img/menu/icon-user.png') }
+.icon-menu.icon-user { background-image: url('/stg/Assets/app/img/menu/icon-user.png') }
 
-.icon-menu.icon-workflow { background-image: url('../img/menu/icon-workflow.png') }
+.icon-menu.icon-workflow { background-image: url('/stg/Assets/app/img/menu/icon-workflow.png') }
 
-.icon-menu.icon-report { background-image: url('../img/menu/icon-report.png') }
+.icon-menu.icon-report { background-image: url('/stg/Assets/app/img/menu/icon-report.png') }
 
-.icon-menu.icon-log { background-image: url('../img/menu/icon-log.png') }
+.icon-menu.icon-log { background-image: url('/stg/Assets/app/img/menu/icon-log.png') }
 
-.icon-menu.icon-license { background-image: url('../img/menu/icon-license.png') }
+.icon-menu.icon-license { background-image: url('/stg/Assets/app/img/menu/icon-license.png') }
 
 .icon-taskbar {
     background-position: center center;
@@ -1079,57 +1162,57 @@
     margin-right: 10px;
     width: 24px;
 }
-.icon-taskbar.icon-favourite { background-image: url('../img/menu/icon-favourite.png') }
+.icon-taskbar.icon-favourite { background-image: url('/stg/Assets/app/img/menu/icon-favourite.png') }
 
-.icon-taskbar.icon-group { background-image: url('../img/menu/icon-group.png') }
+.icon-taskbar.icon-group { background-image: url('/stg/Assets/app/img/menu/icon-group.png') }
 
-.icon-taskbar.icon-msg { background-image: url('../img/menu/icon-msg.png') }
+.icon-taskbar.icon-msg { background-image: url('/stg/Assets/app/img/menu/icon-msg.png') }
 
-.icon-taskbar.icon-notify { background-image: url('../img/menu/icon-notify.png') }
+.icon-taskbar.icon-notify { background-image: url('/stg/Assets/app/img/menu/icon-notify.png') }
 
-.icon-taskbar.icon-myexecute { background-image: url('../img/menu/icon-myexecute.png') }
+.icon-taskbar.icon-myexecute { background-image: url('/stg/Assets/app/img/menu/icon-myexecute.png') }
 
-.icon-taskbar.icon-myfile { background-image: url('../img/menu/icon-myfile.png') }
+.icon-taskbar.icon-myfile { background-image: url('/stg/Assets/app/img/menu/icon-myfile.png') }
 
-.icon-taskbar.icon-mywork { background-image: url('../img/menu/icon-mywork.png') }
+.icon-taskbar.icon-mywork { background-image: url('/stg/Assets/app/img/menu/icon-mywork.png') }
 
-.icon-taskbar.icon-org { background-image: url('../img/menu/icon-org.png') }
+.icon-taskbar.icon-org { background-image: url('/stg/Assets/app/img/menu/icon-org.png') }
 
-.icon-taskbar.icon-perm { background-image: url('../img/menu/icon-perm.png') }
+.icon-taskbar.icon-perm { background-image: url('/stg/Assets/app/img/menu/icon-perm.png') }
 
-.icon-taskbar.icon-recent { background-image: url('../img/menu/icon-recent.png') }
+.icon-taskbar.icon-recent { background-image: url('/stg/Assets/app/img/menu/icon-recent.png') }
 
-.icon-taskbar.icon-doctype { background-image: url('../img/menu/icon-doctype.png') }
+.icon-taskbar.icon-doctype { background-image: url('/stg/Assets/app/img/menu/icon-doctype.png') }
 
-.icon-taskbar.icon-storage { background-image: url('../img/menu/icon-storage.png') }
+.icon-taskbar.icon-storage { background-image: url('/stg/Assets/app/img/menu/icon-storage.png') }
 
-.icon-taskbar.icon-role { background-image: url('../img/menu/icon-role.png') }
+.icon-taskbar.icon-role { background-image: url('/stg/Assets/app/img/menu/icon-role.png') }
 
-.icon-taskbar.icon-share { background-image: url('../img/menu/icon-share.png') }
+.icon-taskbar.icon-share { background-image: url('/stg/Assets/app/img/menu/icon-share.png') }
 
-.icon-taskbar.icon-user { background-image: url('../img/menu/icon-user.png') }
+.icon-taskbar.icon-user { background-image: url('/stg/Assets/app/img/menu/icon-user.png') }
 
-.icon-taskbar.icon-workflow { background-image: url('../img/menu/icon-workflow.png') }
+.icon-taskbar.icon-workflow { background-image: url('/stg/Assets/app/img/menu/icon-workflow.png') }
 
-.icon-taskbar.icon-report { background-image: url('../img/menu/icon-report.png') }
+.icon-taskbar.icon-report { background-image: url('/stg/Assets/app/img/menu/icon-report.png') }
 
-.icon-taskbar.icon-log { background-image: url('../img/menu/icon-log.png') }
+.icon-taskbar.icon-log { background-image: url('/stg/Assets/app/img/menu/icon-log.png') }
 
-.icon-taskbar.icon-license { background-image: url('../img/menu/icon-license.png') }
+.icon-taskbar.icon-license { background-image: url('/stg/Assets/app/img/menu/icon-license.png') }
 
-.icon-taskbar.icon-myfriend { background-image: url('../img/menu/icon-myfriend.png') }
+.icon-taskbar.icon-myfriend { background-image: url('/stg/Assets/app/img/menu/icon-myfriend.png') }
 
-.icon-taskbar.icon-mygroup { background-image: url('../img/menu/icon-mygroup.png') }
+.icon-taskbar.icon-mygroup { background-image: url('/stg/Assets/app/img/menu/icon-mygroup.png') }
 
 .icon-list {
-    background: url("../img/icon-list.png") no-repeat scroll center center transparent;
+    background: url("/Assets/app/img/icon-list.png") no-repeat scroll center center transparent;
     display: block;
     height: 18px;
     width: 18px;
 }
 
 body .icon-computer {
-    background: url("../img/computer.png") no-repeat center center;
+    background: url("/Assets/app/img/computer.png") no-repeat center center;
     display: inline-block;
     vertical-align: middle;
     height: 48px;
@@ -1137,7 +1220,7 @@ body .icon-computer {
 }
 
 body .icon-share2 {
-    background: url("../img/share.png") no-repeat center center;
+    background: url("/Assets/app/img/share.png") no-repeat center center;
     display: inline-block;
     vertical-align: middle;
     height: 48px;

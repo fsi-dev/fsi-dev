@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="52px" viewBox="0 0 42 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_file_word</title>
+    <desc>Created with Sketch.</desc>
+    <defs/>
+    <g id="File" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="File_Type" transform="translate(-12.000000, -85.000000)">
+            <g id="icon_file_word" transform="translate(12.000000, 85.000000)">
+                <path d="M4,0 L27.937,0 L42,14.063 L42,48 C42,50.209 40.209,52 38,52 L4,52 C1.791,52 0,50.209 0,48 L0,4 C0,1.791 1.791,0 4,0" id="Page-1" fill="#FFFFFF"/>
+                <path d="M40,48 C40,49.105 39.104,50 38,50 L4,50 C2.895,50 2,49.105 2,48 L2,4 C2,2.895 2.895,2 4,2 L27,2 L40,15 L40,48 Z M27.938,0 L4,0 C1.791,0 0,1.791 0,4 L0,48 C0,50.209 1.791,52 4,52 L38,52 C40.209,52 42,50.209 42,48 L42,14.062 L27.938,0 Z" id="Fill-1" fill="#2C81C6"/>
+                <path d="M30.43,21 L27.193,34.381 C27.023,35.075 26.926,35.633 26.901,36.057 L26.85,36.057 C26.791,35.43 26.702,34.889 26.583,34.432 L23.13,21 L20.02,21 L16.287,34.33 C16.084,35.066 15.966,35.65 15.932,36.082 L15.868,36.082 C15.835,35.473 15.75,34.889 15.615,34.33 L12.314,21 L9,21 L14.091,39.205 L17.582,39.205 L21.061,26.446 C21.222,25.879 21.323,25.295 21.366,24.694 L21.416,24.694 C21.45,25.338 21.539,25.93 21.683,26.472 L25.149,39.205 L28.564,39.205 L33.553,21 L30.43,21 Z" id="Page-1" fill="#2C81C6"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -343,3 +343,8 @@ header.bd-navbar .navbar-nav-scroll .navbar-nav.pull-right .nav-item:last-child{
     cursor: pointer;
 }
 
+body.compensate-for-scrollbar {
+    overflow: visible;
+}
+
+
