@@ -806,6 +806,9 @@ var Main = {
         });
     },
     onEvent: function () {
+        jQuery(document).on("click", ".jobFile_Fancybox", function () {
+            $(this).parents(".jobFile_Attach").find(".jobFile_Name").click();
+        });   
         jQuery(document).on("change", ".datetime, .date", function (e) {
             try {
                 var dateInput = jQuery(e.currentTarget);
