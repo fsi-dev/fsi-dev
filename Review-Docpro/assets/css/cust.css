@@ -1,0 +1,32 @@
+.fc-list-table td {
+    border-width: 1px 0 0;
+    padding: 8px 14px !important;
+}
+.fc-ltr .fc-list-heading-main,
+.fc-toolbar h2 {
+    text-transform: capitalize;
+}
+.fc-event-container .fc-event {
+    padding: 8px 10px;
+    border-width: 0 0 0 3px;
+    margin-bottom: 3px;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0d…0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
+    background-image: -webkit-linear-gradient(top,#fff 0,#ededed 100%);
+    background-image: -moz-linear-gradient(top,#fff 0,#ededed 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#ededed 100%);
+    background-image: linear-gradient(to bottom,#fff 0,#ededed 100%);
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+    color: #262626;
+    text-decoration: none;
+    display: block;
+    font-size: .85em;
+    line-height: 1.3;
+    border-radius: 2px;
+    font-weight: normal;
+}
+.fc-day-grid-event .fc-content {
+    font-weight: 600;
+}
+.widget-body {
+    background-color: #fff;
+}

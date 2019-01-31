@@ -1,0 +1,1 @@
+Project run only in Xampp (Or run in hosting)
